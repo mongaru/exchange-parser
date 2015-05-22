@@ -1,5 +1,7 @@
 <?php
 
+define('APPLICATION_ENV', 'dev');
+
 // Define Application Version
 define('KK_APP_VERSION', '1.2.2');
 
