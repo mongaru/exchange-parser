@@ -1,0 +1,61 @@
+<div class="clearfix" id="view_user">
+    <div class="sub_column_right right round" id="user_general" style="width: 100%">
+        <div class="padding_wrapper">
+            <div class="two_column_item medium">
+
+                <div class="item clearfix">
+                    <div class="left">
+                        <?php echo $this->translate->_('Name'); ?>
+                    </div> <!-- end left -->
+                    <div class="right">
+                        <?php echo $this->companyInfo->company_name; ?>
+                    </div> <!-- end right -->
+                </div> <!-- end clearfix -->
+
+                <div class="item clearfix">
+                    <div class="left">
+                        <?php echo $this->translate->_('Address'); ?>
+                    </div> <!-- end left -->
+                    <div class="right">
+                        <span style="white-space:pre-wrap"><?php echo $this->companyInfo->company_address; ?></span>
+                    </div> <!-- end right -->
+                </div> <!-- end clearfix -->
+
+                <div class="item clearfix">
+                    <div class="left">
+                        <?php echo $this->translate->_('Phone'); ?>
+                    </div> <!-- end left -->
+                    <div class="right">
+                        <?php echo $this->companyInfo->company_phone; ?>
+                    </div> <!-- end right -->
+                </div> <!-- end clearfix -->
+
+                <div class="item clearfix">
+                    <div class="left">
+                        <?php echo $this->translate->_('Fax'); ?>
+                    </div> <!-- end left -->
+                    <div class="right">
+                        <?php echo $this->companyInfo->company_fax; ?>
+                    </div> <!-- end right -->
+                </div> <!-- end clearfix -->
+
+                <div class="item clearfix last">
+                    <div class="left">
+                        <?php echo $this->translate->_('Homepage'); ?>
+                    </div> <!-- end left -->
+                    <div class="right">
+                    <a href="<?php echo $this->companyInfo->company_homepage; ?>" title="<?php echo $this->companyInfo->company_name; ?>"><?php echo $this->companyInfo->company_homepage; ?></a>
+                    </div> <!-- end right -->
+                </div> <!-- end clearfix -->
+
+            </div> <!-- end two_column_item -->
+        </div> <!-- end padding_wrapper -->
+
+    </div> <!-- end sub_column_right -->
+                                                                                                             
+    <div class="spacer clear"><!-- --></div>
+                                                                
+
+</div> <!-- end content -->
+
+<?php echo ($this->listPeople)?$this->listPeople:'';?>

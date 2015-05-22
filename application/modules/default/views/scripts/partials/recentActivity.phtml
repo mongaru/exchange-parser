@@ -1,0 +1,73 @@
+<?php if (count($this->todayActivities) > 0): ?>
+<!-- Today Activity Log -->
+<h4><?php echo $this->translate->_('Today'); ?></h4>
+<div class="v-list">
+    <div id="today_dashboard_activity">
+            <?php
+            $i = 0;
+            $total = count($this->todayActivities);
+            foreach($this->todayActivities as $activity):
+                $i++;
+                if ($i == 11) break;
+                $classFirst = ($i == 1) ? ' first' : ' ';
+                $classLast = '';
+                if ($i == 10) {
+                    $classLast.= ' last';
+                    $classLast.= ($total > 10) ? ' has_more' : ' ';
+                }
+                ?>
+                <?php echo $this->activity($activity, $classFirst . $classLast); ?>
+            <?php endforeach; ?>
+    </div>
+        <?php if ($i > 10): ?>
+    <span id="today_dashboard_button" onclick="javascript: getActivities('today');" class="show_more round">
+        <span class="icon16x16-img downarr">
+            <a title="<?php echo $this->translate->_('View More'); ?>" href="javascript://">
+                <span id="today_dashboard_text"><?php echo $this->translate->_('View More'); ?></span>
+                <span id="today_dashboard_loading" class="loading_img hide_me">
+                    <img src="<?php echo $this->serverUrl('/images/layout/ajax-loader.gif'); ?>" width="11px" alt="Loading..." />
+                </span>
+            </a>
+        </span>
+    </span>
+        <?php endif; ?>
+</div> <!-- end v-list -->
+<?php endif; ?>
+<?php if (count($this->yesterdayActivities) > 0): ?>
+<!-- Yesterday Activity Log -->
+<h4><?php echo $this->translate->_('Yesterday'); ?></h4>
+<div class="v-list">
+    <div id="yesterday_dashboard_activity">
+            <?php
+            $i = 0;
+            $total = count($this->yesterdayActivities);
+            foreach($this->yesterdayActivities as $activity):
+                $i++;
+                if ($i == 11) break;
+                $classFirst = ($i == 1) ? ' first' : ' ';
+                $classLast = '';
+                if ($i == 10) {
+                    $classLast.= ' last';
+                    $classLast.= ($total > 10) ? ' has_more' : ' ';
+                }
+                ?>
+                <?php echo $this->activity($activity, $classFirst . $classLast); ?>
+            <?php endforeach; ?>
+    </div>
+        <?php if ($i > 10): ?>
+    <span id="yesterday_dashboard_button" onclick="javascript: getActivities('yesterday');" class="show_more round">
+        <span class="icon16x16-img downarr">
+            <a title="<?php echo $this->translate->_('View More'); ?>" href="javascript://">
+                <span id="yesterday_dashboard_text"><?php echo $this->translate->_('View More'); ?></span>
+                <span id="yesterday_dashboard_loading" class="loading_img hide_me">
+                    <img src="<?php echo $this->serverUrl('/images/layout/ajax-loader.gif'); ?>" width="11px" alt="Loading..." />
+                </span>
+            </a>
+        </span>
+    </span>
+        <?php endif; ?>
+</div> <!-- end v-list -->
+<?php endif; ?>
+<?php if ((count($this->todayActivities) == 0) && (count($this->yesterdayActivities) == 0)): ?>
+<p><?php echo $this->translate->_('There are no activities from Yesterday and Today.'); ?></p>
+<?php endif; ?>

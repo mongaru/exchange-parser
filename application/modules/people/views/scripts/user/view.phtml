@@ -1,0 +1,122 @@
+
+
+
+    <section class="main grid24 lft">
+            <?php if(count($this->messages)>=1) : ?>
+                <?php foreach ($this->messages as $key => $value) : ?>
+                    <div class="message m_success"> <?php echo $value; ?></div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <div class="clearfix"></div>        
+        <h3 class ="user_header"><?php echo $this->translate->_('User Details'); ?></h3>         
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#add_to_groups_button').click(function(){
+                    $(this).fadeOut(50).parent().find('.hide').fadeIn(200);
+                    return false;
+                });
+                
+                
+                $('#add_avatar_button').click(function(){
+                    
+                    return false;
+                });
+            });
+        </script>
+
+             
+        <div class="user_options grid4 lft">            
+            <div class="user_avatar" style="width:98px; height:98px;">
+                <img src="<?php echo  $this->avatarInfo ;?>" alt="" style="width:96px;" />
+            </div>
+        </div><!-- user_options end -->
+        
+        
+        <table class="grid19 rgt ">
+
+
+           <tbody>  
+            <tr>
+                <td style = "width:50%;"><strong><?php echo $this->translate->_('Name'); ?></strong></td>
+                <td><?php echo  ucwords($this->userInfo->user_firstname).' '.ucwords($this->userInfo->user_surname); ?></a></td>
+            </tr>
+            
+            <tr>
+                <td><strong><?php echo $this->translate->_('Email'); ?></strong></td>
+                <td><a href="#"><?php echo (isset($this->userInfo->user_email)) ?  '' : $this->userInfo->user_email ; ?></a></td>
+            </tr>
+            <tr>
+                <td><strong><?php echo $this->translate->_('Company'); ?></strong></td>
+                <td><?php echo (($this->userCompany['company_name'] == '')) ?  '' : $this->userCompany['company_name'] ; ?></td>
+            </tr>
+
+            <tr>
+                <td><strong><?php echo $this->translate->_('Role'); ?></strong></td>
+
+                <td><?php echo (isset($this->permissionsdata->privileges_rol_name))  ? '' : ucwords(str_replace("_", " ", $this->permissionsdata->privileges_rol_name)); ?></td>
+            </tr>
+            <tr>
+                <td><strong><?php echo $this->translate->_('Department'); ?></strong></td>
+
+                <td><?php echo (isset($this->permissionsdata->user_department))  ? '' : ucwords($this->permissionsdata->department); ?></td>
+            </tr>
+</tbody> 
+        </table>
+        
+        
+        <div class="clearfix"></div>
+        
+        
+        <div class="user_options grid4 lft">
+            <span class="icon-phone iBlk txtRgt" style="font-size:35px; line-height:35px;"></span>
+        </div><!-- user_options end -->
+        
+        
+        <table class="grid19 rgt">
+            <tr>
+                <td  style = "width:50%;"><strong><?php echo $this->translate->_('Phone'); ?></strong></td>
+                <td><?php echo (isset($this->userInfo->user_optional->user_phone)) ? $this->userInfo->user_optional->user_phone : ''; ?></td>
+            </tr>
+            
+            <tr>
+                <td><strong><?php echo $this->translate->_('Mobile'); ?></strong></td>
+                <td><?php echo (isset($this->userInfo->user_optional->user_mobile)) ? $this->userInfo->user_optional->user_mobile : ''; ?></td>
+            </tr>
+            
+            <tr>
+                <td><strong><?php echo $this->translate->_('Language'); ?></strong></td>
+                <td><?php echo ($this->userInfo->user_locale=="zh_CN") ? "Chinese" : (($this->userInfo->user_locale=='') ? '' : "English"); ?></td>
+            </tr>
+            
+
+        </table>
+        
+        
+        <div class="clearfix"></div>
+        
+        
+        <div class="user_options grid4 lft">
+            <span class="icon-clock-2 iBlk txtRgt" style="font-size:35px; line-height:35px;"></span>
+        </div><!-- user_options end -->
+        
+        
+        <table class="grid19 rgt">
+            <tr>
+<?php if($this->userInfo->user_timezone!== '' &&  $this->userInfo->user_timezone!== null) : ?>
+                <td><strong><?php echo $this->translate->_('Local Time :  '). $this->userInfo->user_timezone; (date_default_timezone_set($this->userInfo->user_timezone)) ?></strong></td>
+                <td class="grid7"><?php  echo date ("H:i",time()); ?></td>
+<?php else : ?>
+                <td><strong><?php echo $this->translate->_('Local Time :  '); ?></strong></td>
+                <td class="grid7"><?php  echo ""; ?></td>
+<?php endif; ?>
+            </tr>
+            
+        </table>
+        
+        
+        <div class="clearfix"></div>
+    </section>
+    
+
+
+

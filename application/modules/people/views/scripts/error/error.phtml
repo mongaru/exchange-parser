@@ -1,0 +1,21 @@
+<h2>An error occurred</h2>
+<h3><?php echo $this->message ?></h3>
+
+<?php if (in_array(APPLICATION_ENV, array('qa', 'rnd', 'development'))): ?>
+<h2>An error occurred</h2>
+<h3><?php echo $this->message ?></h3>
+
+<h3>Exception information:</h3>
+<p><b>Message:</b> <?php echo $this->exception->getMessage() ?></p>
+<p>&nbsp;<br /></p>
+
+<h3>Stack trace:</h3>
+<pre><?php echo $this->exception->getTraceAsString() ?></pre>
+<p>&nbsp;<br /></p>
+
+<h3>Request Parameters:</h3>
+<pre><?php echo var_export($this->request->getParams(), true) ?></pre>
+<p>&nbsp;<br /></p>
+
+<div class="clear"><!-- --></div>
+<?php endif; ?>

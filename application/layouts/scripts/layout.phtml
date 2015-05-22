@@ -1,0 +1,497 @@
+
+<?php
+
+    if ( ! is_null($this->userData))
+    {
+        $user_full_name = strlen($this->userData->user_firstname . ' ' . $this->userData->user_surname[0]) >= 9
+                ? ucwords($this->userData->user_firstname)
+                : $this->userData->user_firstname . ' ' . $this->userData->user_surname[0].'.';
+
+
+        $enURL = ($this->userData->user_locale == 'en_US')? 'javascript://' : $this->serverUrl('/lang/switch/id/en');
+        $zhURL = ($this->userData->user_locale == 'zh_CN')? 'javascript://' : $this->serverUrl('/lang/switch/id/zh');
+    }
+        if (Zend_Auth::getInstance()->hasIdentity()){
+
+            $avatarInfo = '';
+            $fileModel = new People_Model_File();
+
+            if($this->userData->user_avatar_file != null && $this->userData->user_avatar_file != "0" ){
+                $avatarFile = $fileModel->find($this->userData->user_avatar_file);
+
+                $imageLib = Amedia_ImageLib::getInstance();
+                $imageLib->setSourceFile($avatarFile->file_full_path, $avatarFile->file_name);
+                $avatarInfo = $this->serverUrl($imageLib->resize('24x24')->getUrl());
+            } else {
+                $avatarInfo = $this->serverUrl('/images/client24.gif');
+            }
+        }
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="Author"             content="" />
+        <meta name="Keywords"           content="" />
+        <meta name="Description"        content="" />
+        <meta name="Title"              content="" />
+        <meta name="robots"             content="index, follow" />
+        <link rel="shortcut icon" href="<?php echo $this->serverUrl('favicon.ico'); ?>" />
+        <?php echo $this->headTitle(); ?>
+
+
+        <!-- MOBILE -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/style/reset.css'); ?>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/style/compiled.styles.css'); ?>" />
+
+        <script type="text/javascript">
+        <?php echo $this->jsCode; ?>
+        </script>
+        <style type="text/css">
+            .serchbox {
+                background: rgb(57, 58, 75);
+                color: #ffffff;
+                border: 1px solid #ccc;
+            }
+            .serchbox label{
+                color: #ffffff;
+            }
+            .filterbox {
+                background: rgb(71, 73, 92) !important;
+                border: 1px solid rgb(71, 73, 92);
+            }
+           .filterbox  li{
+                color: #ffffff;
+           }
+           .filterbox  div.filter_search {
+                border: solid 1px rgb(53, 47, 47) !important;
+                box-shadow: 1px 1px 2px rgb(0, 0, 0) inset !important;
+           }
+
+        </style>
+        <!-- jQuery -->
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/application/jquery-1.7.2.min.js'); ?>"></script>
+
+        <!-- Lightbox (Fancybox) -->
+        <script src="<?php echo $this->serverUrl('/assets/js/application/fancybox/jquery.fancybox.js'); ?>"></script>
+        <script src="<?php echo $this->serverUrl('/assets/js/application/fancybox/jquery.mousewheel-3.0.6.pack.js'); ?>"></script>
+        <script src="<?php echo $this->serverUrl('/assets/js/application/fancybox/jquery.fancybox-thumbs.js'); ?>"></script>
+        <script src="<?php echo $this->serverUrl('/assets/js/application/fancybox/jquery.fancybox-media.js'); ?>"></script>
+
+        <!-- Jquery UI -->
+        <!-- <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+        <script src="<?php echo $this->serverUrl('/assets/js/application/ui/jquery-ui-1.8.23.custom.min.js'); ?>"></script>
+
+        <!-- Validator -->
+        <script src="<?php echo $this->serverUrl('/assets/js/application/validator/jquery.validate.min.js'); ?>"></script>
+
+        <!-- Datatable -->
+        <script src="<?php echo $this->serverUrl('/assets/js/application/tables/jquery.dataTables.js'); ?>"></script>
+
+        <!-- TINY SCROLLBAR -->
+        <script src="<?php echo $this->serverUrl('/assets/js/application/tiny_scrollbar/jquery.tinyscrollbar.js'); ?>"></script>
+
+        <!-- TAP EVENTS -->
+        <script src="<?php echo $this->serverUrl('/assets/js/application/jquery.doubletap.js'); ?>"></script>
+
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/tiny.editor.packed.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/application/plugins.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/application/scripts.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/application/forms.js'); ?>"></script>
+
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/modules/loader.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/modules/searcher.js'); ?>"></script>
+
+        <!-- CROSS BROWSER -->
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/tinyeditor.css'); ?>" />
+        <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/style/cross_browser/webkit.css'); ?>" />
+        <!--[if IE 7]>
+            <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" />
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style/cross_browser/ie7.css" />
+            <script type="text/javascript" src="/assets/js/application/ie7.js"></script>
+            <script type="text/javascript" src="/assets/js/application/ie8.js"></script>
+        <![endif]-->
+
+        <!--[if IE 8]>
+                  <script type="text/javascript" src="/assets/js/application/ie8.js"></script>
+            <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8, IE=9" />
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style/cross_browser/ie8.css" />
+        <![endif]-->
+
+        <!--[if IE 9]>
+            <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style/cross_browser/ie9.css" />
+        <![endif]-->
+
+        <!--[if IE 10]>
+            <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style/cross_browser/ie9.css" />
+        <![endif]-->
+
+        <!-- End of head including-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <?php
+    $uri =Zend_Controller_Front::getInstance()->getRequest()->getRequestUri();
+    $url = explode("/", $this->serverUrl($uri));
+    foreach ($url as $key => $value) {
+        if($key>=5) {
+            unset($url[$key]);
+        }
+    }
+    $url = implode('/', $url);
+    ?>
+
+        <style type="text/css">
+            .topBar a[href="<?php echo $url; ?>"],
+            .mobile_nav a[href="<?php echo $url; ?>"]{ color:#ff0000; text-decoration:none; .box-shadow(0 -1px 1px #999);}
+        </style>
+
+        <base href="<?php echo $this->serverUrl('/'); ?>" />
+
+        <?php echo $this->headScript(); ?>
+        
+        <script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-5622516-84']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+    </head>
+
+    <body id="<?php echo $this->pageID; ?>" class="<?php echo $this->pageClass; ?>">
+
+
+            <?php if ($this->loggedIn == true): ?>
+    <section class="viewport">
+                <!--TOP_BAR-->
+                <div class="topBar">
+                    <div class="inner">
+
+                        <div class="topbtn show_mobile">
+                            <a href="#" class="show_nav"><i></i><?php echo $this->translate->_('Menu'); ?></a>
+                        </div>
+
+                        <div class="topbtn user_btn">
+                            <a href="<?php echo $this->serverUrl('/people/user/view/id/' . $this->userData->ID_user); ?>" title="<?php echo $this->translate->_('My Info'); ?>">
+                                <em class="avatar24"><img src="<?php echo $avatarInfo; ?>" alt="" /></em>
+
+                                <?php if ($this->loggedIn == true): ?>
+                                <?php echo $this->translate->_('Welcome').'   '.ucwords($user_full_name); ?>   </a>
+                               <?php endif; ?>
+                            </a>
+
+                            <ul class="user_subnav">
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'my')): ?>
+                                <li><a href="<?php echo $this->serverUrl('/people/user/my' ); ?>"> <?php echo $this->translate->_('Edit my profile'); ?></a></li>
+                        <?php endif; ?>
+                                <li><a href="<?php echo $this->serverUrl('/logout'); ?>"><?php echo $this->translate->_('Logout'); ?></a></li>
+                            </ul>
+                        </div><!-- user_btn end -->
+
+                        <div class="topbtn hide_mobile"><a href="<?php echo $this->serverUrl('/'); ?>"><?php echo $this->translate->_('Dashboard'); ?></a></div>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'costsheet_manage', 'index')): ?>
+                            <div class="topbtn hide_mobile"><a href="<?php echo $this->serverUrl('/costsheet/manage'); ?>"><?php echo $this->translate->_('Cost Sheets'); ?></a></div>
+                        <?php endif; ?>
+
+
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'index')): ?>
+                            <div class="topbtn hide_mobile"><a href="<?php echo $this->serverUrl('/yield/manage'); ?>"><?php echo $this->translate->_('Yields'); ?></a></div>
+                        <?php endif; ?>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'costing_manage', 'index')): ?>
+                        <div class="topbtn hide_mobile"><a href="<?php echo $this->serverUrl('/costing/manage'); ?>"><?php echo $this->translate->_('Costing Packs'); ?></a>
+                            <?php if($this->amediaAcl->isVendor(Zend_Auth::getInstance()->getIdentity()->user_level)) : ?>
+                                <ul>
+                                <li> <a href="<?php echo $this->serverUrl('/costing/manage'); ?>">
+                                   List Costing Packs   </a></li>
+                                    <li> <a href="<?php echo $this->serverUrl('/costing/bid/my'); ?>">
+                                   Bids of Group
+                                </a></li>
+                                <li> <a href="<?php echo $this->serverUrl('/costing/manage/index/status/accepted'); ?>">
+                                   Accepted Bid Kits
+                                </a></li>
+                            </ul>
+                            <?php endif; ?>
+
+
+                        </div>
+
+                        <?php endif; ?>
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'index') || $this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'index')): ?>
+                        <div class="topbtn hide_mobile">
+
+                            <a ><?php echo $this->translate->_('Users'); ?> & <?php echo $this->translate->_('Groups'); ?> <i></i></a>
+
+                            <ul>
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'add')): ?>
+                                <li><a href="<?php echo $this->serverUrl('/people/user/add'); ?>"><?php echo $this->translate->_('Add User'); ?></a></li>
+                        <?php endif; ?>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'index')): ?>
+
+                                <li><a href="<?php echo $this->serverUrl('/company/manage'); ?>"><?php echo $this->translate->_('Manage Groups'); ?></a></li>
+
+                        <?php endif; ?>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'index')): ?>
+
+                                <li><a href="<?php echo $this->serverUrl('/people/user'); ?>"><?php echo $this->translate->_('Manage Users'); ?></a></li>
+                            <?php endif ; ?>
+                            </ul>
+                        </div>
+                                                    <?php endif ; ?>
+     <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_roles', 'index') ||  $this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'setup')): ?>
+
+                        <div class="topbtn hide_mobile">
+                            <a ><?php echo $this->translate->_('Setup'); ?> <i></i></a>
+
+                            <ul>
+
+
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_roles', 'index')): ?>
+                                <li><a href="<?php echo $this->serverUrl('/people/roles/'); ?>"><?php echo $this->translate->_('Roles'); ?></a></li>
+                        <?php endif; ?>
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'setup')): ?>
+                                <li><a href=<?php echo $this->serverUrl("/yield/manage/setup"); ?>><?php echo $this->translate->_('Yields'); ?></a></li>
+                    <?php endif; ?>
+                            </ul>
+                        </div>
+                        <?php endif; ?>
+                        <div class="topbtn hide_mobile rgt">
+                            <a href="<?php echo $enURL; ?>" title="Change Language" class="lang_en"><?php echo $this->translate->_('English'); ?></a>
+|
+                            <a href="<?php echo $zhURL; ?>" title="Change Language" class="lang_ch">  <?php echo $this->translate->_('Chinese'); ?></a>
+                        </div>
+
+                        <div class="show_mobile search_btn">
+                            <a href="#" class="icon-search"></a>
+                        </div>
+
+                        <div class="hide fancybox_close">
+                            <a href="#"><span class="icon-cancel"></span></a>
+                        </div>
+
+
+                    </div><!-- inner -->
+                </div><!-- topbar -->
+
+<nav class="mobile_nav show_mobile">
+    <ul>
+        <li><a href="<?php echo $this->serverUrl('/'); ?>"><?php echo $this->translate->_('Dashboard'); ?></a></li>
+
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'index')): ?>
+                            <li ><a href="<?php echo $this->serverUrl('/yield/manage'); ?>"><?php echo $this->translate->_('Yields'); ?></a></li>
+                        <?php endif; ?>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'costing_manage', 'index')): ?>
+                        <li ><a href="<?php echo $this->serverUrl('/costing/manage'); ?>"><?php echo $this->translate->_('Costing Packs'); ?></a></li>
+                        <?php endif; ?>
+        <li>
+            <a class = "subUsrM"><?php echo $this->translate->_('Users'); ?> & <?php echo $this->translate->_('Groups'); ?> <i></i></a>
+            <ul id = "subUser" class = "hide_mobile">
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'add')): ?>
+                                <li ><a href="<?php echo $this->serverUrl('/people/user/add'); ?>"><?php echo $this->translate->_('Add User'); ?></a></li>
+                        <?php endif; ?>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'index')): ?>
+
+                                <li ><a href="<?php echo $this->serverUrl('/company/manage'); ?>"><?php echo $this->translate->_('Manage Groups'); ?></a></li>
+
+                        <?php endif; ?>
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'add')): ?>
+
+                                <li ><a href="<?php echo $this->serverUrl('/people/user'); ?>"><?php echo $this->translate->_('Manage Users'); ?></a></li>
+                            <?php endif ; ?>
+
+            </ul>
+        </li>
+
+        <li>
+     <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_roles', 'index') ||  $this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'setup')): ?>
+            <a  class = "subSetM"><?php echo $this->translate->_('Setup'); ?> <i></i></a>
+            <ul id = "subSet" class = "hide_mobile" >
+
+
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_roles', 'index')): ?>
+                                <li ><a href="<?php echo $this->serverUrl('/people/roles/'); ?>"><?php echo $this->translate->_('Roles'); ?></a></li>
+                        <?php endif; ?>
+                        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'setup')): ?>
+                                <li ><a href=<?php echo $this->serverUrl("/yield/manage/setup"); ?>><?php echo $this->translate->_('Yields'); ?></a></li>
+                    <?php endif; ?>
+            </ul>
+                    <?php endif; ?>
+        </li>
+
+        <li>
+            <a  class = "langu"><?php echo $this->translate->_('Language'); ?> <i></i></a>
+            <ul id = "langu" class  = "hide_mobile">
+                <li ><a href="<?php echo $enURL; ?>" title="Change Language" class="lang_en"><?php echo $this->translate->_('English'); ?></a></li>
+
+                <li ><a href="<?php echo $zhURL; ?>" title="Change Language" class="lang_ch"> <?php echo $this->translate->_('Chinese'); ?></a></li>
+            </ul>
+        </li>
+            <li ><a href="<?php echo $this->serverUrl('/logout'); ?>" title="Logout" ><?php echo $this->translate->_('Logout'); ?></a></li>
+
+    </ul>
+</nav><!-- mobile_nav end -->
+
+
+            <?php endif; ?>
+
+            <div class="wrapper fluid">
+                <header class="header">
+                    <div class="inner">
+                        <hgroup>
+                            <h1 class="logo"><a href="./">Kandy Kiss</a></h1>
+
+                            <?php if ($this->loggedIn == true): ?>
+                              <form method="post" action="<?php echo $this->serverUrl('/search/index/index'); ?>" class="hide_mobile serchbox rgt" id="search_form">
+
+                                <input type="text"  name="query" placeholder='Search all data...' value="<?php echo $this->currentSearchQuery != '' ? $this->currentSearchQuery : $this->translate->_('Search all data...'); ?>" value="" onclick="Search.clean()" id="featured_search" class="left"/>
+
+                                    <i class="icon-arrow-2">
+                                    </i>
+                                    <button class="blue icon-search"></button>
+                                    <span class="clearfix"></span>
+
+                                    <ul class="search_radio_butons">
+                                        <li>
+                                            <input type="radio" name="type"  value="yield" id="yieldcost1" style="top: -2px;left: -1px;"/>
+                                            <label for="chkbx1"><?php echo $this->translate->_('Yields'); ?></label>
+                                        </li>
+
+                                        <li>
+                                            <input type="radio" name="type" id="yieldcost" value="costing" style="top: -2px;left: -1px;"  />
+                                            <label for="chkbx2"><?php echo $this->translate->_('Costing Packs'); ?></label>
+                                        </li>
+
+                                        <li>
+                                            <input type="radio" name="type" id="usercheck"  value="users" style="top: -2px;left: -1px;"/>
+                                            <label for="usercheck"><?php echo $this->translate->_('Users'); ?></label>
+                                        </li>
+                                    </ul><!-- search_radio_butons end -->
+<div class="ui-autocomplete hide filterbox">
+    <li>
+        <div class="filter_search ">
+            <ul>
+                <li>Filter by &raquo;</li>
+                <li>
+                    <input type="radio"  value = "completed" name="filter" id="chkfilter1" />
+                    <label for="chkfilter1">Completed</label>
+                </li>
+
+                <li>
+                    <input type="radio" value = "pending" name="filter" id="chkfilter2" />
+                    <label for="chkfilter2">Pending</label>
+                </li>
+
+                <li>
+                    <input type="radio" value = "archived" name="filter" id="chkfilter3" />
+                    <label for="chkfilter3">Archived</label>
+                </li>
+            </ul>
+        </div>
+    </li>
+</div>
+<script type="text/javascript">
+
+</script>
+                                </form>
+
+                            <?php endif; ?>
+
+                            <div class="clearfix"></div>
+                        </hgroup>
+
+                        <div class="clearfix"></div>
+                    </div><!-- inner end -->
+                </header>
+
+
+
+                <div class="content">
+            
+                    <div class="inner">
+                        <?php echo $this->layout()->content; ?>
+
+                        <?php if ($this->mainRightRail != ''): ?>
+                        <aside class = "rgt hide_mobile"  >
+                            <?php echo $this->mainRightRail; ?>
+                        </aside>
+                        <?php endif; ?>
+
+                        <div class="clearfix"><!--&nbsp;--></div>
+
+                    </div><!-- inner end -->
+                </div><!-- content end -->
+            </div><!-- wrapper end -->
+            <div class="clearfix"></div>
+            <!--contracted menu-->
+            <script type="text/javascript">
+            $(document).ready(function(){
+
+                            $('.subSetM').click(function(){
+                                $('#subSet').toggleClass('hide_mobile');
+                                return false;
+                            })
+
+                            $('.subUsrM').click(function(){
+                                $('#subUser').toggleClass('hide_mobile');
+                                return false;
+                            })
+
+                            $('.langu').click(function(){
+                                $('#langu').toggleClass('hide_mobile');
+                                return false;
+                            })
+
+                    }
+                );
+            </script>
+
+
+
+</section>
+                <?php //if ($this->loggedIn == true): ?>
+                <footer class="footer">
+                    <div class="inner fluid">
+                        <address>
+                            <big>702-350-1126</big>
+                            <span>Version 1.0.0</span>
+                            <span>Platform Version 2.0</span>
+                            <span>Powered by <a href="http://www.amediacreative.com" target="_blank">Amedia</a></span>
+                            <span>&copy; 2013 Amedia Creative</span>
+                        </address>
+
+                        <div class="clearfix"><!--&nbsp--></div>
+                    </div><!-- inner end -->
+                </footer>
+            <?php //endif; ?>
+    </body>
+    <script type="text/javascript">
+$(document).ready(function(){
+ //ini_forms();
+Search.init();
+});
+    </script>
+</html>
+

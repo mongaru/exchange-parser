@@ -1,0 +1,78 @@
+<?php
+$errorMessages = $this->loginForm->getMessages();
+?>
+
+<section class="main grid35 lft">
+    <article class="login">
+        <header>
+            <h3>Login</h3>
+            <p><?php echo $this->translate->_('Please login to proceed.'); ?></p>
+            
+            <?php if ($this->errorMessage != ""): ?>
+                <p style="font-weight: bold; color: red;"><?php echo $this->errorMessage; ?></p>
+            <?php endif; ?>
+        </header>
+                    
+        <form enctype="application/x-www-form-urlencoded" action="<?php echo $this->serverUrl('/login'); ?>" method="post" autocomplete="off">
+
+            <script type="text/javascript">
+                $(document).ready(function()
+                {
+                    $('.login_email').focus();
+                }); 
+            </script>
+
+            <div>
+                <input type="hidden" name="redirect_to" value="<?php echo $this->redirectTo; ?>" />
+            </div>
+
+            <div class="blk">
+                <input type="text" name="email" placeholder="Email" class="login_email" />
+                
+                <p class="error spacer clear"<?php echo (($this->wrongEmail == true) || (isset($errorMessages['email']))) ? ' style="text-indent: 0px;"' : ''; ?>>
+                
+                    <?php if ($this->wrongEmail == true): ?>
+                        <?php echo $this->translate->_('Email password doesn\'t exists.'); ?>
+                    <?php else: ?>
+                        <?php //echo $this->translate->_('Please enter a valid email'); ?>
+                    <?php endif; ?>
+                
+                    <?php if (isset($errorMessages['email'])): ?>
+                        <?php foreach($errorMessages['email'] as $error): ?>
+                            <?php echo $error; ?><br />
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </p>
+
+            </div>
+            
+            <div class="blk">
+                <input type="password" name="password" placeholder="Password"/>
+                
+                <p class="error spacer clear"<?php echo (($this->wrongPassword == true) || (isset($errorMessages['password']))) ? ' style="text-indent: 0px;"' : ''; ?>>
+                
+                    <?php if ($this->wrongPassword == true): ?>
+                        <?php echo $this->translate->_('Password provided is not valid.'); ?>
+                    <?php else: ?>
+                        <?php //echo $this->translate->_('Please enter an valid password'); ?>
+                    <?php endif; ?>
+                
+                    <?php if (isset($errorMessages['password'])): ?>
+                        <?php foreach($errorMessages['password'] as $error): ?>
+                            <?php echo $error; ?><br />
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </p>
+            </div>
+            
+            <div class="blk">
+                <a class="lft" href="">Forgot your password?</a>
+                <button class="green rgt" type="submit">Login</button>
+                <div class="clearfix"><!--&nbsp--></div>
+            </div>
+
+        </form>
+    </article><!-- login end -->
+</section>
+
+<div class="clearfix"><!--&nbsp;--></div>

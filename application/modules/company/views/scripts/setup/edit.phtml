@@ -1,0 +1,50 @@
+<?php
+$this->form->setAction($this->serverUrl($this->url()));
+$errors = $this->form->getMessages();
+
+if (count($errors)>0):
+?>
+    <p style="font-weight: bold; color: red;"><?php echo $this->translate->_('Form contains errors, try again.'); ?></p>
+<?php endif; ?>
+
+<div class="content_section clearfix round" id="edit_setup">
+
+    <form id="<?php echo $this->form->getName(); ?>" action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>">
+        <div class="global_input_wrapper" id="setup_form_fields">
+
+            <div class="left val_label">
+                <label for="disclaimer_text" class="titletag"><?php echo $this->translate->_('Disclaimer Text'); ?></label>
+            </div> <!-- end left -->
+
+            <div class="right val_label">
+                
+            </div> <!-- end left -->
+            
+            <div class="clear"><!-- --></div>
+
+            
+            <div class="val_class_holder">
+                <div class="textarea">
+                    <span class="left"><!-- --></span>
+                    <span class="mid">
+                        <textarea cols="0" rows="0" class="val_nr" id="disclaimer_text" name="disclaimer_text"><?php echo $this->form->getElement('disclaimer_text')->getValue(); ?></textarea>
+                    </span>
+                    <span class="right"><!-- --></span>
+                </div> <!-- end textarea -->
+                <p class="error spacer clear"></p>
+            </div> <!-- end val_class_holder -->
+           
+            <div class="clear"><!-- --></div>
+
+            <div class="btm-runner clearfix">
+                <ul>
+                    <li class="button no_right_margin"><input type="submit" class="submit" value="<?php echo $this->translate->_('submit'); ?>" id="submit_setup_add"  /></li>
+                    <li class="link"><a title="<?php echo $this->translate->_('Cancel'); ?>" class="inline-link" href="<?php echo $this->serverUrl('/'); ?>"><?php echo $this->translate->_('Cancel'); ?></a></li>
+                </ul>
+            </div> <!-- end btm-runner -->
+
+        </div> <!-- end global_input_wrapper -->
+    </form> <!-- end add_company_form -->
+
+</div>
+

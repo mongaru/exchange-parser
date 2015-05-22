@@ -1,0 +1,121 @@
+<section class="main">
+
+<!-- Chart for user activity-->
+
+
+                <?php if($this->permissionsdata->department != "yields" && $this->permissionsdata->department != "costing" && $this->permissionsdata->department !="vendors") : ?>
+                    <article class="quadrant grid35">
+                    <header>
+                        <h3 class="lft"><?php echo $this->translate->_('User Activity'); ?></h3>
+                        
+                        <select class="grid7 rgt" name="" show="1" id="user_activity_select">
+                            <option value="today"><?php echo $this->translate->_('Today'); ?></option>
+                            <option value="thismonth"><?php echo $this->translate->_('This Month'); ?></option>
+                            <option value="lastmonth"><?php echo $this->translate->_('Last Month'); ?></option>
+                            <option value="date"><?php echo $this->translate->_('Year to Date'); ?></option>
+                        </select>
+                        
+                        
+                        <div class="clearfix"><!--&nbsp--></div>
+                    </header>
+                    
+                    <div id="user_activity_chart" class=""></div>
+                    <div id="chart_a2" class="hide"></div>
+                     <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'add')): ?>                    
+                                        <a class="btn_blue rgt add_user_btn " onclick="User.fancyAdd();"><?php echo $this->translate->_('Add User'); ?></a>
+                    <?php endif; ?>      
+             <h6 class="txtCntr" style="z-index:1;"><pre><?php echo $this->translate->_('Total Activity'); ?> : <b id = 'total_activity' ></b></pre></h6>
+
+                <section id="useractivity_lightbox_container" class="grid34 lft" style="display:none;"></section>
+                    <div class="clearfix"></div>
+                </article>
+                <div id="add_user_container" class ="hide" style =""></div>
+                <?php endif; ?>
+
+
+
+
+
+
+
+<!-- Chart for Yields-->
+
+<?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'index')): ?>
+
+        <?php $cpclass= "quadrant last lft"; ?>
+                <?php if($this->permissionsdata->department == "yields") : ?>
+            <?php $cpclass= "quadrant grid35"; ?>
+                <?php endif; ?>
+
+                <article class="<?php echo $cpclass; ?>">
+                    <header>
+                        <h3 class="lft"><?php echo $this->translate->_('Yields'); ?></h3>
+                        
+                        <select class=" rgt" name="" show="1" id="yields_selector">
+                            <option value="today"><?php echo $this->translate->_('Today'); ?></option>
+                            <option value="thismonth"><?php echo $this->translate->_('This Month'); ?></option>
+                            <option value="lastmonth"><?php echo $this->translate->_('Last Month'); ?></option>
+                            <option value="date"><?php echo $this->translate->_('Year to Date'); ?></option>
+                        </select>
+                        <div class="clearfix"><!--&nbsp--></div>
+                    </header>
+            <p></p>
+                    <div id="yields_chart"></div>
+            <br>        
+            <div class="clearfix"></div>
+            <br>
+<?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'yield_manage', 'add')): ?>                    
+
+        <a class="btn_blue rgt lightbox fancybox.ajax alignwithCostingChart" href="<?php echo $this->serverUrl('/yield/manage/add'); ?>"><?php echo $this->translate->_('Add Yield'); ?></a>
+<?php endif; ?>       
+        <h6 class="txtCntr" style="z-index:1;"><pre><?php echo $this->translate->_('Total Yields '); ?>: <b id = 'total_yield_posted' ></b></pre></h6>
+        <div class="clearfix"></div>   
+        
+    <section id="yields_lightbox_container" class="grid34 lft" style="display:none;"></section>
+    </article>
+            <?php endif; ?>
+
+
+<!--Chart for Costing pack-->
+<?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'costing_manage', 'index')): ?>
+        <?php $cpclass= "quadrant last rgt"; ?>
+                <?php if($this->permissionsdata->department == "costing" || $this->permissionsdata->department == "vendors") : ?>
+            <?php $cpclass= "quadrant grid35"; ?>
+                <?php endif; ?>
+    <article class="<?php echo $cpclass; ?>">
+        <script type="text/javascript">var ID_Costingpack = false;</script>
+        <header>
+            <h3 class="lft"><?php echo $this->translate->_('Costing Packs'); ?></h3>
+            
+          <select class=" rgt" name="" show="1" id="costing_selector" style="margin:0 0 11px;">
+                <option value="today"><?php echo $this->translate->_('Today'); ?></option>
+                <option value="thismonth"><?php echo $this->translate->_('This Month'); ?></option>
+                <option value="lastmonth"><?php echo $this->translate->_('Last Month'); ?></option>
+                <option value="date"><?php echo $this->translate->_('Year to Date'); ?></option>
+            </select>
+            <div class="clearfix"><!--&nbsp--></div>
+        </header>
+            <div id="costing_chart"></div>
+<br>        
+<div class="clearfix"></div>
+<br>
+<?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'costing_manage', 'add')): ?>  
+                <a class="btn_blue rgt lightbox fancybox.ajax" href="<?php echo $this->serverUrl('/costing/manage/add'); ?>"><?php echo $this->translate->_('Add Costing Pack'); ?></a>
+<?php endif; ?>
+              <h6 class="txtCntr" style="z-index:1;"><a ><?php echo $this->translate->_('Total Costing Posted'); ?>: <b id = 'costingCount' ></b></a></h6>
+              <div class="clearfix"></div>
+        <!-- Lightbox div  -->
+        <section id="costing_lightbox_container" class="grid35 lft" style="display:none;"></section>
+
+    </article>
+<?php endif; ?>
+<script type="text/javascript">
+$(document).ready(function(){ 
+ ini_forms();
+});
+    </script>
+
+
+    <div class="clearfix"></div>
+
+</section>

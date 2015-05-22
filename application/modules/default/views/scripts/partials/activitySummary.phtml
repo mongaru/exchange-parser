@@ -1,0 +1,578 @@
+<?php if ($this->activitySummaryType == 'default'): ?>
+<div class="even_column_left left">
+    <div class="v-list">
+
+        <?php if (isset($this->activitySummaryDataset['saleskitPostedToday'])): ?>
+        <div class="item first clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitPostedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitPostedToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Posted Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['saleskitViewedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitViewedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitViewedToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Viewed Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+        
+        <?php if (isset($this->activitySummaryDataset['yieldsPostedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsPostedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsPostedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/posted/stats_when/today'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsPostedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsPostedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Posted Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsCompletedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsCompletedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsCompletedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/completed/stats_when/today'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsCompletedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsCompletedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Completed Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsPostedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsPostedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsPostedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/posted/stats_when/today'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsPostedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsPostedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Posted Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsCommentedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsCommentedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsCommentedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/commented/stats_when/today'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsCommentedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsCommentedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Commented On Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['commentsPostedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['commentsPostedToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Comments Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['usersAddedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['usersAddedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['usersAddedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/people/user/index/stats_filter/yes/stats_type/added/stats_when/today'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['usersAddedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['usersAddedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Users Added Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['loginsToday'])): ?>
+        <div class="item last clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['loginsToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['loginsToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/people/user/index/stats_filter/yes/stats_type/loggedin/stats_when/today'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['loginsToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['loginsToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Logins Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+    </div> <!-- end v-list -->
+</div> <!-- end sub_column_left -->
+
+<div class="even_column_right right">
+    <div class="v-list">
+
+        <?php if (isset($this->activitySummaryDataset['saleskitPostedYesterday'])): ?>
+        <div class="item first clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitPostedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitPostedYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Posted Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['saleskitViewedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitViewedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitViewedYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Viewed Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsPostedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsPostedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsPostedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/posted/stats_when/yesterday'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsPostedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsPostedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Posted Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsCompletedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsCompletedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsCompletedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/completed/stats_when/yesterday'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsCompletedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsCompletedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Completed Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsPostedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsPostedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsPostedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/posted/stats_when/yesterday'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsPostedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsPostedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Posted Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsCommentedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsCommentedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsCommentedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/commented/stats_when/yesterday'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsCommentedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsCommentedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Commented On Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['commentsPostedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['commentsPostedYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Comments Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['usersAddedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['usersAddedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['usersAddedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/people/user/index/stats_filter/yes/stats_type/added/stats_when/yesterday'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['usersAddedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['usersAddedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Users Added Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['loginsYesterday'])): ?>
+        <div class="item last clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['loginsYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['loginsYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/people/user/index/stats_filter/yes/stats_type/loggedin/stats_when/yesterday'); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['loginsYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['loginsYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Logins Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+    </div> <!-- end v-list -->
+</div> <!-- end sub_column_right -->
+<?php endif; ?>
+
+<?php if ($this->activitySummaryType == 'bydate'): ?>
+<div class="">
+    <div class="v-list">
+
+        <?php if (isset($this->activitySummaryDataset['saleskitPosted'])): ?>
+        <div class="item first clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitPosted'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitPosted']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Posted'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['saleskitViewed'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitViewed'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitViewed']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Viewed'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsPosted'])): ?>
+        <div class="item first clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsPosted'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsPosted'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/posted/stats_when/' . $this->activityRefineDate); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsPosted']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsPosted']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Posted'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsCompleted'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsCompleted'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsCompleted'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/completed/stats_when/' . $this->activityRefineDate); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsCompleted']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsCompleted']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Completed'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsPosted'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsPosted'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsPosted'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/posted/stats_when/' . $this->activityRefineDate); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsPosted']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsPosted']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Posted'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsCommented'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsCommented'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsCommented'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/commented/stats_when/' . $this->activityRefineDate); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsCommented']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsCommented']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Commented On'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['commentsPosted'])): ?>
+        <div class="item clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['commentsPosted']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Comments'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['usersAdded'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['usersAdded'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['usersAdded'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/people/user/index/stats_filter/yes/stats_type/added/stats_when/' . $this->activityRefineDate); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['usersAdded']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['usersAdded']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Users Added'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['logins'])): ?>
+        <div class="item last clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['logins'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['logins'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/people/user/index/stats_filter/yes/stats_type/loggedin/stats_when/' . $this->activityRefineDate); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['logins']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['logins']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Logins'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+    </div> <!-- end v-list -->
+</div> <!-- end sub_column_left -->
+<?php endif; ?>
+
+<?php if ($this->activitySummaryType == 'byuser'): ?>
+<div class="even_column_left left">
+    <div class="v-list">
+
+        <?php if (isset($this->activitySummaryDataset['saleskitPostedToday'])): ?>
+        <div class="item first clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitPostedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitPostedToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Posted Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['saleskitViewedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitViewedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitViewedToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Viewed Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsPostedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsPostedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsPostedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/posted/stats_when/today/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsPostedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsPostedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Posted Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsCompletedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsCompletedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsCompletedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/completed/stats_when/today/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsCompletedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsCompletedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Completed Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsPostedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsPostedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsPostedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/posted/stats_when/today/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsPostedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsPostedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Posted Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsCommentedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsCommentedToday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsCommentedToday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/commented/stats_when/today/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsCommentedToday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsCommentedToday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Commented On Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['commentsPostedToday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['commentsPostedToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Comments Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['loginsToday'])): ?>
+        <div class="item last clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['loginsToday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Logins Today'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+    </div> <!-- end v-list -->
+</div> <!-- end sub_column_left -->
+
+<div class="even_column_right right">
+    <div class="v-list">
+
+        <?php if (isset($this->activitySummaryDataset['saleskitPostedYesterday'])): ?>
+        <div class="item first clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitPostedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitPostedYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Posted Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['saleskitViewedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['saleskitViewedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php echo $this->activitySummaryDataset['saleskitViewedYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Sales Kits Viewed Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+        
+        <?php if (isset($this->activitySummaryDataset['yieldsPostedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsPostedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsPostedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/posted/stats_when/yesterday/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsPostedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsPostedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Posted Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['yieldsCompletedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['yieldsCompletedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['yieldsCompletedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/yield/manage/index/stats_filter/yes/stats_type/completed/stats_when/yesterday/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['yieldsCompletedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['yieldsCompletedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Yields Completed Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsPostedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsPostedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsPostedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/posted/stats_when/yesterday/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsPostedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsPostedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Posted Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['discussionsCommentedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count<?php echo $this->activitySummaryDataset['discussionsCommentedYesterday'] == 0 ? ' titletag' : ''; ?>">
+                <?php if ($this->activitySummaryDataset['discussionsCommentedYesterday'] > 0): ?>
+                <a href="<?php echo $this->serverUrl('/discussion/manage/index/stats_filter/yes/stats_type/commented/stats_when/yesterday/stats_by/' . $this->selectedUser); ?>" title="<?php echo $this->translate->_('View'); ?>">
+                    <?php echo $this->activitySummaryDataset['discussionsCommentedYesterday']; ?>
+                </a>
+                <?php else: ?>
+                <?php echo $this->activitySummaryDataset['discussionsCommentedYesterday']; ?>
+                <?php endif; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Discussions Commented On Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['commentsPostedYesterday'])): ?>
+        <div class="item clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['commentsPostedYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Comments Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+        <?php if (isset($this->activitySummaryDataset['loginsYesterday'])): ?>
+        <div class="item last clearfix">
+            <span class="log_count titletag">
+                <?php echo $this->activitySummaryDataset['loginsYesterday']; ?>
+            </span>
+            <span class="log_head titletag"><?php echo $this->translate->_('Total Logins Yesterday'); ?></span>
+        </div> <!-- end item -->
+        <?php endif; ?>
+
+    </div> <!-- end v-list -->
+</div> <!-- end sub_column_right -->
+<?php endif; ?>

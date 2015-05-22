@@ -1,0 +1,98 @@
+
+<?php
+  $fileUrl = '';
+  if ($this->fileUploaded == true)
+    $fileUrl = $this->serverUrl('/uploads/' . $this->fileFullName);
+?>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/application/jquery-1.7.2.min.js'); ?>"></script>  
+
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/style/reset.css'); ?>" />
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/style/uploader.layout.css'); ?>" />
+ 
+
+    <script type="text/javascript">
+    //<![CDATA[
+
+        $(document).ready(function() {
+            /*-------------- FILE --------------*/
+            $('.iFile').each(function(){
+                var r = $(this).find('input:file').attr('rel');
+                $(this).append(r);
+            }).change(function(){
+                $(this).prev('.iFileDescription').html('<i class="progress_bar_blue animate_bar">Loading...</i>');
+                $('#FormFileUpload').submit();
+            });
+
+            $('.iFileDescription .remove_btn').click(function(){
+                
+                <?php if ($this->jsResetCallback != ''): ?>
+                    window.top.window.<?php echo $this->jsResetCallback; ?>('<?php echo $this->fileId; ?>', '<?php echo $fileUrl; ?>', '<?php echo $this->jsParameterCallback; ?>');
+                <?php endif; ?>
+                
+                $('.iFile file').val('');
+                $(this).attr('style', 'display:none');
+                $('#file_name').html('');
+
+                return false;
+            });
+        } );
+
+    //]]>
+    </script>
+
+    <?php if ($this->fileUploaded == true): ?>
+        <script type="text/javascript">
+        //<![CDATA[
+
+            $(document).ready(function() {
+                // JS Callback function
+                // First parameter is File Id, Second is File full path
+
+                <?php if ($this->jsResetCallback != ''): ?>
+                    window.top.window.<?php echo $this->jsCallback; ?>('<?php echo $this->fileId; ?>', '<?php echo $fileUrl; ?>', '<?php echo $this->jsParameterCallback; ?>');
+                <?php endif; ?>
+                
+            } );
+
+        //]]>
+        </script>
+    <?php endif; ?>
+
+</head>
+<body>
+
+    <form action="<?php echo $this->serverUrl($this->url()); ?>" method="post" name="FormFileUpload" id="FormFileUpload" enctype="multipart/form-data">
+        <section class="grid11 fluid">
+        <p>
+            <span class="iFileDescription grid24 iBlk" id = "<?php echo $this->ID_file; ?>">
+                <?php if ($this->fileUploaded == true): ?>
+                    <em id="file_name" ><?php echo $this->fileName; ?></em>
+                    <button class="remove_btn" ><i class="icon-x-altx-alt"></i>Remove</button>
+                <?php else: ?>
+                    &nbsp;
+                <?php endif; ?>
+            </span>
+            <span class="iFile">Submit file
+                <input class="" type="file" name="file" id="file" value="" />
+            </span>     
+        </p>
+
+        <?php if ($this->errorMessage != ''): ?>
+            <p class="error spacer clear">
+                <?php echo $this->errorMessage; ?>
+            </p>
+        <?php endif; ?>
+
+        </section>
+        
+    </form>
+
+</body>
+</html>

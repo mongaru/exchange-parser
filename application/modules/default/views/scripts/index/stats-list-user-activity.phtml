@@ -1,0 +1,39 @@
+<header class="" style="margin-bottom:21px;">
+    <h3 class="lft"><?php echo $this->pageTitle; ?> <small> > <?php echo $this->translate->_($this->userlevel); ?> </small></h3>
+</header>
+<br><br>
+<div id="Activity_default" class="Activity_info">
+    <div class="clearfix"></div>
+    <table class = "user_act_fix">                             
+        <thead>
+            <tr>
+                <th colspan = "2" id="when"></th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <?php $column  = 2 ;  ?>
+            <tr>
+                <?php $countActivities = count($this->ListActivities); ?> 
+                <?php $cantActivities = 0; ?>    
+                <?php  foreach ($this->ListActivities as $key => $value) :  ?>
+                    <?php $cantActivities++; ?>    
+                    <?php $column--;  ?>
+                    <?php if($cantActivities==$countActivities) : ?>
+                        <?php $column= 2; ?>  
+                        <td class = "t1"><?php echo $value; ?></td> <td colspan = "3"   ><?php echo ucwords($key); ?></td>  
+
+                    <?php else  : ?>
+                        <td class = "table_content t1"><?php echo $value; ?></td> <td><?php echo ucwords(str_replace('.', ' ', $key)); ?></td>  
+                    
+                    <?php endif; ?>
+                    
+                    <?php if ( $column==0 ) : ?>
+                        <?php $column = 2; ?>  
+                        </tr><tr>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </tr>
+        </tbody>
+    </table>
+</div>

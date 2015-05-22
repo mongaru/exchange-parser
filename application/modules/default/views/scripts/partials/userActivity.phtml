@@ -1,0 +1,31 @@
+<h4>
+    <?php echo $this->translate->_('For Today And Yesterday'); ?>
+    <span class="runner_dropdown global_input_wrapper">
+        <span class="val_class_holder">
+            <span class="dropdown">
+                <span class="left"><!-- --></span>
+                <span class="dropdown_label mid" id="refine_pattern_maker_label"><?php echo $this->selectedUserName; ?></span>
+                <select id="refine_pattern_maker" class="val_dropdown" name="refine_pattern_maker">
+                <?php foreach($this->activeUsers as $user): ?>
+                    <option title="<?php echo $user['full_name']; ?>" value="<?php echo $user['ID_user']; ?>"<?php echo ($user['ID_user'] == $this->selectedUser) ? ' selected="selected"' : ''; ?>><?php echo $user['full_name']; ?></option>
+                <?php endforeach; ?>
+                </select>
+                <span class="right"><!-- --></span>
+            </span><!-- end dropdown -->
+        </span> <!-- end val_class_holder -->
+    </span> <!-- end runner_datepicker -->
+</h4>
+
+<div id="content_user_activity" class="clearfix">
+
+    <?php echo $this->partial(
+            'partials/activitySummary.phtml',
+            array(
+                'translate' => $this->translate,
+                'selectedUser' => $this->selectedUser,
+                'activitySummaryType' => $this->activitySummaryType,
+                'activitySummaryDataset' => $this->activitySummaryDataset
+            )
+            ); ?>
+    
+</div> <!-- end clearfix -->

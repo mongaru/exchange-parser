@@ -1,0 +1,54 @@
+<?php
+/**
+ * logActivity.phtml view partial
+ *
+ * @access      public
+ * @author      Ever Daniel Barreto Rojas <e.barreto@amediacreative.com>
+ * @copyright   Amedia Creative, Inc.
+ * @version     $Id$
+ */
+?>
+<div class="item<?php echo $this->className != '' ? ' ' . $this->className : ''; ?> clearfix">
+    <?php if ($this->showTime): ?>
+    <span class="log_time">
+        <?php echo $this->logTime; ?>
+    </span>
+    <?php endif; ?>
+
+    <?php if ($this->showIcon): ?>
+    <span class="log_icon">
+        <a class="icon16x16-img <?php echo $this->logIcon; ?>">
+            &nbsp;
+        </a>
+    </span>
+    <?php endif; ?>
+
+    <?php if ($this->showHead): ?>
+    <span class="log_head">
+        <?php if ($this->showUser): ?>
+        <a href="<?php echo $this->userLink; ?>" class="inline-link">
+            <?php echo $this->escape($this->logUser); ?>
+        </a>
+        <?php endif; ?>
+        <?php if ($this->showAction): ?>
+        <span class="action">
+            <?php echo $this->escape($this->logAction); ?>
+        </span>
+        <?php endif; ?>
+        <?php if ($this->showObject): ?>
+        <a href="<?php echo $this->logObjectLink; ?>" class="inline-link">
+            <?php echo $this->escape($this->logObject); ?>
+        </a>
+        <?php endif; ?>
+        <?php if ($this->showObjectType): ?>
+        <span class="type"><?php echo $this->escape($this->logObjectType); ?></span>.
+        <?php endif; ?>
+    </span>
+    <?php endif; ?>
+
+    <?php if ($this->showBody): ?>
+    <span class="log_body">
+        <?php echo $this->logBody; ?>
+    </span>
+    <?php endif; ?>
+</div> <!-- end item -->

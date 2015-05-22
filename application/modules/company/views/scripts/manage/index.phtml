@@ -1,0 +1,113 @@
+<?php
+    $userRole = Zend_Auth::getInstance()->getIdentity()->user_level;
+?>
+ <section class="main lft grid24" >
+
+
+
+        <article >
+            <header>
+                <h3><?php echo $this->translate->_('Manage Groups'); ?></h3>
+            </header>
+
+            <form id="companyForm" name="companyForm" action="/company/manage/save-company" method="POST">
+                <input type="hidden" name = "ID_company" id="ID_company"/>
+ <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'add')): ?>                
+                <button type="button" class="blue" id="add_group_button"><?php echo $this->translate->_('Add Group');?></button>
+<?php endif; ?>
+                <div class="clearfix"><!--&nbsp--></div>
+                
+                <div class="hide">
+                    <div class="grid17 blk lft">
+                        <label for="company_name"><?php echo $this->translate->_('Group Name');?></label>
+                        <input type="text" id="company_name" name="company_name"/>
+                    </div>
+                    
+                    <div class="grid17 blk rgt">
+                        <div class="blk textareafix">
+                            <label for="company_description"><?php echo $this->translate->_('Group Description');?></label>
+                            <textarea id="company_description" name="company_description"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grid17 blk lft">
+                        <select class="grid15 " name="company_type" show="1" id="company_type" style="margin:0 0 11px;">
+                            <option value=""><?php echo $this->translate->_('Select Group Type'); ?>...</option>
+                            <?php if(Zend_Auth::getInstance()->getIdentity()->user_department) :  ?>
+                            <option value="vendor"><?php echo $this->translate->_('Vendor'); ?></option>
+                            <?php else : ?>
+                            <option value="owner"><?php echo $this->translate->_('Owner'); ?></option>
+                            <option value="vendor"><?php echo $this->translate->_('Vendor'); ?></option>
+                            <?php endif; ?>
+ 
+                        </select>
+                    </div>
+
+
+
+                    <div class="clearfix"><!--&nbsp--></div>
+                    
+                    <div class="bottom">
+                        <button type="submit" id="add_group_button" class="blue rgt"><?php echo $this->translate->_('Submit');?></button>
+                        <button type="button" id="cancel_group_button" class="default lft"><?php echo $this->translate->_('Cancel');?></button>
+                        
+                        <div class="clearfix"><!--&nbsp--></div>
+                    </div><!-- bottom end -->
+                </div><!-- hide end -->
+            </form>
+
+
+                                 <?php //echo $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>
+            <table>
+                <colgroup id ="colgroup" >
+                    <col class="grid20" />
+                    <col class="grid8" />                    
+                    <col class="grid6" />
+                </colgroup>
+            
+                <thead>
+                    <tr>
+                   <th class="first"><a href="<?php echo $this->serverUrl('/company/manage/index/page/' . $this->current_page . '/order_by/name/order_type/' . (($this->current_order_type == 'asc') ? 'desc' : 'asc') . '/status/' . $this->current_user_status); ?>" title="<?php echo $this->translate->_('Sort'); ?>" class="btn-img sort"><?php echo $this->translate->_('Group'); ?></a></th>
+                    <th><a href="<?php echo $this->serverUrl('/company/manage/index/page/' . $this->current_page . '/order_by/type/order_type/' . (($this->current_order_type == 'asc') ? 'desc' : 'asc') . '/status/' . $this->current_user_status); ?>" title="<?php echo $this->translate->_('Type'); ?>" class="btn-img sort"><?php echo $this->translate->_('Type'); ?></a></th>
+                        <th><?php echo $this->translate->_('Actions');?></th>
+                    </tr>
+                </thead>
+                    
+                <tbody>
+                    <?php foreach ($this->paginator as $record): ?>
+
+    <tr > 
+                            <td class = "<?php echo ($record->ID_company==Zend_Auth::getInstance()->getIdentity()->ID_company) ? "own_group"  : ""; ?>">
+
+                                <a href="<?php echo $this->serverUrl('/company/manage/view/id/' . $record->ID_company); ?>"><?php echo strlen($record->company_name) > 25 ? substr($record->company_name, 0, 22) . '...' : $record->company_name; ?></a>
+                            </td>
+                            <td class = "<?php echo ($record->ID_company==Zend_Auth::getInstance()->getIdentity()->ID_company) ? "own_group"  : ""; ?>">
+
+                                    <?php echo ($record!= null && $record!= '' ) ? ucwords($record->company_type ) : ''   ; ?>
+                                </td>
+                            <td class="txtCntr <?php echo ($record->ID_company==Zend_Auth::getInstance()->getIdentity()->ID_company) ? "own_group"  : ""; ?>">
+        <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'edit')): ?>                                                
+            <a class="tip icon button lft" href="javascript:;" onclick="Company.loadCompany(<?php echo $record->ID_company; ?>)" title="Edit"><i class="icon-pencil"></i></a>
+        <?php endif; ?>
+            <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'delete')): ?>  
+                <?php if($record->company_type=='disabled vendor'): ?>
+                                <a class="tip icon button lft" href="<?php echo $this->serverUrl('/company/manage/restore/disable/true/id/').$record->ID_company; ?>" title="Restore"><i class="icon-redo"></i></a>
+                <?php else: ?>    
+                 <?php if($record->company_type == 'vendor') : ?>
+                        <a class="tip icon button lft" href="<?php echo $this->serverUrl('/company/manage/trash/disable/true/id/').$record->ID_company; ?>" onclick="javascript: return confirm('<?php echo $this->translate->_('Are you sure you want to disable this company?'); ?>');" title="Disable"><i class="icon-warning"></i></a>
+                 <?php endif; ?>
+                                <a class="tip icon button lft" href="<?php echo $this->serverUrl('/company/manage/delete/id/').$record->ID_company; ?>" title="Delete"><i class="icon-remove"></i></a>
+                <?php endif; ?>
+
+            <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </article>
+     
+        <div class="clearfix"><!--&nbsp;--></div>
+
+
+</section>

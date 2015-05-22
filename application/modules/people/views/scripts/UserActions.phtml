@@ -1,0 +1,70 @@
+<?php
+$userRole = Zend_Auth::getInstance()->getIdentity()->user_level;
+$isCurrentUser = Zend_Auth::getInstance()->getIdentity()->ID_user == $this->userInfo->ID_user;
+
+if (trim($this->userInfo->user_auth->user_avatar_file) != '')
+{
+    $avatar = new People_Model_File();
+    $avatar->find($this->userInfo->user_auth->user_avatar_file);
+    $imageLib = Amedia_ImageLib::getInstance();
+    $imageLib->setSourceFile($avatar->getfile_full_path(), $avatar->getfile_name());
+    $avatarFile = $this->serverUrl($imageLib->resize('22x22')->getUrl());
+}
+else
+{
+    $avatarFile = $this->serverUrl('images/client128.gif');
+}
+$iduser= $this->userInfo->ID_user;
+if ( ! isset($this->showEdit))         $this->showEdit = false;
+if ( ! isset($this->showChangePass))   $this->showChangePass = false;
+if ( ! isset($this->showTrash))        $this->showTrash = false;
+if ( ! isset($this->showChangeAvatar)) $this->showChangeAvatar = false;
+
+?>
+
+        <section class="actions_aside hide_mobile">
+            <header>
+                <h4 class="darkTitle">Actions</h4>
+                <span>Additional actions for <?php echo strlen($this->userInfo->user_firstname . ' ' . $this->userInfo->user_surname) > 25 ? substr($this->userInfo->user_firstname . ' ' . $this->userInfo->user_surname, 0, 22) . '...' : $this->userInfo->user_firstname ; ?></span>
+            </header>
+            
+            <ul>
+                <?php if($this->showEdit && $this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'edit')) : ?>
+                    <li>
+                        <a href="<?php echo $this->serverUrl('/people/user/edit/id/'. $iduser); ?>">
+                            <i class="icon-pencil-2"></i>
+                            <span>Edit Profile</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if($this->showTrash && $this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'trash') && $this->userInfo->user_is_deleted=='no') : ?>                      
+                <li>
+                    <a href="<?php echo $this->serverUrl('/people/user/trash/id/' .$iduser); ?>">
+                        <i class="icon-remove"></i>
+                        <span>Move to Trash</span>
+                    </a>
+                </li>
+                <?php endif; ?>  
+                    
+
+                <?php if($this->userInfo->user_is_deleted=='yes') : ?>               
+                <li>
+                    <a href="<?php echo $this->serverUrl('/people/user/restore/id/' .$iduser); ?>">
+                        <i class="icon-redo"></i>
+                        <span>Restore from Trash</span>
+                    </a>
+                </li>
+                <?php endif; ?>  
+                <li>
+                    <a href="<?php echo $this->serverUrl('/company/manage/view/id/' . $this->userCompany['ID_company']); ?>">
+                        <i class="icon-user-2"></i>
+                        <span>View my Company</span>
+                    </a>
+                </li>
+
+
+            </ul>
+        </section><!-- actions_aside end -->
+
+

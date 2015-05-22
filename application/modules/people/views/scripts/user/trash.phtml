@@ -1,0 +1,294 @@
+<?php
+	$locales['en_US'] = 'English';
+	$locales['zh_CN'] = 'Chinese';
+		
+	$this->form->setAction($this->serverUrl($this->url()));
+?>
+<?php //echo $this->form; ?>
+<?php if ($this->formErrorMessages != ""): ?>
+	<p style="font-weight: bold; color: red;"><?php $this->formErrorMessages; ?></p>
+<?php endif; ?>
+
+						<div class="content_section clearfix round" id="add_user">
+                        	
+                            <form id="<?php echo $this->form->getName(); ?>" action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>">
+                                <div class="global_input_wrapper" id="user_form_fields">
+                                
+                                	<h4>Required Information</h4>
+
+                                    <div class="left val_label">
+                                        <label for="user_email" class="titletag">Email</label>
+                                    </div> <!-- end left -->
+                                    
+                                    <div class="right val_label">
+                                        <label for="user_role_dropdown" class="titletag">Role</label>
+                                    </div> <!-- end right -->
+  
+                                    <div class="left val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_email')->getValue(); ?>" id="user_email" class="val_email" name="user_email" tabindex="1"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter an valid email address.</p>
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="right val_class_holder">
+                                        <div class="dropdown">
+                                            <span class="left"><!-- --></span>
+                                            <span class="dropdown_label mid" id="role_label"><?php echo $this->form->getElement('role')->getValue() == '' ? 'Select Role...' : ucwords(str_replace(array('_'), array(' '), $this->form->getElement('role')->getValue())); ?></span>
+                                            	<select tabindex="2" name="role" class="val_dropdown" id="role">
+    												<option value="" label="Select Role...">Select Role...</option>
+    												<option value="superadmin" label="Super Administrator"<?php echo $this->form->getElement('role')->getValue() == 'superadmin' ? ' selected="selected"' : ''; ?>>Super Administrator</option>
+    												<option value="admin" label="Administrator"<?php echo $this->form->getElement('role')->getValue() == 'admin' ? ' selected="selected"' : ''; ?>>Administrator</option>
+    												<option value="yielder_manager" label="Yielder Manager"<?php echo $this->form->getElement('role')->getValue() == 'yielder_manager' ? ' selected="selected"' : ''; ?>>Yielder Manager</option>
+    												<option value="pattern_maker_manager" label="Pattern Maker Manager"<?php echo $this->form->getElement('role')->getValue() == 'pattern_maker_manager' ? ' selected="selected"' : ''; ?>>Pattern Maker Manager</option>
+    												<option value="pattern_maker" label="Pattern Maker"<?php echo $this->form->getElement('role')->getValue() == 'pattern_maker' ? ' selected="selected"' : ''; ?>>Pattern Maker</option>
+    												<option value="yielder" label="Yielder"<?php echo $this->form->getElement('role')->getValue() == 'yielder' ? ' selected="selected"' : ''; ?>>Yielder</option>
+    												<option value="user" label="User (View Only)"<?php echo $this->form->getElement('role')->getValue() == 'user' ? ' selected="selected"' : ''; ?>>User (View Only)</option>
+												</select>
+                                            <span class="right"><!-- --></span>
+                                        </div><!-- end dropdown -->
+                                        <p class="error spacer clear">Please select a role.</p>
+                                    </div> <!-- end val_class_holder -->
+                                    
+                                    <div class="clear"><!-- --></div>
+
+                                    <div class="left val_label">
+                                        <label for="user_firstname" class="titletag">First Name</label>
+                                    </div> <!-- end left -->
+                                    
+                                    <div class="right val_label">
+                                        <label for="user_surname" class="titletag">Last Name</label>
+                                    </div> <!-- end right -->
+  
+                                    <div class="left val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_firstname')->getValue(); ?>" id="user_firstname" class="val_min_len_3" name="user_firstname" tabindex="2"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter the First Name.</p>
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="right val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_surname')->getValue(); ?>" id="user_surname" class="val_min_len_3" name="user_surname" tabindex="3"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter the Surname.</p>
+                                    </div> <!-- end val_class_holder -->
+                                    
+                                    <div class="clear"><!--  --></div>
+                                    
+                                    <div class="val_label">
+                                        <label for="user_position" class="titletag">Title</label>
+                                    </div> <!-- end right -->
+                                    
+                                    <div class="val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_position')->getValue(); ?>" id="user_position" class="val_min_len_3" name="user_position" tabindex="3"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter a the Title.</p>
+                                    </div> <!-- end val_class_holder -->
+
+									<div class="clear"><!-- --></div>
+
+                                    <h4>Optional Information</h4>
+                                    <h5>The following properties are optional. You can set them now, or at any point in the future.</h5>
+                                    <div class="spacer"><!-- --></div>
+                                    <p>Please specify the account password.  If not entered, the system will generate a random password.</p>
+
+                                    <div class="left val_label">
+                                        <label for="user_password" class="titletag">Password</label>
+                                    </div> <!-- end left -->
+                                    
+                                    <div class="right val_label">
+                                        <label for="password_conf" class="titletag">Retype</label>
+                                    </div> <!-- end right -->
+  
+                                    <div class="left val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_password')->getValue(); ?>" type="password" id="user_password" class="" name="user_password" tabindex="4"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter a password.</p>
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="right val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('password_conf')->getValue(); ?>" type="password" id="password_conf" class="" name="password_conf" tabindex="5"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please confirm the password.</p>
+                                    </div> <!-- end val_class_holder -->
+
+									<div class="clear"><!-- --></div>
+
+                                    <div class="left val_label">
+                                        <label for="user_phone" class="titletag">Phone</label>
+                                    </div> <!-- end left -->
+                                    
+                                    <div class="right val_label">
+                                        <label for="user_mobile" class="titletag">Mobile</label>
+                                    </div> <!-- end right -->
+  
+                                    <div class="left val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_phone')->getValue(); ?>" id="user_phone" class="val_phone val_nr" name="user_phone" tabindex="6"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter the Phone number.</p>
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="right val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_mobile')->getValue(); ?>" id="user_mobile" class="val_phone val_nr" name="user_mobile" tabindex="7"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter a Mobile number.</p>
+                                    </div> <!-- end val_class_holder -->
+
+									<div class="clear"><!-- --></div>
+
+                                    <div class="left val_label">
+                                        <label for="user_local" class="titletag">Fax</label>
+                                    </div> <!-- end left -->
+                                    
+                                    <div class="right val_label">
+                                        <label for="user_timezone" class="titletag">Time Zone</label>
+                                    </div> <!-- end right -->
+                                    
+                                    <div class="left val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_fax')->getValue(); ?>" id="user_fax" class="val_phone val_nr" name="user_fax" tabindex="7"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter a Fax number.</p>
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="right val_class_holder">
+                                        <div class="dropdown">
+                                            <span class="left"><!-- --></span>
+                                            <span class="dropdown_label mid" id="locale_label"><?php echo $this->form->getElement('user_locale')->getValue() == '' ? 'Please Select...' : $locales[$this->form->getElement('user_locale')->getValue()]; ?></span>
+                                                <select tabindex="9" id="locale" class="val_dropdown" name="user_locale">
+                                                    <option value="" label="Please Select...">Please Select...</option>
+    												<option value="en_US" label="English"<?php echo $this->form->getElement('user_locale')->getValue() == 'en_US' ? ' selected="selected"' : ''; ?>>English</option>
+    												<option value="zh_CN" label="Chinese"<?php echo $this->form->getElement('user_locale')->getValue() == 'zn_CH' ? ' selected="selected"' : ''; ?>>Chinese</option>
+                                                </select>
+                                            <span class="right"><!-- --></span>
+                                        </div><!-- end dropdown -->
+                                        <p class="error spacer clear">Please select a language.</p>
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="clear"><!-- --></div>
+                                    
+                                    <div class="left val_label">
+                                        <label for="user_timezone" class="titletag">Time Zone</label>
+                                    </div> <!-- end right -->
+
+                                    <div class="right val_label">
+                                        <label for="user_aim" class="titletag">AIM</label>
+                                    </div> <!-- end left -->
+                                    
+                                    <div class="left val_class_holder">
+                                        <div class="dropdown">
+                                            <span class="left"><!-- --></span>
+                                            <span class="dropdown_label mid" id="timezone_label">Please Select...</span>
+                                                <select tabindex="9" id="timezone" class="val_dropdown" name="user_timezone">
+                                                    <option value="" >Please Select...</option>
+                                                <?php foreach(DateTimeZone::listIdentifiers() as $tz): ?>
+                                                	<option value="<?php echo $tz; ?>" title="<?php echo $tz; ?>"<?php echo $this->form->getElement('user_timezone')->getValue() == $tz ? ' selected="selected"' : ''; ?>><?php echo ucwords(str_replace(array('/', '_'), array(' - ', ' '), $tz)); ?></option>
+                                                <?php endforeach; ?>
+                                                </select>
+                                            <span class="right"><!-- --></span>
+                                        </div><!-- end dropdown -->
+                                        <p class="error spacer clear">Please select a timezone.</p>
+                                    </div> <!-- end val_class_holder -->
+  
+                                    <div class="right val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_aim')->getValue(); ?>" id="user_aim" name="user_aim" tabindex="10"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                    </div> <!-- end val_class_holder -->
+
+                                    <div class="clear"><!-- --></div>
+                                    
+                                    <div class="val_label">
+                                        <label for="user_msn" class="titletag">MSN</label>
+                                    </div> <!-- end right -->
+                                    
+                                    <div class="val_class_holder">
+                                        <div class="input">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <input value="<?php echo $this->form->getElement('user_msn')->getValue(); ?>" id="user_msn" class="val_email val_nr" name="user_msn" tabindex="11"/>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end input -->
+                                        <p class="error spacer clear">Please enter a valid MSN email address.</p>
+                                    </div> <!-- end val_class_holder -->
+                                    
+                                    <div class="clear"><!-- --></div>
+                                    
+                                    <div class="val_label">
+                                    	<label for="welcome_message" class="titletag">Personal Welcome Message</label>
+                                    </div>
+
+                                    <div class="val_class_holder">
+                                        <div class="textarea">
+                                            <span class="left"><!-- --></span>
+                                            <span class="mid">
+                                                <textarea cols="0" rows="0" class="val_min_len_2" id="welcome_message" name="welcome_message" tabindex="12"><?php echo $this->form->getElement('welcome_message')->getValue(); ?></textarea>
+                                            </span>
+                                            <span class="right"><!-- --></span>
+                                        </div> <!-- end textarea -->
+                                        <p class="error spacer clear">Your welcome message is too short.</p>
+                                	</div> <!-- end val_class_holder -->
+
+                                    <div class="clear"><!-- --></div>
+                                    
+                                    <div class="hr"><hr /></div>
+                                    
+                                    <div class="btm-runner clearfix">
+                                    	<ul>
+                                        	<li class="button no_right_margin"><input type="submit" class="submit" value="submit" id="submit_user_add" tabindex="13" /></li>
+                                    		<li class="link"><a title="Go Back" class="inline-link" href="<?php echo $this->serverUrl('/people/user/index'); ?>">Go Back</a></li>
+                                        </ul>
+                                    </div> <!-- end btm-runner -->
+
+                                </div> <!-- end global_input_wrapper -->
+                            </form> <!-- end add_user_form -->
+
+                        </div>
+                        

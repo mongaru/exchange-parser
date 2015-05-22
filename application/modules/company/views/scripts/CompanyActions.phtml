@@ -1,0 +1,80 @@
+<?php
+$userRole = $this->userData->user_level;
+$isClient = (stristr($this->userData->user_level, 'client') !== FALSE);
+$isVendor = (stristr($this->userData->user_level, 'vendor') !== FALSE);
+$isCurrentOwner = ( isset($this->companyInfo) AND ($this->userData->ID_company == $this->companyInfo->ID_company) );
+
+if ( ! isset($this->showAdd))          $this->showAdd = false;
+if ( ! isset($this->showEdit))         $this->showEdit = false;
+if ( ! isset($this->showChangePass))   $this->showChangePass = false;
+if ( ! isset($this->showTrash))        $this->showTrash = false;
+if ( ! isset($this->showChangeAvatar)) $this->showChangeAvatar = false;
+
+if ($isClient)
+{   
+    $this->showAdd = ($isCurrentOwner == true);
+    $this->showEdit = ($isCurrentOwner == true);
+    $this->showTrash = ($isCurrentOwner == true);
+}
+
+if ($isVendor)
+{   
+    $this->showAdd = ($isCurrentOwner == true);
+    $this->showEdit = ($isCurrentOwner == true);
+    $this->showTrash = ($isCurrentOwner == true);
+}
+
+if (isset($this->companyInfo->company_master) AND (($this->companyInfo->company_master) == 'yes') AND ($userRole != 'superadmin'))
+    $this->showEdit = false;
+?>
+<?php if (null !== $this->companyInfo): ?>
+<!-- Company Actions Box -->
+<div class="padding_wrapper">
+    <div class="box round" id="user_actions">
+        <div class="box-wrapper">
+            <h4><?php echo $this->translate->_('Actions'); ?></h4>
+            <div class="v-list">
+                    <?php if ($this->companyInfo->company_is_deleted == 'no'): ?>
+
+                        <?php if (($this->showEdit == true) && (($userRole == 'superadmin') || ($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'edit')))): ?>
+                <div class="item clearfix">
+                    <span class="log_head icon16x16-img edit-user"><a href="<?php echo $this->serverUrl('/company/manage/edit/id/' . $this->companyInfo->ID_company); ?>" title="<?php echo $this->translate->_('Edit Company'); ?>" class="link"><?php echo $this->translate->_('Edit Company'); ?></a></span>
+                </div> <!-- end item -->
+                        <?php endif; ?>
+
+                        <?php if (($this->showAdd == true) && (($userRole == 'superadmin') || ($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'addtocompany')))): ?>
+                <div class="item clearfix">
+                    <span class="log_head icon16x16-img add"><a href="<?php echo $this->serverUrl('/people/user/addtocompany/id/' . $this->companyInfo->ID_company); ?>" title="<?php echo $this->translate->_('Add User To Company'); ?>" class="link"><?php echo $this->translate->_('Add User To Company'); ?></a></span>
+                </div> <!-- end item -->
+                        <?php endif; ?>
+
+                        <?php if (($this->showTrash == true) && (($userRole == 'superadmin') || ($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'trash')))): ?>
+                <div class="item clearfix">
+                    <span class="log_head icon16x16-img trash"><a href="<?php echo $this->serverUrl('/company/manage/trash/id/' . $this->companyInfo->ID_company); ?>" onclick="javascript: return confirm('<?php echo $this->translate->_('Are you sure you want to delete this company?'); ?>');" title="<?php echo $this->translate->_('Move To Trash'); ?>" class="link"><?php echo $this->translate->_('Move To Trash'); ?></a></span>
+                </div> <!-- end item -->
+                        <?php endif; ?>
+
+                        <?php /*if (($this->showSetMaster == true) && (($userRole == 'superadmin') || ($this->amediaAcl->inheritsRole($userRole, $this->userInfo->user_auth->user_level)))): ?>
+                <div class="item clearfix">
+                    <span class="log_head icon16x16-img add"><a href="<?php echo $this->serverUrl('/company/manage/setasmaster/id/' . $this->companyInfo->ID_company); ?>" onclick="javascript: return confirm('<?php echo $this->translate->_('Are you sure you want to set this company as the owner company?'); ?>');" title="<?php echo $this->translate->_('Set As Owner Company'); ?>" class="link"><?php echo $this->translate->_('Set As Owner Company'); ?></a></span>
+                </div> <!-- end item -->
+                        <?php endif;*/ ?>
+
+
+                    <?php else: ?>
+
+                        <?php if (($userRole == 'superadmin') || ($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'restore'))): ?>
+                <div class="item clearfix">
+                    <span class="log_head icon16x16-img restore"><a href="<?php echo $this->serverUrl('/company/manage/restore/id/' . $this->companyInfo->ID_company); ?>" onclick="javascript: return confirm('<?php echo $this->translate->_('Are you sure you want to restore this company?'); ?>');" title="<?php echo $this->translate->_('Restore'); ?>" class="link"><?php echo $this->translate->_('Restore'); ?></a></span>
+                </div> <!-- end item -->
+                        <?php endif; ?>
+
+                    <?php endif; ?>
+            </div> <!-- end v-list -->
+        </div> <!-- end box-wrapper -->
+    </div> <!-- end box -->
+</div> <!-- end padding_wrapper -->
+
+<div class="clear"><!-- --></div>
+<!-- Company Actions Box -->
+<?php endif; ?>

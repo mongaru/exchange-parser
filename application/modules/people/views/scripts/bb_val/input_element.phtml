@@ -1,0 +1,20 @@
+<div class="<?php echo $this->class ?>">
+	<div class="val_label">
+		<label for="<?php echo $this->element->getName(); ?>" class="titletag" title="<?php echo $this->element->getLabel(); ?>"><?php echo $this->element->getLabel(); ?></label>
+	</div> <!-- end left -->
+  	<div class="clear"><!--  --></div>
+	<div class="val_class_holder">
+		<div class="input">
+			<span class="left"><!-- --></span>
+			<span class="mid">
+				<input value="" id="user_email" class="val_email" name="user_email" tabindex="1"/>
+				<?php echo $this->{$this->element->helper}($this->element->getName(), $this->element->getValue(), $this->element->getAttribs()); ?>
+			</span>
+			<span class="right"><!-- --></span>
+		</div> <!-- end input -->
+		<p class="error spacer clear"><?php echo $this->formErrors($this->element->getMessages()) ?></p>
+		<div class="hint"><?php echo $this->element->getDescription() ?></div>
+	</div> <!-- end val_class_holder -->
+</div>
+
+<div class="clear"><!-- --></div>

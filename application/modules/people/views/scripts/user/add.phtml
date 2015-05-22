@@ -1,0 +1,274 @@
+ <?php
+    $formData = $this->form->getValues();
+   $errorMessages = $this->form->getMessages();
+
+?>
+
+<?php if(!$this->json) : ?>   
+    <?php if(isset($formData['ID_user']) && $formData['ID_user']!==''){
+        $subTitle ='<h2>'.$this->translate->_('Edit User').'</h2>'; 
+    } else  {
+        $subTitle ='<h2>'.$this->translate->_('Add User').'</h2>';
+    }
+?>
+<?php else : ?>
+<?php         $subTitle ='<h2 style = "right: 8%;">'.$this->translate->_('Add User').'</h2>'; ?>
+<?php endif; ?>
+
+<section class = "main lft grid24" >
+
+<script type="text/javascript">
+var department = <?php echo "'".$formData['user_department']."';"; ?> 
+
+
+</script>
+
+<article>
+    <header style = "">
+
+    <?php echo $this->translate->_($subTitle); ?>    
+        <br><br>
+<?php if(!$this->json) : ?>   
+        <h3 ><?php echo $this->translate->_('Add Avatar'); ?></h3>
+    <?php endif; ?>
+    </header>
+
+<?php if(!$this->json) : ?>            
+    <div class="user_options grid7 lft">
+        <p class = "p_c">
+            <?php  if(!isset($formData['user_avatar_file'])) { $formData['user_avatar_file'] =  0;} ?>
+            <a class="btn_default iBlk buttonfix lightbox fancybox.ajax"  href="<?php echo $this->serverUrl('/people/user/get-addr-avatar/id_avatar/'.$formData['user_avatar_file']); ?>" ><?php echo $this->translate->_('Add Avatar'); ?></a>
+        </p>
+        
+        <div class="user_avatar fixavatar">
+            <img class="avatar_file" src="<?php echo  $this->avatarInfo ;?>" alt="" style="width: 130px;height: 130px;" />
+        </div>
+    </div><!-- user_options end -->
+<?php endif;  ?>                    
+      
+    <form id="user_form" action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>" class="grid26 rgt ">
+        <input type="hidden" name="ID_auth" id="ID_auth" value="<?php echo $formData['ID_auth']; ?>" />        
+        <input type="hidden" name="ID_user" id="ID_user" value="<?php echo $formData['ID_user']; ?>" />
+         <input type="hidden" name="ID_optional" id="ID_optional" value="<?php echo $formData['ID_optional']; ?>" />       
+        <input type="hidden" name="user_avatar_file" id="user_avatar_file" value="<?php echo isset($formData['user_avatar_file']) ? $formData['user_avatar_file'] : ''; ?>" />
+
+        <?php if($this->userData->ID_user != $formData['ID_user']) :?>
+            <?php if($this->isVendor) : ?>
+            <input  type="radio" style="display: none;" checked="checked"  name="ID_company" id="ID_company_<?php echo Zend_Auth::getInstance()->getIdentity()->ID_company; ?>" value="<?php echo Zend_Auth::getInstance()->getIdentity()->ID_company; ?>"  />
+            <?php else: ?>
+        <a  class="btn btn_blue" id="add_to_groups_button"><?php echo $this->translate->_('Select Group'); ?></a>
+
+        <p class = "groups_ops">
+
+             <?php foreach($this->companyOptions as $c): ?>
+
+             <?php if($c->ID_company == $formData['ID_company']) :  ?>
+                <span class="hide">
+                    <input type="radio" checked = "checked" name="ID_company" id="ID_company_<?php echo $c->ID_company; ?>" value="<?php echo $c->ID_company; ?>" class="chk_button" />
+                    <label  for="ID_company_<?php echo $c->ID_company; ?>" ><?php echo $c->company_name; ?></label>
+                </span>    
+             <?php else : ?>
+                    <span class="hide">
+                    <input type="radio" name="ID_company" id="ID_company_<?php echo $c->ID_company; ?>" value="<?php echo $c->ID_company; ?>" class="chk_button" />
+                    <label  for="ID_company_<?php echo $c->ID_company; ?>"><?php echo $c->company_name; ?></label>
+                </span>
+             <?php endif; ?>         
+
+            <?php endforeach; ?>    
+                
+            <span class="clearfix"></span>
+            
+        </p>
+        <?php endif; ?>
+    <?php else : ?>                     
+            <input  type="radio" style="display: none;" checked="checked"  name="ID_company" id="ID_company_<?php echo $formData['ID_company']; ?>" value="<?php echo $formData['ID_company']; ?>"  />
+    <?php endif; ?>
+
+  
+        <div class="clearfix"><!--&nbsp--></div>
+
+        <div id="groupErrorMessage" class="error" style="display:none;">Please select a group.</div>
+
+        <div class="clearfix"><!--&nbsp--></div>
+                            
+        <div class="grid17 blk lft ajust">
+            <label for="user_email"><?php echo $this->translate->_('Email'); ?> *</label>
+            <input type="text" id="user_email" name="user_email" value="<?php echo $formData['user_email']; ?>" />
+        
+            <p class="error spacer clear"<?php echo isset($errorMessages['user_email']) ? ' style="text-indent: 0px;"' : ''; ?>>
+            <?php if (isset($errorMessages['user_email'])): ?>
+                <?php foreach($errorMessages['user_email'] as $error): ?>
+                <?php echo '<font color = "red">'.$error.'</font>'; ?><br />
+                <?php endforeach; ?>
+            <?php endif; ?>
+            </p>
+        </div>
+
+        <div class="grid17 blk rgt ajust" >
+            <label for="user_level"><?php echo $this->translate->_('Role'); ?>   </label>
+           
+            <script type="text/javascript">
+            var id_privileges = <?php echo ($formData['user_level']) ? '"'.$formData['user_level'].'";' : '"";'; ?>; 
+            var DepartmentForRoles ={}; 
+            </script>
+            <?php $isCosting = false; ?>
+            <select name="user_level" id="user_level" show="1" >
+                <option value=""><?php echo $this->translate->_('Select Role'); ?>...</option>
+                   <?php foreach($this->roleOptions as $r): ?>
+    
+                    <?php if(strtolower(Zend_Auth::getInstance()->getIdentity()->user_department) == "costing" && $this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'costing_manage', 'add')) : ?>
+
+                        <?php if(  ( $r->department == 'costing' || $r->department == 'vendors') ):  ?>
+
+                            <script type="text/javascript">DepartmentForRoles[<?php echo $r->id_privileges; ?>] = <?php echo ($r->department) ? '"'.$r->department.'";' : '"";'; ?></script>
+                         
+                            <option value="<?php echo $r->id_privileges; ?>" ><?php echo ucwords(str_replace("_", " ", $r->privileges_rol_name)); ?>
+                            </option> 
+
+                       <?php endif; ?>
+                   <?php elseif(strtolower(Zend_Auth::getInstance()->getIdentity()->user_department) == "vendors") : ?>
+                        <?php if($r->department=="vendors") : ?>
+                            <script type="text/javascript">DepartmentForRoles[<?php echo $r->id_privileges; ?>] = <?php echo ($r->department) ? '"'.$r->department.'";' : '"";'; ?></script>
+                            <option value="<?php echo $r->id_privileges; ?>" ><?php echo ucwords(str_replace("_", " ", $r->privileges_rol_name)); ?>
+                            </option> 
+                        <?php endif; ?>
+                   <?php elseif(strtolower(Zend_Auth::getInstance()->getIdentity()->user_department) == "yields") : ?>
+                        <?php if($r->department=="yields" && $this->myPrivName->priority >$r->priority) : ?>
+                            <script type="text/javascript">DepartmentForRoles[<?php echo $r->id_privileges; ?>] = <?php echo ($r->department) ? '"'.$r->department.'";' : '"";'; ?></script>
+                            <option value="<?php echo $r->id_privileges; ?>" ><?php echo ucwords(str_replace("_", " ", $r->privileges_rol_name)); ?>
+                            </option> 
+                        <?php endif; ?>
+
+                   <?php else : ?>
+                            <script type="text/javascript">DepartmentForRoles[<?php echo $r->id_privileges; ?>] = <?php echo ($r->department) ? '"'.$r->department.'";' : '"";'; ?></script>
+
+                            <option value="<?php echo $r->id_privileges; ?>" ><?php echo ucwords(str_replace("_", " ", $r->privileges_rol_name)); ?>
+                            </option> 
+
+
+                   <?php endif; ?>                   
+
+                    <?php endforeach; ?>
+            </select>
+            <b id="dep"></b>          
+            <input type="hidden" name="user_department" id="user_department" value="<?php echo (isset($formData['user_department'])) ? $formData['user_department'] : ''; ?>"/>  
+        </div>  
+      
+        <div class="clearfix"><!--&nbsp--></div>
+
+        <div class="grid17 blk lft ajust">
+            <label for="user_firstname"><?php echo $this->translate->_('First Name'); ?></label>
+            <input type="text" id="user_firstname" name="user_firstname" value="<?php echo $formData['user_firstname']; ?>" />
+        </div>
+
+        <div class="grid17 blk rgt ajust">
+            <label for="user_surname"><?php echo $this->translate->_('Last Name'); ?></label>
+            <input type="text" id="user_surname" name="user_surname" value="<?php echo $formData['user_surname']; ?>" />
+        </div>
+        
+        <div class="clearfix"><!--&nbsp--></div>
+
+        <div class="grid17 blk lft ajust">
+            <label for="user_password"><?php echo $this->translate->_('Password'); ?></label>
+            <input type="password" id="user_password" name="user_password" />
+        </div>
+        
+        <div class="grid17 blk rgt ajust">
+            <label for="password_conf"><?php echo $this->translate->_('Re-type Password'); ?></label>
+            <input type="password" id="password_conf" name="password_conf"/>
+        </div>
+        
+        <div class="clearfix"><!--&nbsp--></div>
+                                                                
+        <div class="grid17 blk lft ajust">
+            <label for="user_phone"><?php echo $this->translate->_('Phone'); ?></label>
+            <input type="text" id="user_phone" name = "user_phone" value="<?php echo $formData['user_phone']; ?>" />
+        </div>
+        
+        <div class="grid17 blk rgt ajust">
+            <label for="user_mobile"><?php echo $this->translate->_('Mobile'); ?></label>
+            <input type="text" id="user_mobile" name= "user_mobile" value="<?php echo $formData['user_mobile']; ?>" />
+        </div>
+                            
+        <div class="clearfix"><!--&nbsp--></div>
+        
+        <div class="grid17 blk lft ajust">
+            <label for="user_locale"><?php echo $this->translate->_('Language'); ?></label>
+            <?php echo $this->formSelect('user_locale', $formData['user_locale'], array('id' => 'user_locale', 'class'=>''), $this->languageOptions)."\n";?>
+        </div>
+        
+        <div class="grid17 blk rgt ajust">
+            <label for="user_timezone"><?php echo $this->translate->_('Time Zone'); ?></label>
+            <select name="user_timezone" id="user_timezone" show="1">
+                <option value=""><?php echo $this->translate->_('Please Select...'); ?></option>
+                    <?php foreach(DateTimeZone::listIdentifiers() as $tz): ?>
+                        <option 
+                            value="<?php echo $tz; ?>" 
+                            <?php echo $formData['user_timezone'] == $tz ? ' selected="selected"' : ''; ?>
+                        >
+                            <?php echo ucwords(str_replace(array('/', '_'), array(' - ', ' '), $tz)); ?>
+                        </option>
+                    <?php endforeach; ?>
+            </select>
+        </div>
+        
+        <div class="clearfix"><!--&nbsp--></div>
+                            
+        <div class="bottom cent">
+<?php if($this->json) : ?>
+            <a id="submit_user" class="btn btn_green rgt"><?php echo $this->translate->_('Save'); ?></a>    
+<script type="text/javascript"> 
+        $(document).ready(function()
+        {
+            $('#submit_user').click(function(){
+                    User.saveUser();   
+            });
+        });
+    </script>
+<?php else: ?>    
+            <a id="submit_user" class="btn btn_green rgt"><?php echo $this->translate->_('Save'); ?></a>    
+<script type="text/javascript"> 
+        $(document).ready(function()
+        {
+            $('#submit_user').click(function(){
+                 $('#user_form').submit();
+            });
+        });
+    </script>
+<?php endif; ?>     
+
+                                            
+          
+<?php if($this->json) : ?>
+ <a class="btn btn_red rgt" id="goback_btn" style="margin-right:10px;height: 18px;top: 1px;"><?php echo $this->translate->_('Go Back'); ?></a>
+        <script type="text/javascript">
+            $('#goback_btn').click(function(){
+                $.fancybox.close();
+            });
+        </script>
+<?php else: ?>
+  <a class="btn btn_red rgt" style="margin-right:15px;"href="javascript:;"style="margin-right:10px;" onclick = "history.go(-1);"  ><?php echo $this->translate->_('Go Back'); ?></a>
+<?php endif; ?>            
+            <div class="clearfix"><!--&nbsp--></div>
+        </div>
+    </form>
+    
+    <div class="clearfix"><!--&nbsp--></div>
+</article>
+<?php if(isset($this->isEdit)) :  ?>
+    <script type="text/javascript">$(document).ready(function(){
+        $('article').find('input:radio').prev().remove();
+    });</script>
+<?php endif; ?>
+<script type="text/javascript">$(document).ready(function(){
+     ini_forms();
+$('input[id*="ID_company_"]').prev().remove();    
+})</script>
+
+    <script type="text/javascript"> 
+        $(document).ready(function()
+        {
+            $('#user_level').val(id_privileges);
+        });
+    </script>
+</section>

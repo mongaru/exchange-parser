@@ -1,0 +1,1608 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kandy Kiss\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-24 18:03-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Ever Daniel Barreto <e.barreto@amediacreative.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: translate;_\n"
+"X-Poedit-Basepath: C:\\AppServ\\www\\KandyKiss\n"
+"X-Poedit-SearchPath-0: application\n"
+"X-Poedit-SearchPath-1: library\n"
+
+#: application/Bootstrap.php:166
+msgid "Kandy Kiss Admin Tools"
+msgstr "Kandy Kiss Admin Tools"
+
+#: application/modules/default/controllers/IndexController.php:29
+#: application/modules/discussion/controllers/ManageController.php:10
+msgid "Error processing your request, please try again later."
+msgstr "Error processing your request, please try again later."
+
+#: application/modules/default/controllers/IndexController.php:30
+msgid "Please select a date to Refine the Activity Summary."
+msgstr "Please select a date to Refine the Activity Summary."
+
+#: application/modules/default/controllers/IndexController.php:31
+msgid "Please select the Refinement User."
+msgstr "Please select the Refinement User."
+
+#: application/modules/default/controllers/IndexController.php:32
+#: application/modules/discussion/controllers/ManageController.php:13
+msgid "Remove"
+msgstr "Remove"
+
+#: application/modules/default/controllers/IndexController.php:49
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: application/modules/default/controllers/IndexController.php:66
+#: application/modules/default/controllers/IndexController.php:183
+#: application/modules/discussion/controllers/ManageController.php:884
+#: application/modules/discussion/controllers/ManageController.php:916
+#: application/modules/discussion/controllers/ManageController.php:966
+#: application/modules/discussion/controllers/ManageController.php:1078
+#: application/modules/discussion/controllers/ManageController.php:1110
+#: application/modules/discussion/controllers/ManageController.php:1141
+#: application/modules/discussion/controllers/ManageController.php:1180
+#: application/modules/discussion/controllers/ManageController.php:1220
+#: application/modules/discussion/controllers/ManageController.php:1308
+msgid "Error processing your request."
+msgstr "Error processing your request."
+
+#: application/modules/default/controllers/IndexController.php:108
+#, php-format
+msgid "For %1$s"
+msgstr "For %1$s"
+
+#: application/modules/default/controllers/UploaderController.php:93
+msgid "Please select a file to upload."
+msgstr "Please select a file to upload."
+
+#: application/modules/default/controllers/UploaderController.php:101
+msgid "Please select a valid file to upload."
+msgstr "Please select a valid file to upload."
+
+#: application/modules/default/controllers/UploaderController.php:152
+msgid "Uploaded."
+msgstr "Uploaded."
+
+#: application/modules/default/views/helpers/Activity.php:64
+msgid "added"
+msgstr "added"
+
+#: application/modules/default/views/helpers/Activity.php:69
+msgid "changed his avatar"
+msgstr "changed his avatar"
+
+#: application/modules/default/views/helpers/Activity.php:74
+#: application/modules/default/views/helpers/Activity.php:273
+msgid "completed"
+msgstr "completed"
+
+#: application/modules/default/views/helpers/Activity.php:79
+#: application/modules/default/views/helpers/Activity.php:197
+#: application/modules/default/views/helpers/Activity.php:280
+msgid "edited"
+msgstr "edited"
+
+#: application/modules/default/views/helpers/Activity.php:84
+#: application/modules/default/views/helpers/Activity.php:287
+msgid "archived"
+msgstr "archived"
+
+#: application/modules/default/views/helpers/Activity.php:89
+#: application/modules/default/views/helpers/Activity.php:205
+#: application/modules/default/views/helpers/Activity.php:294
+msgid "locked"
+msgstr "locked"
+
+#: application/modules/default/views/helpers/Activity.php:94
+msgid "logged in."
+msgstr "logged in."
+
+#: application/modules/default/views/helpers/Activity.php:99
+msgid "logged out."
+msgstr "logged out."
+
+#: application/modules/default/views/helpers/Activity.php:104
+#: application/modules/default/views/helpers/Activity.php:213
+#: application/modules/default/views/helpers/Activity.php:301
+msgid "restored"
+msgstr "restored"
+
+#: application/modules/default/views/helpers/Activity.php:109
+#: application/modules/default/views/helpers/Activity.php:308
+msgid "restored from the Archive the"
+msgstr "restored from the Archive the"
+
+#: application/modules/default/views/helpers/Activity.php:114
+#: application/modules/default/views/helpers/Activity.php:224
+#: application/modules/default/views/helpers/Activity.php:318
+msgid "is now subscribed to"
+msgstr "is now subscribed to"
+
+#: application/modules/default/views/helpers/Activity.php:119
+#: application/modules/default/views/helpers/Activity.php:238
+#: application/modules/default/views/helpers/Activity.php:331
+msgid "trashed"
+msgstr "trashed"
+
+#: application/modules/default/views/helpers/Activity.php:124
+#: application/modules/default/views/helpers/Activity.php:245
+#: application/modules/default/views/helpers/Activity.php:338
+msgid "unlocked"
+msgstr "unlocked"
+
+#: application/modules/default/views/helpers/Activity.php:129
+msgid "uploaded a file."
+msgstr "uploaded a file."
+
+#: application/modules/default/views/helpers/Activity.php:159
+msgid "commented on"
+msgstr "commented on"
+
+#: application/modules/default/views/helpers/Activity.php:161
+#: application/modules/default/views/helpers/Activity.php:170
+#: application/modules/default/views/helpers/Activity.php:179
+#: application/modules/default/views/helpers/Activity.php:191
+#: application/modules/default/views/helpers/Activity.php:199
+#: application/modules/default/views/helpers/Activity.php:207
+#: application/modules/default/views/helpers/Activity.php:215
+#: application/modules/default/views/helpers/Activity.php:232
+#: application/modules/default/views/helpers/Activity.php:240
+#: application/modules/default/views/helpers/Activity.php:247
+msgid "discussion"
+msgstr "discussion"
+
+#: application/modules/default/views/helpers/Activity.php:168
+msgid "edited a comment in"
+msgstr "edited a comment in"
+
+#: application/modules/default/views/helpers/Activity.php:177
+msgid "trashed a comment in"
+msgstr "trashed a comment in"
+
+#: application/modules/default/views/helpers/Activity.php:189
+#: application/modules/default/views/helpers/Activity.php:266
+msgid "started"
+msgstr "started"
+
+#: application/modules/default/views/helpers/Activity.php:229
+#: application/modules/default/views/helpers/Activity.php:323
+msgid "subscription was removed from"
+msgstr "subscription was removed from"
+
+#: application/modules/default/views/helpers/Activity.php:268
+#: application/modules/default/views/helpers/Activity.php:275
+#: application/modules/default/views/helpers/Activity.php:282
+#: application/modules/default/views/helpers/Activity.php:289
+#: application/modules/default/views/helpers/Activity.php:296
+#: application/modules/default/views/helpers/Activity.php:303
+#: application/modules/default/views/helpers/Activity.php:310
+#: application/modules/default/views/helpers/Activity.php:326
+#: application/modules/default/views/helpers/Activity.php:333
+#: application/modules/default/views/helpers/Activity.php:340
+msgid "yield"
+msgstr "yield"
+
+#: application/modules/default/views/helpers/Timespan.php:52
+msgid "years"
+msgstr "years"
+
+#: application/modules/default/views/helpers/Timespan.php:52
+msgid "year"
+msgstr "year"
+
+#: application/modules/default/views/helpers/Timespan.php:62
+msgid "months"
+msgstr "months"
+
+#: application/modules/default/views/helpers/Timespan.php:62
+msgid "month"
+msgstr "month"
+
+#: application/modules/default/views/helpers/Timespan.php:74
+msgid "weeks"
+msgstr "weeks"
+
+#: application/modules/default/views/helpers/Timespan.php:74
+msgid "week"
+msgstr "week"
+
+#: application/modules/default/views/helpers/Timespan.php:86
+msgid "days"
+msgstr "days"
+
+#: application/modules/default/views/helpers/Timespan.php:86
+msgid "day"
+msgstr "day"
+
+#: application/modules/default/views/helpers/Timespan.php:98
+msgid "hours"
+msgstr "hours"
+
+#: application/modules/default/views/helpers/Timespan.php:98
+msgid "hour"
+msgstr "hour"
+
+#: application/modules/default/views/helpers/Timespan.php:110
+msgid "minutes"
+msgstr "minutes"
+
+#: application/modules/default/views/helpers/Timespan.php:110
+msgid "minute"
+msgstr "minute"
+
+#: application/modules/default/views/helpers/Timespan.php:118
+msgid "seconds"
+msgstr "seconds"
+
+#: application/modules/default/views/helpers/Timespan.php:118
+msgid "second"
+msgstr "second"
+
+#: application/modules/discussion/controllers/ManageController.php:11
+msgid "Are you sure you want to delete this file?"
+msgstr "Are you sure you want to delete this file?"
+
+#: application/modules/discussion/controllers/ManageController.php:12
+msgid "Are you sure you want to delete this comment?"
+msgstr "Are you sure you want to delete this comment?"
+
+#: application/modules/discussion/controllers/ManageController.php:23
+#: application/modules/discussion/controllers/ManageController.php:24
+msgid "Discussions"
+msgstr "Discussions"
+
+#: application/modules/discussion/controllers/ManageController.php:108
+msgid "Everyone"
+msgstr "Everyone"
+
+#: application/modules/discussion/controllers/ManageController.php:109
+#, php-format
+msgid "Discussions %1$s %2$s by %3$s"
+msgstr "Discussions %1$s %2$s by %3$s"
+
+#: application/modules/discussion/controllers/ManageController.php:117
+msgid "Active Discussions"
+msgstr "Active Discussions"
+
+#: application/modules/discussion/controllers/ManageController.php:122
+msgid "Deleted Discussions"
+msgstr "Deleted Discussions"
+
+#: application/modules/discussion/controllers/ManageController.php:127
+msgid "Locked Discussions"
+msgstr "Locked Discussions"
+
+#: application/modules/discussion/controllers/ManageController.php:163
+#: application/modules/discussion/controllers/ManageController.php:164
+msgid "Add Discussion"
+msgstr "Add Discussion"
+
+#: application/modules/discussion/controllers/ManageController.php:466
+msgid "Edit Discussion"
+msgstr "Edit Discussion"
+
+#: application/modules/discussion/controllers/ManageController.php:947
+msgid "The discussion was successfully moved to this Yield."
+msgstr "The discussion was successfully moved to this Yield."
+
+#: application/modules/discussion/controllers/ManageController.php:1059
+msgid "The discussion was successfully copied to this Yield"
+msgstr "The discussion was successfully copied to this Yield"
+
+#: application/modules/discussion/controllers/ManageController.php:1158
+msgid "The file was successfully deleted."
+msgstr "The file was successfully deleted."
+
+#: application/modules/discussion/controllers/ManageController.php:1288
+msgid "Comment was successfully deleted."
+msgstr "Comment was successfully deleted."
+
+#: application/modules/discussion/controllers/ManageController.php:1341
+msgid "All people subscribed to this discussion was notified."
+msgstr "All people subscribed to this discussion was notified."
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:46
+#, php-format
+msgid "Today at %1$s"
+msgstr "Today at %1$s"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:50
+#, php-format
+msgid "Yesterday at %1$s"
+msgstr "Yesterday at %1$s"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:54
+#: application/modules/discussion/views/helpers/FileDescription.php:64
+#, php-format
+msgid "%1$s ago"
+msgstr "%1$s ago"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:61
+msgid "said"
+msgstr "said"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:62
+#: application/modules/discussion/views/helpers/Subscribers.php:54
+#: application/modules/discussion/views/helpers/Subscribers.php:66
+#: application/modules/discussion/views/helpers/Subscribers.php:79
+msgid "View User"
+msgstr "View User"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:63
+msgid "Permalink"
+msgstr "Permalink"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:64
+msgid "Move To Trash"
+msgstr "Move To Trash"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:65
+msgid "Update Comment"
+msgstr "Update Comment"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:66
+msgid "Notify People"
+msgstr "Notify People"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:67
+msgid "Attached Files"
+msgstr "Attached Files"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:68
+msgid "Attachments"
+msgstr "Attachments"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:69
+msgid "Attach Another File"
+msgstr "Attach Another File"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:70
+msgid "Show Details"
+msgstr "Show Details"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:71
+msgid "Hide Details"
+msgstr "Hide Details"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:72
+msgid "New File"
+msgstr "New File"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:73
+msgid "Please browse and select a file, once the file is uploaded, it will be automatically attached to this comment."
+msgstr "Please browse and select a file, once the file is uploaded, it will be automatically attached to this comment."
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:74
+msgid "Attaching File to Comment..."
+msgstr "Attaching File to Comment..."
+
+#: application/modules/discussion/views/helpers/FileDescription.php:56
+#: application/modules/discussion/views/helpers/FileSummary.php:51
+msgid "Today"
+msgstr "Today"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:60
+#: application/modules/discussion/views/helpers/FileSummary.php:55
+msgid "Yesterday"
+msgstr "Yesterday"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:75
+#: application/modules/discussion/views/helpers/FileSummary.php:70
+msgid "Send To Trash"
+msgstr "Send To Trash"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:76
+#: application/modules/discussion/views/helpers/FileSummary.php:71
+msgid "View File"
+msgstr "View File"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:77
+msgid "Name"
+msgstr "Name"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:78
+msgid "Size &amp; Filetype"
+msgstr "Size &amp; Filetype"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:94
+#, php-format
+msgid "Uploaded %1$s by %2$s"
+msgstr "Uploaded %1$s by %2$s"
+
+#: application/modules/discussion/views/helpers/Subscribers.php:36
+msgid "is responsible."
+msgstr "is responsible."
+
+#: application/modules/discussion/views/helpers/Subscribers.php:45
+msgid "Nobody is subscribed to this discussion."
+msgstr "Nobody is subscribed to this discussion."
+
+#: application/modules/discussion/views/helpers/Subscribers.php:56
+msgid " is subscribed to this discussion."
+msgstr " is subscribed to this discussion."
+
+#: application/modules/discussion/views/helpers/Subscribers.php:68
+#: application/modules/discussion/views/helpers/Subscribers.php:81
+msgid " are subscribed to this discussion."
+msgstr " are subscribed to this discussion."
+
+#: application/modules/people/controllers/AuthController.php:85
+#: application/modules/people/controllers/AuthController.php:103
+#: application/modules/people/controllers/AuthController.php:107
+msgid "Wrong email or password provided. Please try again."
+msgstr "Wrong email or password provided. Please try again."
+
+#: application/modules/people/controllers/AuthController.php:119
+#: application/modules/people/controllers/AuthController.php:161
+msgid "Login"
+msgstr "Login"
+
+#: application/modules/people/controllers/AuthController.php:153
+msgid "Email"
+msgstr "Email"
+
+#: application/modules/people/controllers/AuthController.php:157
+msgid "Password"
+msgstr "Password"
+
+#: application/modules/people/controllers/UserController.php:15
+msgid "Yields Department"
+msgstr "Yields Department"
+
+#: application/modules/people/controllers/UserController.php:105
+#, php-format
+msgid "Users %1$s %2$s"
+msgstr "Users %1$s %2$s"
+
+#: application/modules/people/controllers/UserController.php:107
+#, php-format
+msgid "Users %1$s %2$s by %3$s"
+msgstr "Users %1$s %2$s by %3$s"
+
+#: application/modules/people/controllers/UserController.php:141
+#: application/modules/people/controllers/UserController.php:142
+msgid "Add People"
+msgstr "Add People"
+
+#: application/modules/people/controllers/UserController.php:154
+#: application/modules/people/controllers/UserController.php:332
+msgid "Super Administrator"
+msgstr "Super Administrator"
+
+#: application/modules/people/controllers/UserController.php:155
+#: application/modules/people/controllers/UserController.php:333
+msgid "Administrator"
+msgstr "Administrator"
+msgid "Yield Administrator"
+msgstr "Yield Administrator"
+
+#: application/modules/people/controllers/UserController.php:156
+#: application/modules/people/controllers/UserController.php:167
+#: application/modules/people/controllers/UserController.php:334
+#: application/modules/people/controllers/UserController.php:345
+msgid "Yielder Manager"
+msgstr "Yielder Manager"
+
+#: application/modules/people/controllers/UserController.php:157
+#: application/modules/people/controllers/UserController.php:168
+#: application/modules/people/controllers/UserController.php:335
+#: application/modules/people/controllers/UserController.php:346
+msgid "Pattern Maker Manager"
+msgstr "Pattern Maker Manager"
+
+#: application/modules/people/controllers/UserController.php:158
+#: application/modules/people/controllers/UserController.php:169
+#: application/modules/people/controllers/UserController.php:185
+#: application/modules/people/controllers/UserController.php:336
+#: application/modules/people/controllers/UserController.php:347
+#: application/modules/people/controllers/UserController.php:363
+msgid "Pattern Maker"
+msgstr "Pattern Maker"
+
+#: application/modules/people/controllers/UserController.php:159
+#: application/modules/people/controllers/UserController.php:170
+#: application/modules/people/controllers/UserController.php:178
+#: application/modules/people/controllers/UserController.php:337
+#: application/modules/people/controllers/UserController.php:348
+#: application/modules/people/controllers/UserController.php:356
+msgid "Yielder"
+msgstr "Yielder"
+
+#: application/modules/people/controllers/UserController.php:160
+#: application/modules/people/controllers/UserController.php:171
+#: application/modules/people/controllers/UserController.php:192
+#: application/modules/people/controllers/UserController.php:199
+#: application/modules/people/controllers/UserController.php:338
+#: application/modules/people/controllers/UserController.php:349
+#: application/modules/people/controllers/UserController.php:370
+#: application/modules/people/controllers/UserController.php:377
+msgid "User"
+msgstr "User"
+
+#: application/modules/people/controllers/UserController.php:205
+#: application/modules/people/controllers/UserController.php:383
+#: application/modules/people/controllers/UserController.php:507
+msgid "English"
+msgstr "English"
+
+#: application/modules/people/controllers/UserController.php:206
+#: application/modules/people/controllers/UserController.php:384
+#: application/modules/people/controllers/UserController.php:508
+msgid "Chinese"
+msgstr "Chinese"
+
+#: application/modules/people/controllers/UserController.php:213
+#: application/modules/people/controllers/UserController.php:216
+#: application/modules/people/controllers/UserController.php:221
+#: application/modules/people/controllers/UserController.php:639
+msgid "Passwords does not match."
+msgstr "Passwords does not match."
+
+#: application/modules/people/controllers/UserController.php:449
+#: application/modules/people/controllers/UserController.php:450
+msgid "Edit "
+msgstr "Edit "
+
+#: application/modules/people/controllers/UserController.php:500
+msgid "Edit My Account"
+msgstr "Edit My Account"
+
+#: application/modules/people/controllers/UserController.php:619
+#: application/modules/people/controllers/UserController.php:620
+msgid "Change password for user "
+msgstr "Change password for user "
+
+#: application/modules/people/controllers/UserController.php:626
+#: application/modules/people/controllers/UserController.php:627
+msgid "Change My Password"
+msgstr "Change My Password"
+
+#: application/modules/search/controllers/IndexController.php:121
+msgid "Search Results"
+msgstr "Search Results"
+
+#: application/modules/search/controllers/IndexController.php:133
+msgid "Yield"
+msgstr "Yield"
+
+#: application/modules/search/controllers/IndexController.php:134
+msgid "Discussion"
+msgstr "Discussion"
+
+#: application/modules/search/controllers/IndexController.php:135
+msgid "Comment"
+msgstr "Comment"
+
+#: application/modules/search/controllers/IndexController.php:143
+msgid "This Week"
+msgstr "This Week"
+
+#: application/modules/search/controllers/IndexController.php:144
+msgid "Last Week"
+msgstr "Last Week"
+
+#: application/modules/search/controllers/IndexController.php:145
+msgid "This Month"
+msgstr "This Month"
+
+#: application/modules/search/controllers/IndexController.php:146
+msgid "Last Month"
+msgstr "Last Month"
+
+#: application/modules/search/controllers/IndexController.php:147
+msgid "This Year"
+msgstr "This Year"
+
+#: application/modules/search/controllers/IndexController.php:148
+msgid "Last Year"
+msgstr "Last Year"
+
+#: application/modules/search/views/helpers/Result.php:82
+msgid " ago"
+msgstr " ago"
+
+#: application/modules/yield/controllers/ManageController.php:13
+msgid "is responsible"
+msgstr "is responsible"
+
+#: application/modules/yield/controllers/ManageController.php:14
+msgid "Loading Styles..."
+msgstr "Loading Styles..."
+
+#: application/modules/yield/controllers/ManageController.php:15
+msgid "Select Style Type..."
+msgstr "Select Style Type..."
+
+#: application/modules/yield/controllers/ManageController.php:16
+msgid "Select Body Type..."
+msgstr "Select Body Type..."
+
+#: application/modules/yield/controllers/ManageController.php:17
+msgid "This body type does not have any style types."
+msgstr "This body type does not have any style types."
+
+#: application/modules/yield/controllers/ManageController.php:18
+msgid "Remove This Style Type"
+msgstr "Remove This Style Type"
+
+#: application/modules/yield/controllers/ManageController.php:19
+msgid "Remove This Body Type"
+msgstr "Remove This Body Type"
+
+#: application/modules/yield/controllers/ManageController.php:20
+msgid "Please choose a Body Type first and then enter the Style Type description."
+msgstr "Please choose a Body Type first and then enter the Style Type description."
+
+#: application/modules/yield/controllers/ManageController.php:21
+msgid "Are you sure you want to delete this Style Type?"
+msgstr "Are you sure you want to delete this Style Type?"
+
+#: application/modules/yield/controllers/ManageController.php:22
+#: application/modules/yield/controllers/ManageController.php:1419
+msgid "Please enter the Body Type description."
+msgstr "Please enter the Body Type description."
+
+#: application/modules/yield/controllers/ManageController.php:23
+msgid "Are you sure you want to delete this Body Type?"
+msgstr "Are you sure you want to delete this Body Type?"
+
+#: application/modules/yield/controllers/ManageController.php:24
+msgid "Please select the Body Type."
+msgstr "Please select the Body Type."
+
+#: application/modules/yield/controllers/ManageController.php:25
+msgid "Please enter a valid percentage range (from 1% to 100%)."
+msgstr "Please enter a valid percentage range (from 1% to 100%)."
+
+#: application/modules/yield/controllers/ManageController.php:26
+msgid "This mini marker has been flagged blue."
+msgstr "This mini marker has been flagged blue."
+
+#: application/modules/yield/controllers/ManageController.php:27
+msgid "Max 10 mini markers is allowed per yield."
+msgstr "Max 10 mini markers is allowed per yield."
+
+#: application/modules/yield/controllers/ManageController.php:28
+msgid "Please select an action."
+msgstr "Please select an action."
+
+#: application/modules/yield/controllers/ManageController.php:29
+msgid "Are you sure you want to delete the selected Yields?"
+msgstr "Are you sure you want to delete the selected Yields?"
+
+#: application/modules/yield/controllers/ManageController.php:30
+msgid "Are you sure you want to archive the selected Yields?"
+msgstr "Are you sure you want to archive the selected Yields?"
+
+#: application/modules/yield/controllers/ManageController.php:31
+msgid "Are you sure you want to delete the selected Refinement?"
+msgstr "Are you sure you want to delete the selected Refinement?"
+
+#: application/modules/yield/controllers/ManageController.php:38
+msgid "Yields"
+msgstr "Yields"
+
+#: application/modules/yield/controllers/ManageController.php:76
+#, php-format
+msgid "Yields refined by %1$s"
+msgstr "Yields refined by %1$s"
+
+#: application/modules/yield/controllers/ManageController.php:205
+#, php-format
+msgid "Yields %1$s %2$s by %3$s"
+msgstr "Yields %1$s %2$s by %3$s"
+
+#: application/modules/yield/controllers/ManageController.php:218
+msgid "Deleted Yields"
+msgstr "Deleted Yields"
+
+#: application/modules/yield/controllers/ManageController.php:223
+msgid "Pending Yields"
+msgstr "Pending Yields"
+
+#: application/modules/yield/controllers/ManageController.php:228
+msgid "Completed Yields"
+msgstr "Completed Yields"
+
+#: application/modules/yield/controllers/ManageController.php:233
+msgid "Archived Yields"
+msgstr "Archived Yields"
+
+#: application/modules/yield/controllers/ManageController.php:279
+#: application/modules/yield/controllers/ManageController.php:280
+msgid "Create New Yield"
+msgstr "Create New Yield"
+
+#: application/modules/yield/controllers/ManageController.php:680
+msgid "Edit Yield"
+msgstr "Edit Yield"
+
+#: application/modules/yield/controllers/ManageController.php:685
+msgid "Edit Completed Yield"
+msgstr "Edit Completed Yield"
+
+#: application/modules/yield/controllers/ManageController.php:714
+msgid " Yield"
+msgstr " Yield"
+
+#: application/modules/yield/controllers/ManageController.php:766
+msgid "Please enter a valid [1-100] Efficiency Percentage."
+msgstr "Please enter a valid [1-100] Efficiency Percentage."
+
+#: application/modules/yield/controllers/ManageController.php:878
+msgid "Complete Yield #"
+msgstr "Complete Yield #"
+
+#: application/modules/yield/controllers/ManageController.php:1448
+msgid "Please select the Body Type to delete."
+msgstr "Please select the Body Type to delete."
+
+#: application/modules/yield/controllers/ManageController.php:1487
+msgid "Please choose the Body Type and enter the Style Type description."
+msgstr "Please choose the Body Type and enter the Style Type description."
+
+#: application/modules/yield/controllers/ManageController.php:1517
+msgid "Please choose the Body Type."
+msgstr "Please choose the Body Type."
+
+#: application/modules/yield/controllers/ManageController.php:1546
+msgid "Please select the Style Type to delete."
+msgstr "Please select the Style Type to delete."
+
+#: application/modules/yield/controllers/RefinementController.php:22
+msgid "Pending"
+msgstr "Pending"
+
+#: application/modules/yield/controllers/RefinementController.php:23
+msgid "Completed"
+msgstr "Completed"
+
+#: application/modules/yield/controllers/RefinementController.php:24
+msgid "Archived"
+msgstr "Archived"
+
+#: application/modules/yield/controllers/RefinementController.php:25
+msgid "Locked"
+msgstr "Locked"
+
+#: application/modules/yield/controllers/RefinementController.php:26
+msgid "Unlocked"
+msgstr "Unlocked"
+
+#: application/modules/yield/controllers/RefinementController.php:37
+msgid "Specific Date..."
+msgstr "Specific Date..."
+
+#: application/modules/yield/controllers/RefinementController.php:38
+msgid "Specific Date Range..."
+msgstr "Specific Date Range..."
+
+#: application/modules/yield/controllers/RefinementController.php:45
+msgid "Above 70%"
+msgstr "Above 70%"
+
+#: application/modules/yield/controllers/RefinementController.php:46
+msgid "Below 70%"
+msgstr "Below 70%"
+
+#: application/modules/yield/controllers/RefinementController.php:47
+msgid "Accepted"
+msgstr "Accepted"
+
+#: application/modules/yield/controllers/RefinementController.php:68
+#: application/modules/yield/controllers/RefinementController.php:69
+msgid "Add Refinement"
+msgstr "Add Refinement"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:31
+msgid "Select Refinement Report..."
+msgstr "Select Refinement Report..."
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:41
+msgid "View This Report"
+msgstr "View This Report"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:42
+msgid "Edit This Report"
+msgstr "Edit This Report"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:43
+msgid "Delete This Report"
+msgstr "Delete This Report"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:44
+msgid "Add Refinement Report"
+msgstr "Add Refinement Report"
+
+#: application/modules/yield/views/helpers/Subscribers.php:42
+msgid "Nobody is subscribed to this yield."
+msgstr "Nobody is subscribed to this yield."
+
+#: application/modules/yield/views/helpers/Subscribers.php:46
+msgid "Other subscriber: "
+msgstr "Other subscriber: "
+
+#: application/modules/yield/views/helpers/Subscribers.php:58
+#: application/modules/yield/views/helpers/Subscribers.php:71
+msgid "Other subscribers: "
+msgstr "Other subscribers: "
+
+#~ msgid "Welcome"
+#~ msgstr "Welcome"
+#~ msgid "My Info"
+#~ msgstr "My Info"
+#~ msgid "Search all data..."
+#~ msgstr "Search all data..."
+#~ msgid "Edit My Info"
+#~ msgstr "Edit My Info"
+#~ msgid "Logout"
+#~ msgstr "Logout"
+#~ msgid "List Yields"
+#~ msgstr "List Yields"
+#~ msgid "Add New Yield"
+#~ msgstr "Add New Yield"
+#~ msgid "View Pending"
+#~ msgstr "View Pending"
+#~ msgid "View Completed"
+#~ msgstr "View Completed"
+#~ msgid "View Archived"
+#~ msgstr "View Archived"
+#~ msgid "View Discussions"
+#~ msgstr "View Discussions"
+#~ msgid "People"
+#~ msgstr "People"
+#~ msgid "Manage People"
+#~ msgstr "Manage People"
+#~ msgid "Add New Person"
+#~ msgstr "Add New Person"
+#~ msgid "Add Discussions"
+#~ msgstr "Add Discussions"
+#~ msgid "Closed Discussions"
+#~ msgstr "Closed Discussions"
+#~ msgid "Manage Person"
+#~ msgstr "Manage Person"
+#~ msgid "310/651/8733"
+#~ msgstr "310/651/8733"
+#~ msgid "Powered By Amedia Creative"
+#~ msgstr "Powered By Amedia Creative"
+#~ msgid "Visit Amedia Creative"
+#~ msgstr "Visit Amedia Creative"
+#~ msgid "Amedia Creative"
+#~ msgstr "Amedia Creative"
+#~ msgid "&nbsp;Please wait..."
+#~ msgstr "&nbsp;Please wait..."
+#~ msgid "Who Is Online?"
+#~ msgstr "Who Is Online?"
+#~ msgid "People who were online in the last 15 minutes."
+#~ msgstr "People who were online in the last 15 minutes."
+#~ msgid "Uh oh! Ninja's have stolen this page!"
+#~ msgstr "Uh oh! Ninja's have stolen this page!"
+#~ msgid ""
+#~ "Or maybe, you've reached a page that does not exist. Please stop blaming "
+#~ "the ninjas."
+#~ msgstr ""
+#~ "Or maybe, you've reached a page that does not exist. Please stop blaming "
+#~ "the ninjas."
+#~ msgid "Error 404 Ninjas"
+#~ msgstr "Error 404 Ninjas"
+#~ msgid ""
+#~ "You'll probably be able to find the information you need by using th menu "
+#~ "at the top of this page. If you feel there is something wrong with this "
+#~ "application, you may get some help by emailing <a href=\"http://"
+#~ "amediacreative.com\" title=\"Visit Amedia Creative\">Amedia Creative</a> "
+#~ "at <a href=\"wecare@amediacreative.com\" title=\"Email Amedia Creative"
+#~ "\">wecare@amediacreative.com</a>. Thank you."
+#~ msgstr ""
+#~ "You'll probably be able to find the information you need by using th menu "
+#~ "at the top of this page. If you feel there is something wrong with this "
+#~ "application, you may get some help by emailing <a href=\"http://"
+#~ "amediacreative.com\" title=\"Visit Amedia Creative\">Amedia Creative</a> "
+#~ "at <a href=\"wecare@amediacreative.com\" title=\"Email Amedia Creative"
+#~ "\">wecare@amediacreative.com</a>. Thank you."
+#~ msgid "Support"
+#~ msgstr "Support"
+#~ msgid "Recent Activity"
+#~ msgstr "Recent Activity"
+#~ msgid "Activity Summary"
+#~ msgstr "Activity Summary"
+#~ msgid "User Activity"
+#~ msgstr "User Activity"
+#~ msgid "For Today And Yesterday"
+#~ msgstr "For Today And Yesterday"
+#~ msgid "Refine"
+#~ msgstr "Refine"
+#~ msgid "View"
+#~ msgstr "View"
+#~ msgid "Yields Posted Today"
+#~ msgstr "Yields Posted Today"
+#~ msgid "Yields Completed Today"
+#~ msgstr "Yields Completed Today"
+#~ msgid "Discussions Posted Today"
+#~ msgstr "Discussions Posted Today"
+#~ msgid "Discussions Commented On Today"
+#~ msgstr "Discussions Commented On Today"
+#~ msgid "Total Comments Today"
+#~ msgstr "Total Comments Today"
+#~ msgid "Users Added Today"
+#~ msgstr "Users Added Today"
+#~ msgid "Total Logins Today"
+#~ msgstr "Total Logins Today"
+#~ msgid "Yields Posted Yesterday"
+#~ msgstr "Yields Posted Yesterday"
+#~ msgid "Yields Completed Yesterday"
+#~ msgstr "Yields Completed Yesterday"
+#~ msgid "Discussions Posted Yesterday"
+#~ msgstr "Discussions Posted Yesterday"
+#~ msgid "Discussions Commented On Yesterday"
+#~ msgstr "Discussions Commented On Yesterday"
+#~ msgid "Total Comments Yesterday"
+#~ msgstr "Total Comments Yesterday"
+#~ msgid "Users Added Yesterday"
+#~ msgstr "Users Added Yesterday"
+#~ msgid "Total Logins Yesterday"
+#~ msgstr "Total Logins Yesterday"
+#~ msgid "Yields Posted"
+#~ msgstr "Yields Posted"
+#~ msgid "Yields Completed"
+#~ msgstr "Yields Completed"
+#~ msgid "Discussions Posted"
+#~ msgstr "Discussions Posted"
+#~ msgid "Discussions Commented On"
+#~ msgstr "Discussions Commented On"
+#~ msgid "Total Comments"
+#~ msgstr "Total Comments"
+#~ msgid "Users Added"
+#~ msgstr "Users Added"
+#~ msgid "Total Logins"
+#~ msgstr "Total Logins"
+#~ msgid "View More"
+#~ msgstr "View More"
+#~ msgid "There are no activities from Yesterday and Today."
+#~ msgstr "There are no activities from Yesterday and Today."
+#~ msgid "Select a file..."
+#~ msgstr "Select a file..."
+#~ msgid "Reset"
+#~ msgstr "Reset"
+#~ msgid "Actions"
+#~ msgstr "Actions"
+#~ msgid "Additional actions for %1$s."
+#~ msgstr "Additional actions for %1$s."
+#~ msgid "Unlock Comments"
+#~ msgstr "Unlock Comments"
+#~ msgid "Lock Comments"
+#~ msgstr "Lock Comments"
+#~ msgid "Are you sure you want to delete this discussion?"
+#~ msgstr "Are you sure you want to delete this discussion?"
+#~ msgid "Move To Yield"
+#~ msgstr "Move To Yield"
+#~ msgid "Copy To Yield"
+#~ msgstr "Copy To Yield"
+#~ msgid "Are you sure you want to restore this discussion from the trash?"
+#~ msgstr "Are you sure you want to restore this discussion from the trash?"
+#~ msgid "Restore"
+#~ msgstr "Restore"
+#~ msgid "Go Back"
+#~ msgstr "Go Back"
+#~ msgid "Your comment message is too short."
+#~ msgstr "Your comment message is too short."
+#~ msgid "update"
+#~ msgstr "update"
+#~ msgid "The comment was successfully updated."
+#~ msgstr "The comment was successfully updated."
+#~ msgid "Search Yields"
+#~ msgstr "Search Yields"
+#~ msgid "Yield Style Number (or part of it)"
+#~ msgstr "Yield Style Number (or part of it)"
+#~ msgid "Please enter the Yield Style Number"
+#~ msgstr "Please enter the Yield Style Number"
+#~ msgid "search"
+#~ msgstr "search"
+#~ msgid "Searching Yields..."
+#~ msgstr "Searching Yields..."
+#~ msgid "Next &raquo;"
+#~ msgstr "Next &raquo;"
+#~ msgid "of %1$s"
+#~ msgstr "of %1$s"
+#~ msgid "&laquo; Previous"
+#~ msgstr "&laquo; Previous"
+#~ msgid "Discussion Information"
+#~ msgstr "Discussion Information"
+#~ msgid "Summary"
+#~ msgstr "Summary"
+#~ msgid "Please enter the Summary."
+#~ msgstr "Please enter the Summary."
+#~ msgid "Message"
+#~ msgstr "Message"
+#~ msgid "The message is too short."
+#~ msgstr "The message is too short."
+#~ msgid "Attach Files"
+#~ msgstr "Attach Files"
+#~ msgid "Add Another File"
+#~ msgstr "Add Another File"
+#~ msgid "Max total size of files you can upload is 8.00 MB"
+#~ msgstr "Max total size of files you can upload is 8.00 MB"
+#~ msgid "Visibility"
+#~ msgstr "Visibility"
+#~ msgid "Select Yield..."
+#~ msgstr "Select Yield..."
+#~ msgid ""
+#~ "Discussions may only be added to yields which are not locked or completed."
+#~ msgstr ""
+#~ "Discussions may only be added to yields which are not locked or completed."
+#~ msgid "Please select a yield."
+#~ msgstr "Please select a yield."
+#~ msgid "Normal"
+#~ msgstr "Normal"
+#~ msgid "Private"
+#~ msgstr "Private"
+#~ msgid "Private: visible to admins only."
+#~ msgstr "Private: visible to admins only."
+#~ msgid "All Yields Department"
+#~ msgstr "All Yields Department"
+#~ msgid "Admins"
+#~ msgstr "Admins"
+#~ msgid "Pattern Makers"
+#~ msgstr "Pattern Makers"
+#~ msgid "Yielders"
+#~ msgstr "Yielders"
+#~ msgid "Designers"
+#~ msgstr "Designers"
+#~ msgid "Replies"
+#~ msgstr "Replies"
+#~ msgid "Last Reply"
+#~ msgstr "Last Reply"
+#~ msgid "Never"
+#~ msgstr "Never"
+#~ msgid "ago"
+#~ msgstr "ago"
+#~ msgid "There are no discussions. You may %screate one%s."
+#~ msgstr "There are no discussions. You may %screate one%s."
+#~ msgid ""
+#~ "There are no active discussions. You may visit a %sdiscussion%s and "
+#~ "unlock one."
+#~ msgstr ""
+#~ "There are no active discussions. You may visit a %sdiscussion%s and "
+#~ "unlock one."
+#~ msgid ""
+#~ "There are no locked discussions. You may visit a %sdiscussion%s and lock "
+#~ "one."
+#~ msgstr ""
+#~ "There are no locked discussions. You may visit a %sdiscussion%s and lock "
+#~ "one."
+#~ msgid "View Discussion Trash"
+#~ msgstr "View Discussion Trash"
+#~ msgid "Discussions (%1$s)"
+#~ msgstr "Discussions (%1$s)"
+#~ msgid "Recently Added"
+#~ msgstr "Recently Added"
+#~ msgid "Recently Commented"
+#~ msgstr "Recently Commented"
+#~ msgid "Recently Edited"
+#~ msgstr "Recently Edited"
+#~ msgid "Discussion Title"
+#~ msgstr "Discussion Title"
+#~ msgid "Date"
+#~ msgstr "Date"
+#~ msgid "By Whom"
+#~ msgstr "By Whom"
+#~ msgid "View Discussion"
+#~ msgstr "View Discussion"
+#~ msgid "By %1$s on %2$s at %3$s"
+#~ msgstr "By %1$s on %2$s at %3$s"
+#~ msgid "Style Number"
+#~ msgstr "Style Number"
+#~ msgid "View Yield"
+#~ msgstr "View Yield"
+#~ msgid "Subscribers"
+#~ msgstr "Subscribers"
+#~ msgid "Description"
+#~ msgstr "Description"
+#~ msgid ""
+#~ "Please browse and select a file, once the file is uploaded, it will be "
+#~ "automatically attached to this discussion."
+#~ msgstr ""
+#~ "Please browse and select a file, once the file is uploaded, it will be "
+#~ "automatically attached to this discussion."
+#~ msgid "Attaching File to Discussion..."
+#~ msgstr "Attaching File to Discussion..."
+#~ msgid "Comments"
+#~ msgstr "Comments"
+#~ msgid "No comments posted in this Discussion."
+#~ msgstr "No comments posted in this Discussion."
+#~ msgid "Reply"
+#~ msgstr "Reply"
+#~ msgid "Post a Comment"
+#~ msgstr "Post a Comment"
+#~ msgid "Your Comment"
+#~ msgstr "Your Comment"
+#~ msgid "submit"
+#~ msgstr "submit"
+#~ msgid "Started by"
+#~ msgstr "Started by"
+#~ msgid "by"
+#~ msgstr "by"
+#~ msgid "Edit"
+#~ msgstr "Edit"
+#~ msgid "Lock"
+#~ msgstr "Lock"
+#~ msgid "Unlock"
+#~ msgstr "Unlock"
+#~ msgid "Restore From Trash"
+#~ msgstr "Restore From Trash"
+#~ msgid "Are you sure you want to restore this discussion?"
+#~ msgstr "Are you sure you want to restore this discussion?"
+#~ msgid "Style #"
+#~ msgstr "Style #"
+#~ msgid "Date Updated"
+#~ msgstr "Date Updated"
+#~ msgid "Copy to this Yield"
+#~ msgstr "Copy to this Yield"
+#~ msgid "Move to this Yield"
+#~ msgstr "Move to this Yield"
+#~ msgid "Copying discussion..."
+#~ msgstr "Copying discussion..."
+#~ msgid "Moving discussion..."
+#~ msgstr "Moving discussion..."
+#~ msgid "Change Avatar"
+#~ msgstr "Change Avatar"
+#~ msgid "Remove Current Avatar"
+#~ msgstr "Remove Current Avatar"
+#~ msgid "Profile Edited"
+#~ msgstr "Profile Edited"
+#~ msgid ""
+#~ "Your profile has been edited. Note, some changes may not be visible until "
+#~ "you re-log in."
+#~ msgstr ""
+#~ "Your profile has been edited. Note, some changes may not be visible until "
+#~ "you re-log in."
+#~ msgid "Log Back In"
+#~ msgstr "Log Back In"
+#~ msgid "or"
+#~ msgstr "or"
+#~ msgid "Continue"
+#~ msgstr "Continue"
+#~ msgid "Additional actions for"
+#~ msgstr "Additional actions for"
+#~ msgid "Edit Profile"
+#~ msgstr "Edit Profile"
+#~ msgid "Change Password"
+#~ msgstr "Change Password"
+#~ msgid "Are you sure you want to delete this user?"
+#~ msgstr "Are you sure you want to delete this user?"
+#~ msgid "Are you sure you want to restore this user?"
+#~ msgstr "Are you sure you want to restore this user?"
+#~ msgid "Please login to proceed."
+#~ msgstr "Please login to proceed."
+#~ msgid "Email password doesn't exists"
+#~ msgstr "Email password doesn't exists"
+#~ msgid "Please enter a valid email"
+#~ msgstr "Please enter a valid email"
+#~ msgid "Password provided is not valid"
+#~ msgstr "Password provided is not valid"
+#~ msgid "Please enter an valid password"
+#~ msgstr "Please enter an valid password"
+#~ msgid "login"
+#~ msgstr "login"
+#~ msgid "Required Information"
+#~ msgstr "Required Information"
+#~ msgid "Role"
+#~ msgstr "Role"
+#~ msgid "Please enter an valid email address."
+#~ msgstr "Please enter an valid email address."
+#~ msgid "Select Role..."
+#~ msgstr "Select Role..."
+#~ msgid "Please select a role."
+#~ msgstr "Please select a role."
+#~ msgid "First Name"
+#~ msgstr "First Name"
+#~ msgid "Last Name"
+#~ msgstr "Last Name"
+#~ msgid "Please enter the First Name."
+#~ msgstr "Please enter the First Name."
+#~ msgid "Please enter the Lastname."
+#~ msgstr "Please enter the Lastname."
+#~ msgid "Title"
+#~ msgstr "Title"
+#~ msgid "Please enter a the Title."
+#~ msgstr "Please enter a the Title."
+#~ msgid "Optional Information"
+#~ msgstr "Optional Information"
+#~ msgid ""
+#~ "The following properties are optional. You can set them now, or at any "
+#~ "point in the future."
+#~ msgstr ""
+#~ "The following properties are optional. You can set them now, or at any "
+#~ "point in the future."
+#~ msgid ""
+#~ "Please specify the account password.  If not entered, the system will "
+#~ "generate a random password."
+#~ msgstr ""
+#~ "Please specify the account password.  If not entered, the system will "
+#~ "generate a random password."
+#~ msgid "Retype"
+#~ msgstr "Retype"
+#~ msgid "Please enter a password."
+#~ msgstr "Please enter a password."
+#~ msgid "Please confirm the password."
+#~ msgstr "Please confirm the password."
+#~ msgid "Phone"
+#~ msgstr "Phone"
+#~ msgid "Phone Ext."
+#~ msgstr "Phone Ext."
+#~ msgid "Please enter the Phone number."
+#~ msgstr "Please enter the Phone number."
+#~ msgid "Please enter the Extension number."
+#~ msgstr "Please enter the Extension number."
+#~ msgid "Mobile"
+#~ msgstr "Mobile"
+#~ msgid "Fax"
+#~ msgstr "Fax"
+#~ msgid "Please enter a Mobile number."
+#~ msgstr "Please enter a Mobile number."
+#~ msgid "Please enter a Fax number."
+#~ msgstr "Please enter a Fax number."
+#~ msgid "Language"
+#~ msgstr "Language"
+#~ msgid "Time Zone"
+#~ msgstr "Time Zone"
+#~ msgid "Please Select..."
+#~ msgstr "Please Select..."
+#~ msgid "Please select a language."
+#~ msgstr "Please select a language."
+#~ msgid "Please select a timezone."
+#~ msgstr "Please select a timezone."
+#~ msgid "AIM"
+#~ msgstr "AIM"
+#~ msgid "MSN"
+#~ msgstr "MSN"
+#~ msgid "Please enter a valid MSN email address."
+#~ msgstr "Please enter a valid MSN email address."
+#~ msgid "Personal Welcome Message"
+#~ msgstr "Personal Welcome Message"
+#~ msgid "Your welcome message is too short."
+#~ msgstr "Your welcome message is too short."
+#~ msgid "User added successfully"
+#~ msgstr "User added successfully"
+#~ msgid "An email has been sent to the new user with their login information."
+#~ msgstr ""
+#~ "An email has been sent to the new user with their login information."
+#~ msgid "New Password"
+#~ msgstr "New Password"
+#~ msgid "Confirm New Password"
+#~ msgstr "Confirm New Password"
+#~ msgid "Please enter a password that matches the New Password field."
+#~ msgstr "Please enter a password that matches the New Password field."
+#~ msgid "Please select the Role."
+#~ msgstr "Please select the Role."
+#~ msgid "Please enter the Last Name."
+#~ msgstr "Please enter the Last Name."
+#~ msgid "Please enter the AIM buddy name."
+#~ msgstr "Please enter the AIM buddy name."
+#~ msgid "User edited successfully"
+#~ msgstr "User edited successfully"
+#~ msgid "Sort"
+#~ msgstr "Sort"
+#~ msgid "Person"
+#~ msgstr "Person"
+#~ msgid "Last Seen"
+#~ msgstr "Last Seen"
+#~ msgid "Restore from Trash"
+#~ msgstr "Restore from Trash"
+#~ msgid "View User Trash"
+#~ msgstr "View User Trash"
+#~ msgid "View User List"
+#~ msgstr "View User List"
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Please enter a valid email address."
+#~ msgid "Please enter the Title."
+#~ msgstr "Please enter the Title."
+#~ msgid "Avatar updated"
+#~ msgstr "Avatar updated"
+#~ msgid " day(s) ago"
+#~ msgstr " day(s) ago"
+#~ msgid "User Avatar"
+#~ msgstr "User Avatar"
+#~ msgid "Department"
+#~ msgstr "Department"
+#~ msgid "Position"
+#~ msgstr "Position"
+#~ msgid "Address Data"
+#~ msgstr "Address Data"
+#~ msgid "Extension"
+#~ msgstr "Extension"
+#~ msgid "Time Data"
+#~ msgstr "Time Data"
+#~ msgid "Local Time"
+#~ msgstr "Local Time"
+#~ msgid "* Timezone was not defined by this user."
+#~ msgstr "* Timezone was not defined by this user."
+#~ msgid "Your Refinements"
+#~ msgstr "Your Refinements"
+#~ msgid "Type:"
+#~ msgstr "Type:"
+#~ msgid "Showing %1$s record(s)."
+#~ msgstr "Showing %1$s record(s)."
+#~ msgid "When:"
+#~ msgstr "When:"
+#~ msgid "Posted By:"
+#~ msgstr "Posted By:"
+#~ msgid "Found %1$s results for <span class='highlight'>%2$s</span>."
+#~ msgstr "Found %1$s results for <span class='highlight'>%2$s</span>."
+#~ msgid "Showing %1$s of %2$s Results."
+#~ msgstr "Showing %1$s of %2$s Results."
+#~ msgid "Record"
+#~ msgstr "Record"
+#~ msgid "Type"
+#~ msgstr "Type"
+#~ msgid "Dated"
+#~ msgstr "Dated"
+#~ msgid "No results found for <span class='highlight'>%1$s</span>."
+#~ msgstr "No results found for <span class='highlight'>%1$s</span>."
+#~ msgid "at"
+#~ msgstr "at"
+#~ msgid "Add Body Type"
+#~ msgstr "Add Body Type"
+#~ msgid "Close"
+#~ msgstr "Close"
+#~ msgid "Please use the fields below to add new types."
+#~ msgstr "Please use the fields below to add new types."
+#~ msgid "Current Body Types"
+#~ msgstr "Current Body Types"
+#~ msgid "New Body Type"
+#~ msgstr "New Body Type"
+#~ msgid "Please enter a style type."
+#~ msgstr "Please enter a style type."
+#~ msgid "add"
+#~ msgstr "add"
+#~ msgid "Add Style Type"
+#~ msgstr "Add Style Type"
+#~ msgid "Body Type"
+#~ msgstr "Body Type"
+#~ msgid "Body Type..."
+#~ msgstr "Body Type..."
+#~ msgid "Loading..."
+#~ msgstr "Loading..."
+#~ msgid "Please select a body type."
+#~ msgstr "Please select a body type."
+#~ msgid "Current Style Types"
+#~ msgstr "Current Style Types"
+#~ msgid "Please select body type to see its current style types."
+#~ msgstr "Please select body type to see its current style types."
+#~ msgid "New Style Type"
+#~ msgstr "New Style Type"
+#~ msgid "Mini Marker"
+#~ msgstr "Mini Marker"
+#~ msgid "Efficiency"
+#~ msgstr "Efficiency"
+#~ msgid "Please enter a valid percent."
+#~ msgstr "Please enter a valid percent."
+#~ msgid "Description (Optional)"
+#~ msgstr "Description (Optional)"
+#~ msgid "Click here to Complete Yield"
+#~ msgstr "Click here to Complete Yield"
+#~ msgid "Complete Yield"
+#~ msgstr "Complete Yield"
+#~ msgid "Unlock Yield"
+#~ msgstr "Unlock Yield"
+#~ msgid "Lock Yield"
+#~ msgstr "Lock Yield"
+#~ msgid "Are you sure you want to delete this yield?"
+#~ msgstr "Are you sure you want to delete this yield?"
+#~ msgid "Are you sure you want to archive this yield?"
+#~ msgstr "Are you sure you want to archive this yield?"
+#~ msgid "Archive Yield"
+#~ msgstr "Archive Yield"
+#~ msgid "Are you sure you want to restore this yield from the trash?"
+#~ msgstr "Are you sure you want to restore this yield from the trash?"
+#~ msgid "Are you sure you want to restore this yield from the Archive?"
+#~ msgstr "Are you sure you want to restore this yield from the Archive?"
+#~ msgid "Restore from Archive"
+#~ msgstr "Restore from Archive"
+#~ msgid "Status"
+#~ msgstr "Status"
+#~ msgid "Date Completed"
+#~ msgstr "Date Completed"
+#~ msgid "Yield Completed"
+#~ msgstr "Yield Completed"
+#~ msgid "Yield Information"
+#~ msgstr "Yield Information"
+#~ msgid "Please enter a valid style number."
+#~ msgstr "Please enter a valid style number."
+#~ msgid "Manage Body Types"
+#~ msgstr "Manage Body Types"
+#~ msgid "&raquo; Manage"
+#~ msgstr "&raquo; Manage"
+#~ msgid "Style Type"
+#~ msgstr "Style Type"
+#~ msgid "Please select the Style Type."
+#~ msgstr "Please select the Style Type."
+#~ msgid "Pattern Card"
+#~ msgstr "Pattern Card"
+#~ msgid "Please select the Pattern Card file."
+#~ msgstr "Please select the Pattern Card file."
+#~ msgid "Pattern"
+#~ msgstr "Pattern"
+#~ msgid "Please select the Pattern file."
+#~ msgstr "Please select the Pattern file."
+#~ msgid "Responsibilities"
+#~ msgstr "Responsibilities"
+#~ msgid "No one is responsible."
+#~ msgstr "No one is responsible."
+#~ msgid "Please choose the User responsible for this yield."
+#~ msgstr "Please choose the User responsible for this yield."
+#~ msgid "Notes (300 character limit)"
+#~ msgstr "Notes (300 character limit)"
+#~ msgid "Current Attachments"
+#~ msgstr "Current Attachments"
+#~ msgid "Uploaded"
+#~ msgstr "Uploaded"
+#~ msgid "Yield Complete Information"
+#~ msgstr "Yield Complete Information"
+#~ msgid "Completed Pattern Card"
+#~ msgstr "Completed Pattern Card"
+#~ msgid "add more"
+#~ msgstr "add more"
+#~ msgid "Complete Notes"
+#~ msgstr "Complete Notes"
+#~ msgid "Your note is too short."
+#~ msgstr "Your note is too short."
+#~ msgid ""
+#~ "Warning: Submitting this form will overwrite the previous stored pattern "
+#~ "card"
+#~ msgstr ""
+#~ "Warning: Submitting this form will overwrite the previous stored pattern "
+#~ "card"
+#~ msgid "Please choose the Use responsible for this yield."
+#~ msgstr "Please choose the Use responsible for this yield."
+#~ msgid "Selected Yields"
+#~ msgstr "Selected Yields"
+#~ msgid "Download all Files"
+#~ msgstr "Download all Files"
+#~ msgid "Delete Selected Yields"
+#~ msgstr "Delete Selected Yields"
+#~ msgid "View Person"
+#~ msgstr "View Person"
+#~ msgid "Are you sure you want to restore this yield?"
+#~ msgstr "Are you sure you want to restore this yield?"
+#~ msgid "Restore Yield"
+#~ msgstr "Restore Yield"
+#~ msgid "Restore Yield from Archive"
+#~ msgstr "Restore Yield from Archive"
+#~ msgid "View Yield Archive"
+#~ msgstr "View Yield Archive"
+#~ msgid "View Yield Trash"
+#~ msgstr "View Yield Trash"
+#~ msgid "View Yields"
+#~ msgstr "View Yields"
+#~ msgid "Important!"
+#~ msgstr "Important!"
+#~ msgid "The following yields are pending longer than 48 hours."
+#~ msgstr "The following yields are pending longer than 48 hours."
+#~ msgid "From"
+#~ msgstr "From"
+#~ msgid "View pending yields"
+#~ msgstr "View pending yields"
+#~ msgid "View All Pending Yields"
+#~ msgstr "View All Pending Yields"
+#~ msgid "Yields (%1$s)"
+#~ msgstr "Yields (%1$s)"
+#~ msgid "Recently Completed"
+#~ msgstr "Recently Completed"
+#~ msgid "Yield Title"
+#~ msgstr "Yield Title"
+#~ msgid "Locked by"
+#~ msgstr "Locked by"
+#~ msgid "Pending for"
+#~ msgstr "Pending for"
+#~ msgid "Completed by"
+#~ msgstr "Completed by"
+#~ msgid "Notes"
+#~ msgstr "Notes"
+#~ msgid "General Notes"
+#~ msgstr "General Notes"
+#~ msgid "Completed Notes"
+#~ msgstr "Completed Notes"
+#~ msgid "Yield Discussion"
+#~ msgstr "Yield Discussion"
+#~ msgid "Associated Discussions"
+#~ msgstr "Associated Discussions"
+#~ msgid "Last Post"
+#~ msgstr "Last Post"
+#~ msgid "Group"
+#~ msgstr "Group"
+#~ msgid "Please enter a valid group name."
+#~ msgstr "Please enter a valid group name."
+#~ msgid "By User"
+#~ msgstr "By User"
+#~ msgid "Status Options"
+#~ msgstr "Status Options"
+#~ msgid "Select Refinement User..."
+#~ msgstr "Select Refinement User..."
+#~ msgid "Select Status..."
+#~ msgstr "Select Status..."
+#~ msgid "Select Date..."
+#~ msgstr "Select Date..."
+#~ msgid "Select Efficiency..."
+#~ msgstr "Select Efficiency..."
+#~ msgid "Enter Date"
+#~ msgstr "Enter Date"
+#~ msgid "Enter Date Range"
+#~ msgstr "Enter Date Range"
+#~ msgid "edit"
+#~ msgstr "edit"
+#~ msgid "Not defined"
+#~ msgstr "Not defined"
+#~ msgid "More activities"
+#~ msgstr "More activities"
+#~ msgid ">Show Details"
+#~ msgstr ">Show Details"
+#~ msgid "ZF Quickstart Language and Time Demo Application"
+#~ msgstr "ZF Quickstart Language and Time Demo Application"
+#~ msgid "Date and Time Information"
+#~ msgstr "Date and Time Information"
+#~ msgid "Current Time Zone is %1$s"
+#~ msgstr "Current Time Zone is %1$s"
+#~ msgid "Today is the %1$s"
+#~ msgstr "Today is the %1$s"
+#~ msgid "Table of Contents"
+#~ msgstr "Table of Contents"
+#~ msgid "Chapter 1. An Introduction to PHP"
+#~ msgstr "Chapter 1. An Introduction to PHP"
+#~ msgid "Chapter 2. Installing Apache and PHP"
+#~ msgstr "Chapter 2. Installing Apache and PHP"
+#~ msgid "Chapter 3. PHP Basics"
+#~ msgstr "Chapter 3. PHP Basics"
+#~ msgid "Chapter 4. Functions"
+#~ msgstr "Chapter 4. Functions"
+#~ msgid "Chapter 5. Arrays"
+#~ msgstr "Chapter 5. Arrays"
+#~ msgid "Please enter the Last Nname."
+#~ msgstr "Please enter the Last Nname."
+#~ msgid "Zend Framework Quickstart Application"
+#~ msgstr "Zend Framework Quickstart Application"
+#~ msgid "Quick Yield Comment"
+#~ msgstr "Quick Yield Comment"
+#~ msgid "Add comment to exisiting discussion or create new."
+#~ msgstr "Add comment to exisiting discussion or create new."
+#~ msgid "Create New Discussion"
+#~ msgstr "Create New Discussion"
+#~ msgid "Add A Comment"
+#~ msgstr "Add A Comment"
+#~ msgid "New discussion created"
+#~ msgstr "New discussion created"
+#~ msgid "New comment added"
+#~ msgstr "New comment added"
+#~ msgid "View Comment"
+#~ msgstr "View Comment"
+#~ msgid "View User"
+#~ msgstr "View User"
+#~ msgid "Recent Comments"
+#~ msgstr "Recent Comments
+#~ msgid "View All Comments"
+#~ msgstr "View All Comments"
+#~ msgid "View All"
+#~ msgstr "View All"
+#~ msgid "View Discussion"
+#~ msgstr "View Discussion"
+#~ msgid "No Comments"
+#~ msgstr "No comments yet"
+#~ msgid "Manage Companies"
+#~ msgstr "Manage Companies"
+#~ msgid "Add New Company"
+#~ msgstr "Add New Company"
+#~ msgid "List Users"
+#~ msgstr "List Users"
+#~ msgid "Form contains errors, try again."
+#~ msgstr "Form contains errors, try again."
+

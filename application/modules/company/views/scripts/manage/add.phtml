@@ -1,0 +1,139 @@
+<?php
+$this->form->setAction($this->serverUrl($this->url()));
+$errors = $this->form->getMessages();
+
+if (count($errors)>0):
+?>
+    <p style="font-weight: bold; color: red;"><?php echo $this->translate->_('Form contains errors, try again.'); ?></p>
+<?php endif; ?>
+
+<div class="content_section clearfix round" id="add_company">
+
+    <form id="<?php echo $this->form->getName(); ?>" action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>">
+        <div class="global_input_wrapper" id="company_form_fields">
+
+            <div class="left val_label">
+                <label for="company_name" class="titletag"><?php echo $this->translate->_('Name'); ?></label>
+            </div> <!-- end left -->
+
+            <div class="right val_label">
+                <label for="company_type" class="titletag"><?php echo $this->translate->_('Company Type'); ?></label>
+            </div> <!-- end left -->
+            
+            <div class="clear"><!-- --></div>
+
+            <div class="left val_class_holder">
+                <div class="input">
+                    <span class="left"><!-- --></span>
+                    <span class="mid">
+                        <input value="<?php echo $this->form->getElement('company_name')->getValue(); ?>" id="company_name" class="val_min_len_2" name="company_name" />
+                    </span>
+                    <span class="right"><!-- --></span>
+                </div> <!-- end input -->
+                <p class="error spacer clear"><?php echo $this->translate->_('Please enter a company name.'); ?></p>
+            </div> <!-- end val_class_holder -->
+
+            <div class="right val_class_holder">
+                <div class="dropdown">
+                    <span class="left"><!-- --></span>
+                    <span class="dropdown_label mid" id="company_type_label"><?php echo $this->form->getElement('company_type')->getValue() == '' ? $this->translate->_('Select Company Type...') : ucwords(str_replace(array('_'), array(' '), $this->form->getElement('company_type')->getValue())); ?></span>
+                    <select id="company_type" class="val_dropdown" name="<?php echo $this->form->getElement('company_type')->getName(); ?>">
+                        <option value="" label="<?php echo $this->translate->_('Select Company Type...'); ?>"><?php echo $this->translate->_('Select Company Type...'); ?></option>
+                        <?php foreach($this->types as $id => $value): ?>
+                            <option value="<?php echo $id; ?>" label="<?php echo $value; ?>"<?php echo ($this->form->getElement('company_type')->getValue() == $id) ? ' selected="selected"' : ''; ?>><?php echo $value; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <span class="right"><!-- --></span>
+                </div><!-- end dropdown -->
+                <p class="error spacer clear"<?php echo isset($errorMessages['company_type']) ? ' style="text-indent: 0px;"' : ''; ?>>
+                <?php if (isset($errorMessages['company_type'])): ?>
+                    <?php foreach($errorMessages['company_type'] as $error): ?>
+                        <?php echo $error; ?><br />
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <?php echo $this->translate->_('Please select a company type.'); ?>
+                <?php endif; ?>
+                </p>
+            </div> <!-- end val_class_holder -->
+
+            <div class="clear"><!-- --></div>
+
+            <div class="left val_label">
+                <label for="company_homepage" class="titletag"><?php echo $this->translate->_('Homepage'); ?></label>
+            </div> <!-- end right -->
+
+            <div class="right val_label">
+                <label for="user_phone" class="titletag"><?php echo $this->translate->_('Phone'); ?></label>
+            </div> <!-- end left -->
+
+            <div class="left val_class_holder">
+                <div class="input">
+                    <span class="left"><!-- --></span>
+                    <span class="mid">
+                        <?php $homepage_val = $this->form->getElement('company_homepage')->getValue();?>
+                        <input value="<?php echo ($homepage_val) ? $homepage_val : ''?>" id="company_homepage" class="val_url val_nr" name="company_homepage" />
+                        </span>
+                        <span class="right"><!-- --></span>
+                </div> <!-- end input -->
+                <p class="error spacer clear"><?php echo $this->translate->_('Please enter a valid url.'); ?></p>
+            </div> <!-- end val_class_holder -->
+
+            <div class="right val_class_holder">
+                <div class="input">
+                    <span class="left"><!-- --></span>
+                    <span class="mid">
+                        <input value="<?php echo $this->form->getElement('company_phone')->getValue(); ?>" id="company_phone" class="val_phone val_nr" name="company_phone" />
+                    </span>
+                    <span class="right"><!-- --></span>
+                </div> <!-- end input -->
+                <p class="error spacer clear"><?php echo $this->translate->_('Please enter a valid Phone number.'); ?></p>
+            </div> <!-- end val_class_holder -->
+
+            <div class="clear"><!-- --></div>
+
+            <div class="val_label">
+                <label for="user_local" class="titletag"><?php echo $this->translate->_('Fax'); ?></label>
+            </div> <!-- end right -->
+
+            <div class="val_class_holder">
+                <div class="input">
+                    <span class="left"><!-- --></span>
+                    <span class="mid">
+                        <input value="<?php echo $this->form->getElement('company_fax')->getValue(); ?>" id="company_fax" class="val_phone val_nr" name="company_fax" />
+                    </span>
+                    <span class="right"><!-- --></span>
+                </div> <!-- end input -->
+                <p class="error spacer clear"><?php echo $this->translate->_('Please enter a valid Fax number.'); ?></p>
+            </div> <!-- end val_class_holder -->
+
+            <div class="clear"><!-- --></div>
+
+            <div class="val_label">
+                <label for="company_address" class="titletag"><?php echo $this->translate->_('Address'); ?></label>
+            </div>
+
+            <div class="val_class_holder">
+                <div class="textarea">
+                    <span class="left"><!-- --></span>
+                    <span class="mid">
+                        <textarea cols="0" rows="0" class="val_nr" id="company_address" name="company_address"><?php echo $this->form->getElement('company_address')->getValue(); ?></textarea>
+                    </span>
+                    <span class="right"><!-- --></span>
+                </div> <!-- end textarea -->
+                <p class="error spacer clear"></p>
+            </div> <!-- end val_class_holder -->
+
+            <div class="clear"><!-- --></div>
+
+            <div class="btm-runner clearfix">
+                <ul>
+                    <li class="button no_right_margin"><input type="submit" class="submit" value="<?php echo $this->translate->_('submit'); ?>" id="submit_company_add"  /></li>
+                    <li class="link"><a title="<?php echo $this->translate->_('Cancel'); ?>" class="inline-link" href="<?php echo $this->serverUrl('/'); ?>"><?php echo $this->translate->_('Cancel'); ?></a></li>
+                </ul>
+            </div> <!-- end btm-runner -->
+
+        </div> <!-- end global_input_wrapper -->
+    </form> <!-- end add_company_form -->
+
+</div>
+

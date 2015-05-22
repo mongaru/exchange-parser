@@ -1,0 +1,113 @@
+<section class="main lft grid35" >
+                        <?php $status='';
+                            $label = 'trash';
+                         ?>
+                        <?php if($this->current_user_status=='active') {
+                            $status  = 'inactive';
+                            $label = 'trash';
+                        } else {
+                            $label = 'list';
+                        }?>
+               
+                    <header>
+                        <h3><?php echo $this->translate->_('Manage Users'); ?> & <?php echo $this->translate->_('Groups'); ?></h3>
+                    </header>
+                    
+                    <article class="grid27 rgt">
+                        <header>
+                            <p>
+ <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'add')): ?>                                  
+                                <button type="button" class="blue" onclick="window.location.href = '/people/user/add'"><?php echo $this->translate->_('Add User'); ?></button>
+<?php endif; ?>
+                            </p>
+                        </header> 
+                        
+                        <table>
+
+                              <colgroup>
+                                <col class="grid23" />
+                                <col class="grid4" />
+                              </colgroup>
+
+                        
+                            <thead>
+                                <tr>
+                                    <th><?php echo $this->translate->_('Name'); ?></th>
+                                    <th><?php echo $this->translate->_('Actions'); ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+    <?php if(count($this->paginator) > 0  ) :  ?>
+                                <?php foreach ($this->paginator as $record) :?>
+
+                                <tr>
+                                    <td><a href="<?php echo $this->serverUrl('/people/user/view/id/'. $record->ID_user) ?>"><?php echo  ucwords($record->user_firstname).' '.ucwords($record->user_surname); ?></a></td>
+                                    <td class="txtCntr">
+
+ <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'edit')): ?>                                          
+                                        <a class="tip icon button lft" href="<?php echo $this->serverUrl('/people/user/edit/id/'. $record->ID_user) ?>" title="<?php echo $this->translate->_('Edit'); ?>"><i class="icon-pencil"></i></a>
+<?php endif; ?>
+ <?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'people_user', 'restore')): ?>  
+                                        <?php if($status  != 'inactive') : ?>
+                                        <a class="tip icon button lft" href="<?php echo $this->serverUrl('/people/user/restore/id/'. $record->ID_user) ?>" title="<?php echo $this->translate->_('Restore'); ?>"><i class="icon-redo"></i></a>
+                                        <?php else : ?>
+                                        <a class="tip icon button lft" href="<?php echo $this->serverUrl('/people/user/trash/id/'. $record->ID_user) ?>" title="<?php echo $this->translate->_('Delete'); ?>"><i class="icon-remove"></i></a>
+                                        <?php endif; ?> 
+<?php endif; ?>                                   
+                                        
+
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+<?php else :  ?>
+                                    <tr>
+                                    <td><?php echo $this->translate->_('Nobody Assigned in this Group').'..'; ?></td>
+                                    <td class="txtCntr">
+                                     </td>
+                                </tr>
+<?php endif; ?>
+                            </tbody>
+                        </table>
+
+                            <a class="btn btn_blue rgt" href="<?php echo $this->serverUrl('/people/user/index/groups/'.$this->current_group.'/status/'.$status) ?>"><?php echo $this->translate->_('View  User '.$label); ?></a>
+                    </article>
+
+                    
+                    <article class="grid7 lft">
+                        <header>
+                            <!--
+                            <h4 class="darkTitle">
+                                Groups
+                                <a href="#" class="rgt"><small>Add</small></a>
+                                <div class="clearfix"></div>
+                            </h4>
+                            -->
+                            <p>
+<?php if($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'index')) :  ?>
+                                <button type="button" class="default manage_groups_btn"  onclick="window.location.href = '/company/manage'"><?php echo $this->translate->_('Manage Groups'); ?></button>
+<?php endif; ?>                                
+
+                            </p>
+                        </header>
+                        
+                        <ul class="selectable_list">
+                        
+                                <?php foreach ($this->companies as $record) :?>
+                                
+                                    <?php if($this->Grouporder == $record->ID_company) : ?>
+                                            <li><a class = "active groups" href="<?php echo $this->serverUrl('/people/user/index/groups/'.$record->ID_company); ?>"><?php echo $record->company_name; ?></a></li>
+
+                                    <?php else : ?>
+                                        <li><a href="<?php echo $this->serverUrl('/people/user/index/groups/'.$record->ID_company); ?>" class="groups"><?php echo $record->company_name; ?></a></li>
+
+                                    <?php endif; ?>
+                                                                   
+                                <?php endforeach; ?>
+                        </ul><!-- selectable_list end -->
+                        <p>&nbsp;</p>
+                    
+                </article>
+<div class="clearfix"></div>
+
+                  </section>

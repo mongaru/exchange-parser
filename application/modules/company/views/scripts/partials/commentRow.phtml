@@ -1,0 +1,22 @@
+<?php if ($this->counter == 1): ?>
+<div class="item clearfix first">
+    <?php if ($this->size): ?>
+    <span class="qd_head"><?php echo $this->translate->_('Recent Comments'); ?> &raquo; <a href="<?php echo $this->dis_url; ?>" title="<?php echo $this->translate->_('View All Comments'); ?>"><?php echo $this->translate->_('View All'); ?></a></span>
+    <?php else: ?> 
+    <span class="qd_head"><?php echo $this->translate->_('Recent Comments'); ?> &raquo; <a href="<?php echo $this->dis_url; ?>" title="<?php echo $this->translate->_('View Discussion'); ?>"><?php echo $this->translate->_('View Discussion'); ?></a></span>
+    <?php endif; ?>
+</div> <!-- end item -->
+<?php endif ?>
+
+<div class="clear"><!-- --></div>
+
+<div class="item clearfix last">
+    <?php if ($this->size): ?>
+        <span class="qd_permalink"><a href="<?php echo $this->dis_url.'#comment_'.$this->com_id; ?>" title="<?php echo $this->translate->_('View Comment'); ?>">#<?php echo $this->com_id; ?></a></span>
+    <?php endif; ?>
+    <span class="qd_author_time"><a title="<?php echo $this->translate->_('View User'); ?>" class="inline-link" href="<?php echo $this->user_url; ?>"><?php echo $this->com_author; ?></a> said <?php echo $this->com_when; ?></span>
+	<div class="clear"><!-- --></div>
+    <span class="qd_log_head"><?php echo $this->com_msg; ?></span>
+</div> <!-- end item -->
+
+

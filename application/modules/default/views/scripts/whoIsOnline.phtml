@@ -1,0 +1,35 @@
+<aside class=>
+    <section class="users_online banner">
+        <header>
+            <h4 class="darkTitle"><?php echo $this->translate->_('Who Is Online?'); ?></h4>
+            <span><?php echo $this->translate->_('People who were online in the last 15 minutes.'); ?></span>
+        </header>
+        
+        <ul>
+            <li>
+                <?php foreach($this->users as $user): ?>
+                    <?php
+                        $avatar = new People_Model_File();
+                        $avatar->find($user->user_auth->user_avatar_file);
+                        if ($avatar->getfile_full_path() != '')
+                        {
+                            $imageLib = Amedia_ImageLib::getInstance();
+                            $imageLib->setSourceFile($avatar->getfile_full_path(), $avatar->getfile_name());
+                            $avatarFile = $this->serverUrl($imageLib->resize('16x16')->getUrl());
+                        }
+                        else
+                        {
+                            $avatarFile = $this->serverUrl('/images/avatars/default16x16.gif');
+                        }
+                    ?>
+
+                    <a href="<?php echo $this->serverUrl('/people/user/view/id/' . $user->ID_user); ?>">
+                        <i class="avatar"><img src="<?php echo $avatarFile; ?>" alt="" /></i>
+                        <span><?php echo $user->user_firstname . ' ' . $user->user_surname; ?></span>
+                    </a>
+                        
+                <?php endforeach; ?>
+           </li>
+        </ul>
+    </section><!-- users_online end -->
+</aside>

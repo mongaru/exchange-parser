@@ -1,0 +1,403 @@
+					<article class = "main grid24 lft">
+						<header>
+							<h3><?php echo $this->translate->_('Roles Settings'); ?></h3>
+						</header>
+						
+						
+						<script type="text/javascript">
+							$(document).ready(function(){
+								$('#add_role_button').click(function(){
+									$(this).fadeOut(50).next().next().slideDown(200);
+									return false;
+								});
+
+								$('.edit_role_button').click(function(){
+									$('#add_role_button').fadeOut(50).next().next().slideDown(200);
+									//$('#add_role_button').fadeToggle(50);
+									$('form#RoleForm .hide').slideDown(200);
+									
+									return false;
+								});		
+
+				
+								$('.icon.edit.button').click(function(){
+									$('#add_role_button').fadeOut(50);
+									$('form#RoleForm .hide').slideDown(200);
+									return false;
+								});
+
+
+								$('#finishedadd').click(function(){
+									if($('#RoleForm').valid()){
+											$('#RoleForm').submit();
+//											$('form').clearForm();
+											$(this).closest('.hide').slideToggle(300);
+											$('#add_role_button').fadeToggle(50);
+									}									
+								})
+								$('form button.default').click(function(){
+									$('form').clearForm();
+									$(this).closest('.hide').slideToggle(300);
+									$('#add_role_button').fadeToggle(50);
+
+									return false;
+								});								
+							});
+						</script>
+						
+    <form id="<?php echo $this->form->getName(); ?>" action="" method="<?php echo $this->form->getMethod(); ?>">
+    	<input type="hidden" id = "id_privileges" name="id_privileges" />
+							<button type="button" class="blue" id="add_role_button"><?php echo $this->translate->_('Add a Role'); ?></button>
+							<div class="clearfix"><!--&nbsp--></div>
+							
+							<div class="hide">
+								<div class="grid10 blk lft ajust">
+									<label for="iRoleName"><?php echo $this->translate->_('Role Name'); ?></label>
+									<input type="text" id="iRoleName" name="iRoleName"/>
+									<p><br></p>
+
+								<label for="department"><?php echo $this->translate->_('Department :'); ?></label>			
+								<select name="department"  id="department">
+		                            <option value=""><?php echo $this->translate->_('Select Department'); ?>...</option>
+		                            <option value="admins"><?php echo $this->translate->_('Admins'); ?></option>
+		                            <option value="vendors"><?php echo $this->translate->_('Vendors'); ?></option>
+		                            <option value="costing"><?php echo $this->translate->_('Costing'); ?></option>
+		                            <option value="sales"><?php echo $this->translate->_('Sales'); ?></option>
+		                            <option value="yields"><?php echo $this->translate->_('Yields'); ?></option>
+		                        </select>
+								</div>
+												
+								<div class="grid24 blk rgt ajust">
+									<div class="blk main ">
+										<label class="blk"><?php echo $this->translate->_('User'); ?> & <?php echo $this->translate->_('Groups'); ?></label>
+										
+										<span>
+											<input type="checkbox" name="checks_user[]" id="manage_users" value="manage_users" class="chk_button" />
+											<label for="manage_users" class="txtCntr" ><?php echo $this->translate->_('Manage Users'); ?></label>
+											
+											<!-- <i class="icon info iBlk" title="">Help</i> -->
+										</span>
+										
+										<span>
+											<input type="checkbox" name="checks_user[]" id="manage_groups" value="manage_groups" class="chk_button"/>
+											<label id ="cbox" for="manage_groups" class="txtCntr"><?php echo $this->translate->_('Manage Groups'); ?></label>
+											
+											<!-- <i class="icon info iBlk" title="">Help</i> -->
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_user[]" id="read_users" value="read_users" class="chk_button" />
+											<label for="read_users" class="txtCntr manage_users_d"><?php echo $this->translate->_('Read Users'); ?></label>
+											
+											<!-- <i class="icon info iBlk" title="">Help</i> -->
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_user[]" id="add_users" value="add_users" class="chk_button" />
+											<label for="add_users" class="txtCntr manage_users_d"><?php echo $this->translate->_('Add Users'); ?></label>
+											
+											<!-- <i class="icon info iBlk" title="">Help</i> -->
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_user[]" id="add_groups" value="add_groups" class="chk_button " />
+											<label for="add_groups" class="txtCntr manage_groups_d"><?php echo $this->translate->_('Add Groups'); ?></label>
+											
+											<!-- <i class="icon info iBlk" title="">Help</i> -->
+										</span>
+
+
+										<span>
+											<input type="checkbox" name="checks_user[]" id="read_groups" value="read_groups" class="chk_button "/>
+											<label for="read_groups" class="txtCntr manage_groups_d"><?php echo $this->translate->_('Read Groups'); ?></label>
+											
+											<!-- <i class="icon info iBlk" title="">Help</i> -->
+										</span>
+									</div>
+									
+	<p></p><div class="clearfix"></div>									
+									<div class="blk main">
+										<label class="blk"><?php echo $this->translate->_('Setup'); ?></label>
+										
+						<!--				<span>
+											<input type="checkbox" name="checks_setup[]" id="general_settings" value="general_settings" class="chk_button" />
+											<label for="general_settings" class="txtCntr" ><?php echo $this->translate->_('General Settings'); ?></label>
+										</span>-->
+
+										<span>
+											<input type="checkbox" name="checks_setup[]" id="roles" value="roles" class="chk_button" />
+											<label for="roles" class="txtCntr" ><?php echo $this->translate->_('Roles'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_setup[]" id="yield" value="yield" class="chk_button " />
+											<label for="yield" class="txtCntr yields_manage_d" ><?php echo $this->translate->_('Yields'); ?></label>
+									</span>
+
+									</div>
+									<p></p>
+									<div class="clearfix"></div>
+<!--
+									<div class="blk">
+										<label class="blk"><?php echo $this->translate->_('Discussions'); ?></label>
+										
+										<span>
+											<input type="checkbox" name="checks_discussions[]" id="discussions_view" value="discussions_view" class="chk_button" />
+											<label for="discussions_view" class="txtCntr" ><?php echo $this->translate->_('View Discussions'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_discussions[]" id="discussions_add" value="discussions_add" class="chk_button" />
+											<label for="discussions_add" class="txtCntr" ><?php echo $this->translate->_('Add Discussions'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_discussions[]" id="discussions_manage" value="discussions_manage" class="chk_button" />
+											<label for="discussions_manage" class="txtCntr" ><?php echo $this->translate->_('Manage Discussions'); ?></label>
+										</span>
+
+									</div>
+
+-->
+									<div class="blk main">
+										<label class="blk"><?php echo $this->translate->_('Yields'); ?></label>
+
+										<span>
+											<input type="checkbox" name="yields[]" id="yields_add" value="yields_add" class="chk_button" />
+											<label for="yields_add" class="txtCntr yields_manage_d" ><?php echo $this->translate->_('Add Yields'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="yields[]" id="yields_complete" value="yields_complete" class="chk_button" />
+											<label for="yields_complete" class="txtCntr yields_manage_d" ><?php echo $this->translate->_('Manage Complete Yield'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="yields[]" id="yields_archived" value="yields_archived" class="chk_button" />
+											<label for="yields_archived" class="txtCntr yields_manage_d" ><?php echo $this->translate->_('Manage Archived Yield'); ?></label>
+										</span>
+
+
+										<span>
+											<input type="checkbox" name="yields[]" id="yields_view" value="yields_view" class="chk_button" />
+											<label for="yields_view" class="txtCntr yields_manage_d" ><?php echo $this->translate->_('View All Yields'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="yields[]" id="yields_manage" value="yields_manage" class="chk_button" />
+											<label for="yields_manage" class="txtCntr" ><?php echo $this->translate->_('Manage Yields'); ?></label>
+										</span>
+
+
+
+									</div>
+
+<!--
+
+									<div class="blk">
+										<label class="blk"><?php echo $this->translate->_('Sales'); ?></label>
+										
+										<span>
+											<input type="checkbox" name="checks_sales[]" id="sales_view" value="sales_view" class="chk_button" />
+											<label for="sales_view" class="txtCntr" ><?php echo $this->translate->_('View Sales'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_sales[]" id="sales_add" value="sales_add" class="chk_button" />
+											<label for="sales_add" class="txtCntr" ><?php echo $this->translate->_('Add Sales'); ?></label>
+										</span>
+
+										<span>
+											<input type="checkbox" name="checks_sales[]" id="sales_manage" value="sales_manage" class="chk_button" />
+											<label for="sales_manage" class="txtCntr" ><?php echo $this->translate->_('Sales Manage'); ?></label>
+										</span>
+									</div>
+									-->
+									<p></p> <div class="clearfix"></div>
+									<div class="blk main">
+										<label class="blk"><?php echo $this->translate->_('Costing Pack Module'); ?></label>
+										
+										<div class="grid9 iBlk" style="vertical-align:top;">
+											<span class="blk">
+												<input type="checkbox" name="checks_costing[]" id="cp_list" value="cp_list" class="chk_button" />
+												<label for="cp_list" class="grid20 txtCntr"><?php echo $this->translate->_('View Costing Pack'); ?></label>
+											</span>
+
+											<span class="blk">
+												<input type="checkbox" name="checks_costing[]" id="cp_add" value="cp_add" class="chk_button" />
+												<label for="cp_add" class="grid20 txtCntr"><?php echo $this->translate->_('Add Costing Pack'); ?></label>
+											</span>
+
+											<span class="blk">
+												<input type="checkbox" name="checks_costing[]" id="cp_edit" value="cp_edit" class="chk_button" />
+												<label for="cp_edit" class="grid20 txtCntr"><?php echo $this->translate->_('Edit Costing Pack'); ?></label>
+											</span>
+
+											<span class="blk">
+												<input type="checkbox" name="checks_costing[]" id="cp_copy" value="cp_copy" class="chk_button" />
+												<label for="cp_copy" class="grid20 txtCntr"><?php echo $this->translate->_('Copy Costing Pack'); ?></label>
+											</span>
+									
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_delete" value="cp_delete" class="chk_button" />
+												<label for="cp_delete" class="grid20 txtCntr"><?php echo $this->translate->_('Delete Costing Pack'); ?></label>
+											</span>
+
+
+
+		
+										</div>
+
+										
+										<div class="grid9 iBlk" style="vertical-align:top;">
+
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_sendTovendor" value="cp_sendTovendor" class="chk_button" />
+												<label for="cp_sendTovendor" class="grid20 txtCntr"><?php echo $this->translate->_('Send Costing Pack to Vendors'); ?></label>
+											</span>
+
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_archive" value="cp_archive" class="chk_button" />
+												<label for="cp_archive" class="grid20 txtCntr"><?php echo $this->translate->_('Archive Costing Pack'); ?></label>
+											</span>
+
+											<span class="blk">
+												<input type="checkbox" name="checks_costing[]" id="cp_manage" value="cp_manage" class="chk_button" />
+												<label for="cp_manage" class="grid20 txtCntr"> <?php echo $this->translate->_('Manage Costing Pack'); ?> </label>
+											</span>
+
+											<span class="blk">
+												<input type="checkbox" name="checks_costing[]" id="cp_print" value="cp_print" class="chk_button" />
+												<label for="cp_print" class="grid20 txtCntr"><?php echo $this->translate->_('Print Costing Pack'); ?></label>
+											</span>
+
+
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_view_bid" value="cp_view_bid" class="chk_button" />
+												<label for="cp_view_bid" class="grid20 txtCntr"><?php echo $this->translate->_('View Bid'); ?></label>
+											</span>											
+
+
+										</div>
+
+										
+										<div class="grid9 iBlk" style="vertical-align:top;">
+
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_manage_bid" value="cp_manage_bid" class="chk_button" />
+												<label for="cp_manage_bid" class="grid20 txtCntr"><?php echo $this->translate->_('Manage Bid'); ?></label>
+											</span>
+																						
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_submit_bid" value="cp_submit_bid" class="chk_button" />
+												<label for="cp_submit_bid" class="grid20 txtCntr isVendor_d"><?php echo $this->translate->_('Submit Bid'); ?></label>
+											</span>
+											
+		
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_accept" value="cp_accept" class="chk_button" />
+												<label for="cp_accept" class="grid20 txtCntr"><?php echo $this->translate->_('Accept/ Unaccept Bid'); ?></label>
+											</span>
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="cp_print_bid" value="cp_print_bid" class="chk_button" />
+												<label for="cp_print_bid" class="grid20 txtCntr isVendor_d"><?php echo $this->translate->_('Print bids'); ?></label>
+											</span>
+
+
+
+											<span>
+												<input type="checkbox" name="checks_costing[]" id="isVendor" value="isVendor" class="chk_button" />
+												<label for="isVendor" class="grid20 txtCntr"><?php echo $this->translate->_('Is Vendor'); ?></label>
+											</span>
+
+										</div>
+									</div>
+
+								<p></p> <div class="clearfix"></div>
+
+									<div class="blk main">
+										<label class="blk"><?php echo $this->translate->_('Cost Sheet Module'); ?></label>
+										
+										<div class="grid9 iBlk" style="vertical-align:top;">
+											<span>
+												<input type="checkbox" name="checks_costsheet[]" id="costsheet_list_colorlayout" value="costsheet_list_colorlayout" class="chk_button" />
+												<label for="costsheet_list_colorlayout" class="grid20 txtCntr costsheet_manage_colorlayout_d"><?php echo $this->translate->_('List Color Layout'); ?></label>
+											</span>
+
+											<span>
+												<input type="checkbox" name="checks_costsheet[]" id="costsheet_manage_colorlayout" value="costsheet_manage_colorlayout" class="chk_button" />
+												<label for="costsheet_manage_colorlayout" class="grid20 txtCntr "><?php echo $this->translate->_('Manage Color Layout'); ?></label>
+											</span>
+										
+										</div>
+										
+										
+										<div class="grid9 iBlk" style="vertical-align:top;">
+											
+											<span>
+												<input type="checkbox" name="checks_costsheet[]" id="costsheet_manage_layout14" value="costsheet_manage_layout14" class="chk_button" />
+												<label for="costsheet_manage_layout14" class="grid20 txtCntr costsheet_manage_colorlayout_d"><?php echo $this->translate->_('Manage Layout #14'); ?></label>
+											</span>
+											
+										</div>
+										
+										
+										<div class="grid9 iBlk" style="vertical-align:top;">
+											<span>
+												<input type="checkbox" name="checks_costsheet[]" id="costsheet_manage_import" value="costsheet_manage_import" class="chk_button" />
+												<label for="costsheet_manage_import" class="grid20 txtCntr costsheet_manage_colorlayout_d"><?php echo $this->translate->_('Manage Import Layout'); ?></label>
+											</span>
+											
+											<span>
+												<input type="checkbox" name="checks_costsheet[]" id="costsheet_manage_mexico" value="costsheet_manage_mexico" class="chk_button" />
+												<label for="costsheet_manage_mexico" class="grid20 txtCntr costsheet_manage_colorlayout_d"><?php echo $this->translate->_('Manage Mexico Layout'); ?></label>
+											</span>
+											
+											</span>
+										</div>										
+									</div>
+								</div>
+								
+								<div class="clearfix"><!--&nbsp--></div>
+								
+								
+								<div class="bottom">
+									<button id = "finishedadd" class="blue rgt"><?php echo $this->translate->_('Finished Adding Role'); ?></button>
+									<button type="button" class="default lft"><?php echo $this->translate->_('Cancel'); ?></button>
+									
+									<div class="clearfix"><!--&nbsp--></div>
+								</div><!-- bottom end -->
+							</div><!-- hide end -->
+						</form>
+						
+						
+						<table>
+							<colgroup>
+								<col class="grid28" />
+								<col class="grid7" />
+							</colgroup>
+						
+							<thead>
+								<tr>
+									<th><?php echo $this->translate->_('Name'); ?></th>
+									<th><?php echo $this->translate->_('Actions'); ?></th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<?php for ($i=0; $i < count($this->roles) ; $i++): ?>
+								<tr >
+									<td >
+									<a id="rolname<?php echo $this->roles[$i]->id_privileges; ?>"><?php echo ucwords(str_replace("_"," ",$this->roles[$i]->privileges_rol_name)); ?></a>	
+									</td>
+									<td class="txtCntr">
+										<a class="tip icon button lft edit_role_button" id="" href="javascript:;" onclick="Role.loadRole(<?php echo $this->roles[$i]->id_privileges; ?>)" title="Edit"><i class="icon-pencil"></i></a>
+										<a class="tip icon button lft" href="<?php echo $this->serverUrl('/people/roles/delete/id/').$this->roles[$i]->id_privileges; ?>" title="Delete"><i class="icon-remove"></i></a>
+									</td>
+								</tr>
+							<?php endfor; ?>
+							</tbody>
+						</table>
+						
+						
+					</article>

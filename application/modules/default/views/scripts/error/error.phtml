@@ -1,0 +1,28 @@
+<h3><?php echo $this->translate->_("Or maybe, you've reached a page that does not exist. Please stop blaming the ninjas."); ?></h3>
+<div class="404image" id="ninjas">
+    <img src="<?php echo $this->serverUrl('/images/error404/error404ninjas.gif'); ?>" width="962px" alt="<?php echo $this->translate->_('Error 404 Ninjas'); ?>" />
+</div> <!-- end ninjas -->
+
+<div class="padding_wrapper">
+    <h5><?php echo $this->translate->_('You\'ll probably be able to find the information you need by using th menu at the top of this page. If you feel there is something wrong with this application, you may get some help by emailing <a href="http://amediacreative.com" title="Visit Amedia Creative">Amedia Creative</a> at <a href="wecare@amediacreative.com" title="Email Amedia Creative">wecare@amediacreative.com</a>. Thank you.'); ?></h5>
+</div> <!-- end padding_wrapper -->
+<div class="clear"><!-- --></div>
+
+<?php if (in_array(APPLICATION_ENV, array('qa', 'rnd', 'development'))): ?>
+<h2>An error occurred</h2>
+<h3><?php echo $this->message ?></h3>
+
+<h3>Exception information:</h3>
+<p><b>Message:</b> <?php echo $this->exception->getMessage() ?></p>
+<p>&nbsp;<br /></p>
+
+<h3>Stack trace:</h3>
+<pre><?php echo $this->exception->getTraceAsString() ?></pre>
+<p>&nbsp;<br /></p>
+
+<h3>Request Parameters:</h3>
+<pre><?php echo var_export($this->request->getParams(), true) ?></pre>
+<p>&nbsp;<br /></p>
+
+<div class="clear"><!-- --></div>
+<?php endif; ?>

@@ -1,0 +1,54 @@
+<?php
+if ($this->userInfo->user_auth->user_avatar_file != '')
+{
+    $avatar = new People_Model_File();
+    $avatar->find($this->userInfo->user_auth->user_avatar_file);
+    $imageLib = Amedia_ImageLib::getInstance();
+    $imageLib->setSourceFile($avatar->getfile_full_path(), $avatar->getfile_name());
+    $avatarFile = $this->serverUrl($imageLib->resize('64x64')->getUrl());
+}
+else
+{
+    $avatarFile = $this->serverUrl('/images/avatars/default64x64.gif');
+}
+?>
+<div class="lightbox_displayed" id="lightbox_change_avatar">
+
+    <div class="section">
+
+        <div class="title"><h2><?php echo $this->translate->_('Change Avatar'); ?></h2></div>
+        <div class="close">
+            <a href="javascript://" onclick="javascript: close_lightbox('#lightbox_change_avatar', '#lightbox_overlay', 0);" title="<?php echo $this->translate->_('Go Back'); ?>">X</a>
+        </div> <!-- end close -->
+
+        <div class="clear"><!-- --></div>
+        <div class="top_left left"><!-- --></div>
+        <div class="top_right right"><!-- --></div>
+        <div class="clear"><!-- --></div>
+        <div class="mid">
+            <div class="padding_wrapper">
+                <div class="v-list" id="delete_avatar">
+                    <div class="item last clearfix">
+                        <span class="log_icon avatar-img avatar64x64"><img id="lbuserAvatar" height="64" width="64" alt="" src="<?php echo $avatarFile; ?>"/></span>
+                        <span class="log_head icon16x16-img remove"><a rel="<?php echo $this->userInfo->ID_user; ?>" class="inline-link" title="<?php echo $this->translate->_('Remove Current Avatar'); ?>" href="javascript://" onclick="javascript: removeAvatarFile(this);"><?php echo $this->translate->_('Remove Current Avatar'); ?></a></span>
+                    </div> <!-- end item -->
+                </div> <!-- end v-list -->
+
+                <div class="hr"><hr /></div>
+                <div class="clear"></div>
+
+                <div class="global_input_wrapper val_class_holder">
+                    <input type="hidden" id="avatar_file" value="" />
+                    <input type="hidden" id="ID_user" value="<?php echo $this->userInfo->ID_user; ?>" id="ID_user" />
+                    <iframe class="upload_file" id="avatar_uploader" name="avatar_uploader" src="<?php echo $this->serverUrl('/uploader/index/id//ucb/attachFile/rcb/removeFile'); ?>" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                </div> <!-- end global_input_wrapper -->
+
+                <div class="clear"><!-- --></div>
+            </div> <!-- end padding_wrapper -->
+        </div> <!-- end mid -->
+        <div class="btm_left left"><!-- --></div>
+        <div class="btm_right right"><!-- --></div>
+        <div class="clear spacer"><!-- --></div>
+    </div> <!-- end section -->
+
+</div> <!-- end lightbox_displayed -->

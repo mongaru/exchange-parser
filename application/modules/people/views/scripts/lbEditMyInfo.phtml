@@ -1,0 +1,21 @@
+<div class="lightbox_displayed" id="lightbox_edit_myinfo">
+    <div class="section">
+        <div class="title"><h2><?php echo $this->translate->_('Profile Edited'); ?></h2></div>
+        <div class="close">
+            <a href="<?php echo $this->serverUrl('/people/user/view/id/' . $this->lbUser->ID_user . '/edited/yes'); ?>" title="<?php echo $this->translate->_('Go Back'); ?>">X</a>
+        </div> <!-- end close -->
+        <div class="clear"><!-- --></div>
+        <div class="top_left left"><!-- --></div>
+        <div class="top_right right"><!-- --></div>
+        <div class="clear"><!-- --></div>
+        <div class="mid">
+            <div class="padding_wrapper">
+                <p><?php echo $this->translate->_('Your profile has been edited. Note, some changes may not be visible until you re-log in.'); ?></p>
+                <p><a href="<?php echo $this->serverUrl('/logout'); ?>"><?php echo $this->translate->_('Log Back In')?></a> <?php echo $this->translate->_('or')?> <a href="<?php echo $this->serverUrl('/people/user/view/id/' . $this->lbUser->ID_user . '/edited/yes'); ?>"><?php echo $this->translate->_('Continue')?></a></p>
+            </div> <!-- end padding_wrapper -->
+        </div> <!-- end mid -->
+        <div class="btm_left left"><!-- --></div>
+        <div class="btm_right right"><!-- --></div>
+        <div class="clear spacer"><!-- --></div>
+    </div> <!-- end section -->
+</div> <!-- end lightbox_displayed -->

@@ -1,0 +1,59 @@
+<section class="grid11 fluid " id="add_avatar">
+
+    <header>
+        <h3 class="grid13 cntr">Add Avatar</h3>
+        <p>&nbsp;</p>
+    </header>
+    
+    <div class="user_avatar" style ="margin-left:30%">
+        <img class="avatar_file" src="<?php echo  $this->avatarInfo ;?>" alt="" style="width: 130px;height: 130px; " />
+    </div>
+    
+    <p>&nbsp;</p>
+    
+    <form action="/uploader/upload-avatar" method="post" class="grid35" id="add_avatar_form" >
+        <input type="hidden" id="ID_user_avatar"  name="user_avatar_file" value="" />
+        <label class="blk" for="iFile">Upload image</label>
+        
+<div >
+        <iframe class="upload_file" name="file" src="<?php echo $this->serverUrl('/uploader/index/id/' . $this->formData['user_avatar_file']. '/ucb/User.attachAvatarFile/rcb/User.removeAvatarFile'); ?>" allowtransparency="true"  scrolling="no" frameborder="0"></iframe>
+        
+</div>
+        
+        <a class="btn btn_blue rgt" type="submit" id="send_avatar" style="margin-right:5px;">submit</a>
+        <div class="clearfix"></div>
+    </form>
+
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+    $('#send_avatar').click(function(){
+        $.fancybox.close();
+         return false;        
+    });        
+    
+    User.attachAvatarFile = function(fileId, fileUrl)
+    {
+ 
+        if ($('#ID_user_avatar'))
+        {
+            $('#user_avatar_file').val(fileId);
+            $('.avatar_file').attr('src',fileUrl);
+            $('#ID_user_avatar').attr('value', fileId);
+          
+        }       
+    }  
+
+    User.removeAvatarFile = function()
+    {
+        if ($('#ID_user_avatar'))
+        {
+            $('#ID_user_avatar').attr('value', '');
+        }
+    }
+
+    });
+    
+</script>

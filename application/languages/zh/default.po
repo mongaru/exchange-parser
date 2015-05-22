@@ -1,0 +1,2249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kandy Kiss\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-24 18:03-0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Alvaro Mercado <alvaro@amediacreative.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: translate;_\n"
+"X-Poedit-Basepath: C:\\AppServ\\www\\KandyKiss\n"
+"Language: zh_CN\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: application\n"
+"X-Poedit-SearchPath-1: library\n"
+
+#: application/Bootstrap.php:166
+msgid "Kandy Kiss Admin Tools"
+msgstr "康提吻管理工具"
+
+msgid "Add Yield"
+msgstr "增加產量"
+
+msgid "Costing Pack Name"
+msgstr "成本核算包名称"
+
+msgid "Create New Costing Pack"
+msgstr "创建新的成本包"
+
+msgid "Short Description"
+msgstr "简短说明"
+
+msgid "Tests Required"
+msgstr "测试要求"
+
+msgid "Pack Name"
+msgstr "包名称"
+
+msgid "Costing Pack Information"
+msgstr "成本核算包信息"
+
+msgid "Costing By"
+msgstr "通过成本核算"
+
+msgid "In By"
+msgstr "在通过"
+
+msgid "Costing Pack Actions"
+msgstr "成本包动作"
+
+msgid "Send Costing Pack to Vendors"
+msgstr "卖方发送成本包"
+
+msgid "Copy as New Costing Pack"
+msgstr "复制为新的成本核算包"
+
+msgid "View User trash"
+msgstr "查看用户垃圾桶"
+
+msgid "View User list"
+msgstr "查看用户列表"
+
+msgid "Print All Bids"
+msgstr "打印所有投标"
+
+msgid "Select Group Type"
+msgstr "选择组类型"
+
+msgid "Client"
+msgstr "客户"
+
+msgid "Owner"
+msgstr "业主"
+
+msgid "Move to Trash"
+msgstr "移动到废纸篓"
+
+msgid "No bids were submitted yet."
+msgstr "没有提交标书。"
+
+msgid "Companies Who Bid"
+msgstr "公司谁出价"
+
+msgid "Recost Requested"
+msgstr "重新成本要求"
+
+msgid "Price"
+msgstr "价格"
+
+msgid "Download all Documents"
+msgstr "下载所有文件"
+
+msgid "Vendor"
+msgstr "供应商"
+
+msgid "Version"
+msgstr "版本"
+
+msgid "Current Bid"
+msgstr "当前价格"
+
+msgid "View Details"
+msgstr "查看详细信息"
+
+msgid "No bids were submitted yet"
+msgstr "还没有提交标书"
+
+msgid "Bid History"
+msgstr "出价历史记录"
+
+msgid "Documents"
+msgstr "文件"
+
+msgid "Photos"
+msgstr "照片"
+
+msgid "Disclaimer"
+msgstr "放弃"
+
+msgid "Bid Acepted Comment"
+msgstr "中标评论"
+
+msgid "Store Price"
+msgstr "店内价格"
+
+msgid "Cost by Date"
+msgstr "成本日期"
+
+msgid "Buyer/Customer"
+msgstr "顾客"
+
+msgid "Document Title"
+msgstr "文件标题"
+
+msgid "Photo Title"
+msgstr "照片名称"
+
+msgid "Notes (900 character limit)"
+msgstr "注（900个字符的限制）"
+
+msgid "Units"
+msgstr "单位"
+
+msgid "Add Photos"
+msgstr "上传照片"
+
+msgid "Document"
+msgstr "文件"
+
+msgid "Photo"
+msgstr "照片"
+
+msgid "Target Price"
+msgstr "目标价"
+
+msgid "Select Primary Costing Agent"
+msgstr "选择主成本核算代理"
+
+msgid "Client Tests Required"
+msgstr "需要客户端测试"
+
+msgid "NKK Date"
+msgstr "NKK日期"
+
+msgid "Add Documents"
+msgstr "添加文件"
+
+msgid "Style"
+msgstr "風格"
+
+# --------------
+msgid "ID"
+msgstr "身分證"
+
+msgid "Costsheet"
+msgstr "成本表"
+
+msgid "Bids"
+msgstr "投標"
+
+msgid "Date Sent"
+msgstr "發送日期"
+
+msgid "Add Costing"
+msgstr "添加成本"
+
+msgid "Company"
+msgstr "公司"
+
+msgid "Year to Date"
+msgstr "年初至今"
+
+msgid "Scale"
+msgstr "規模"
+
+msgid "View Color Layout Trash"
+msgstr "查看顏色佈局垃圾桶"
+
+msgid "View Color Layout List"
+msgstr "查看顏色佈局列表"
+
+# --------------
+msgid "All"
+msgstr "所有"
+
+msgid "Re-type Password"
+msgstr "重新輸入密碼"
+
+msgid "Select Language"
+msgstr "選擇語言"
+
+msgid "Read Users"
+msgstr "讀取用戶"
+
+msgid "Add Avatar"
+msgstr "添加頭像"
+
+msgid "Select Group"
+msgstr "選擇“群組”"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Read Groups"
+msgstr "添加組"
+
+msgid "Add Group"
+msgstr "閱讀組"
+
+msgid "Submit"
+msgstr "提交"
+
+msgid "Delete"
+msgstr "刪除"
+
+msgid "Group Name"
+msgstr "組名"
+
+msgid "Group Description"
+msgstr "集團簡介"
+
+msgid "General Settings"
+msgstr "“常規設置”"
+
+msgid "View Discussions"
+msgstr "查看討論"
+
+msgid "Add Discussions"
+msgstr "加入討論"
+
+msgid "Manage Discussions"
+msgstr "管理討論"
+
+msgid "View Sales"
+msgstr "查看銷售"
+
+msgid "Sales"
+msgstr "銷售"
+
+msgid "Costing Pack Module"
+msgstr "成本核算模塊打包"
+
+msgid "View Costing Pack"
+msgstr "查看成本計算包裝"
+
+msgid "Print Costing Pack"
+msgstr "打印成本核算包"
+
+msgid "Add Costing Pack"
+msgstr "添加成本核算包裝"
+
+msgid "Edit Costing Pack"
+msgstr "編輯成本核算包"
+
+msgid "Manage Costing Pack"
+msgstr "管理成本核算包"
+
+msgid "View Bid"
+msgstr "查看出價"
+
+msgid "Manage Bid"
+msgstr "管理出價"
+
+msgid "Edit Bid"
+msgstr "編輯投標"
+
+msgid "Archive Costing Pack"
+msgstr "檔案成本核算包裝"
+
+msgid "Cost Sheet Module"
+msgstr "成本薄板模塊"
+
+msgid "Accept/Unaccept Bid"
+msgstr "接受/不能接受投標"
+
+msgid "List Color Layout"
+msgstr "列表顏色佈局"
+
+msgid "Manage Color Layout"
+msgstr "管理顏色佈局"
+
+msgid "Manage Layout #14"
+msgstr "管理佈局＃14"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Role Name"
+msgstr "角色名稱"
+
+msgid "Finished Adding Role"
+msgstr "完成新增角色"
+
+msgid "Manage Import Layout"
+msgstr "管理進口版面"
+
+msgid "Manage Mexico Layout"
+msgstr "管理墨西哥城佈局"
+
+msgid "Add Sales"
+msgstr "增加銷售"
+
+msgid "Sales Manage"
+msgstr "銷售管理"
+
+msgid "View Costing pack "
+msgstr "查看成本核算包"
+
+#: application/modules/default/controllers/IndexController.php:29
+#: application/modules/discussion/controllers/ManageController.php:10
+msgid "Error processing your request, please try again later."
+msgstr "错误处理您的请求，请稍后再试."
+
+#: application/modules/default/controllers/IndexController.php:30
+msgid "Please select a date to Refine the Activity Summary."
+msgstr "请选择体型来看它的当前类型"
+
+#: application/modules/default/controllers/IndexController.php:31
+msgid "Please select the Refinement User."
+msgstr "选择细化用户..."
+
+#: application/modules/default/controllers/IndexController.php:32
+#: application/modules/discussion/controllers/ManageController.php:13
+msgid "Remove"
+msgstr "删除"
+
+#: application/modules/default/controllers/IndexController.php:49
+msgid "Dashboard"
+msgstr "控制台"
+
+#: application/modules/default/controllers/IndexController.php:66
+#: application/modules/default/controllers/IndexController.php:183
+#: application/modules/discussion/controllers/ManageController.php:884
+#: application/modules/discussion/controllers/ManageController.php:916
+#: application/modules/discussion/controllers/ManageController.php:966
+#: application/modules/discussion/controllers/ManageController.php:1078
+#: application/modules/discussion/controllers/ManageController.php:1110
+#: application/modules/discussion/controllers/ManageController.php:1141
+#: application/modules/discussion/controllers/ManageController.php:1180
+#: application/modules/discussion/controllers/ManageController.php:1220
+#: application/modules/discussion/controllers/ManageController.php:1308
+msgid "Error processing your request."
+msgstr "错误处理您的请求。"
+
+#: application/modules/default/controllers/IndexController.php:108
+#, php-format
+msgid "For %1$s"
+msgstr "現在是 %1$s"
+
+#: application/modules/default/controllers/UploaderController.php:93
+msgid "Please select a file to upload."
+msgstr "请选择要上传的文件。"
+
+#: application/modules/default/controllers/UploaderController.php:101
+msgid "Please select a valid file to upload."
+msgstr "请选择一个有效的文件上传。"
+
+#: application/modules/default/controllers/UploaderController.php:152
+msgid "Uploaded."
+msgstr "上传。"
+
+#: application/modules/default/views/helpers/Activity.php:64
+msgid "added"
+msgstr "补充"
+
+#: application/modules/default/views/helpers/Activity.php:69
+msgid "changed his avatar"
+msgstr "改变了他的头像"
+
+#: application/modules/default/views/helpers/Activity.php:74
+#: application/modules/default/views/helpers/Activity.php:273
+msgid "completed"
+msgstr "完成"
+
+#: application/modules/default/views/helpers/Activity.php:79
+#: application/modules/default/views/helpers/Activity.php:197
+#: application/modules/default/views/helpers/Activity.php:280
+msgid "edited"
+msgstr "编辑"
+
+#: application/modules/default/views/helpers/Activity.php:84
+#: application/modules/default/views/helpers/Activity.php:287
+msgid "archived"
+msgstr "搜索产量"
+
+#: application/modules/default/views/helpers/Activity.php:89
+#: application/modules/default/views/helpers/Activity.php:205
+#: application/modules/default/views/helpers/Activity.php:294
+msgid "locked"
+msgstr "锁定"
+
+#: application/modules/default/views/helpers/Activity.php:94
+msgid "logged in."
+msgstr "登录英寸"
+
+#: application/modules/default/views/helpers/Activity.php:99
+msgid "logged out."
+msgstr "登出。"
+
+#: application/modules/default/views/helpers/Activity.php:104
+#: application/modules/default/views/helpers/Activity.php:213
+#: application/modules/default/views/helpers/Activity.php:301
+msgid "restored"
+msgstr "恢复"
+
+#: application/modules/default/views/helpers/Activity.php:109
+#: application/modules/default/views/helpers/Activity.php:308
+msgid "restored from the Archive the"
+msgstr "恢复从归档"
+
+#: application/modules/default/views/helpers/Activity.php:114
+#: application/modules/default/views/helpers/Activity.php:224
+#: application/modules/default/views/helpers/Activity.php:318
+msgid "is now subscribed to"
+msgstr "现在订阅"
+
+#: application/modules/default/views/helpers/Activity.php:119
+#: application/modules/default/views/helpers/Activity.php:238
+#: application/modules/default/views/helpers/Activity.php:331
+msgid "trashed"
+msgstr "丢弃"
+
+#: application/modules/default/views/helpers/Activity.php:124
+#: application/modules/default/views/helpers/Activity.php:245
+#: application/modules/default/views/helpers/Activity.php:338
+msgid "unlocked"
+msgstr "开锁"
+
+#: application/modules/default/views/helpers/Activity.php:129
+msgid "uploaded a file."
+msgstr "上传一个文件。"
+
+#: application/modules/default/views/helpers/Activity.php:159
+msgid "commented on"
+msgstr "评论"
+
+#: application/modules/default/views/helpers/Activity.php:161
+#: application/modules/default/views/helpers/Activity.php:170
+#: application/modules/default/views/helpers/Activity.php:179
+#: application/modules/default/views/helpers/Activity.php:191
+#: application/modules/default/views/helpers/Activity.php:199
+#: application/modules/default/views/helpers/Activity.php:207
+#: application/modules/default/views/helpers/Activity.php:215
+#: application/modules/default/views/helpers/Activity.php:232
+#: application/modules/default/views/helpers/Activity.php:240
+#: application/modules/default/views/helpers/Activity.php:247
+msgid "discussion"
+msgstr "讨论"
+
+#: application/modules/default/views/helpers/Activity.php:168
+msgid "edited a comment in"
+msgstr "在编辑评论"
+
+#: application/modules/default/views/helpers/Activity.php:177
+msgid "trashed a comment in"
+msgstr "在丢弃评论"
+
+#: application/modules/default/views/helpers/Activity.php:189
+#: application/modules/default/views/helpers/Activity.php:266
+msgid "started"
+msgstr "开始"
+
+#: application/modules/default/views/helpers/Activity.php:229
+#: application/modules/default/views/helpers/Activity.php:323
+msgid "subscription was removed from"
+msgstr "认购被解除"
+
+#: application/modules/default/views/helpers/Activity.php:268
+#: application/modules/default/views/helpers/Activity.php:275
+#: application/modules/default/views/helpers/Activity.php:282
+#: application/modules/default/views/helpers/Activity.php:289
+#: application/modules/default/views/helpers/Activity.php:296
+#: application/modules/default/views/helpers/Activity.php:303
+#: application/modules/default/views/helpers/Activity.php:310
+#: application/modules/default/views/helpers/Activity.php:326
+#: application/modules/default/views/helpers/Activity.php:333
+#: application/modules/default/views/helpers/Activity.php:340
+msgid "yield"
+msgstr "生产"
+
+#: application/modules/default/views/helpers/Timespan.php:52
+msgid "years"
+msgstr " 年"
+
+#: application/modules/default/views/helpers/Timespan.php:52
+msgid "year"
+msgstr "年"
+
+#: application/modules/default/views/helpers/Timespan.php:62
+msgid "months"
+msgstr "个月"
+
+#: application/modules/default/views/helpers/Timespan.php:62
+msgid "month"
+msgstr "个月"
+
+#: application/modules/default/views/helpers/Timespan.php:74
+msgid "weeks"
+msgstr "周"
+
+#: application/modules/default/views/helpers/Timespan.php:74
+msgid "week"
+msgstr "周"
+
+#: application/modules/default/views/helpers/Timespan.php:86
+msgid "days"
+msgstr "天"
+
+#: application/modules/default/views/helpers/Timespan.php:86
+msgid "day"
+msgstr "天"
+
+#: application/modules/default/views/helpers/Timespan.php:98
+msgid "hours"
+msgstr "小时"
+
+#: application/modules/default/views/helpers/Timespan.php:98
+msgid "hour"
+msgstr "小时"
+
+#: application/modules/default/views/helpers/Timespan.php:110
+msgid "minutes"
+msgstr "分钟"
+
+#: application/modules/default/views/helpers/Timespan.php:110
+msgid "minute"
+msgstr "分钟"
+
+#: application/modules/default/views/helpers/Timespan.php:118
+msgid "seconds"
+msgstr "秒"
+
+#: application/modules/default/views/helpers/Timespan.php:118
+msgid "second"
+msgstr "秒"
+
+#: application/modules/discussion/controllers/ManageController.php:11
+msgid "Are you sure you want to delete this file?"
+msgstr "你确定要删除这个文件？"
+
+#: application/modules/discussion/controllers/ManageController.php:12
+msgid "Are you sure you want to delete this comment?"
+msgstr "您确定要删除此评论？"
+
+#: application/modules/discussion/controllers/ManageController.php:23
+#: application/modules/discussion/controllers/ManageController.php:24
+msgid "Discussions"
+msgstr "讨论"
+
+#: application/modules/discussion/controllers/ManageController.php:108
+msgid "Everyone"
+msgstr "每个人"
+
+#: application/modules/discussion/controllers/ManageController.php:109
+#, php-format
+msgid "Discussions %1$s %2$s by %3$s"
+msgstr "讨论 %1$s %2$s 将 %3$s"
+
+#: application/modules/discussion/controllers/ManageController.php:117
+msgid "Active Discussions"
+msgstr "讨论中"
+
+#: application/modules/discussion/controllers/ManageController.php:122
+msgid "Deleted Discussions"
+msgstr "删除讨论"
+
+#: application/modules/discussion/controllers/ManageController.php:127
+msgid "Locked Discussions"
+msgstr "锁定讨论"
+
+#: application/modules/discussion/controllers/ManageController.php:163
+#: application/modules/discussion/controllers/ManageController.php:164
+msgid "Add Discussion"
+msgstr "添加讨论"
+
+#: application/modules/discussion/controllers/ManageController.php:466
+msgid "Edit Discussion"
+msgstr "编辑讨论"
+
+#: application/modules/discussion/controllers/ManageController.php:947
+msgid "The discussion was successfully moved to this Yield."
+msgstr "讨论已成功转移到这个产量。"
+
+#: application/modules/discussion/controllers/ManageController.php:1059
+msgid "The discussion was successfully copied to this Yield"
+msgstr "讨论是成功地复制到这个产量"
+
+#: application/modules/discussion/controllers/ManageController.php:1158
+msgid "The file was successfully deleted."
+msgstr "该文件已成功删除"
+
+#: application/modules/discussion/controllers/ManageController.php:1288
+msgid "Comment was successfully deleted."
+msgstr "评语已成功删除"
+
+#: application/modules/discussion/controllers/ManageController.php:1341
+msgid "All people subscribed to this discussion was notified."
+msgstr "已通知所有参与讨论的人员"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:46
+#, php-format
+msgid "Today at %1$s"
+msgstr "今天的%1$s个"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:50
+#, php-format
+msgid "Yesterday at %1$s"
+msgstr "昨天在%1$s个"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:54
+#: application/modules/discussion/views/helpers/FileDescription.php:64
+#, php-format
+msgid "%1$s ago"
+msgstr "%1$s 之前"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:61
+msgid "said"
+msgstr "说"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:62
+#: application/modules/discussion/views/helpers/Subscribers.php:54
+#: application/modules/discussion/views/helpers/Subscribers.php:66
+#: application/modules/discussion/views/helpers/Subscribers.php:79
+msgid "View User"
+msgstr "查看用户"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:63
+msgid "Permalink"
+msgstr "固定链接"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:64
+msgid "Move To Trash"
+msgstr "移进垃圾箱"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:65
+msgid "Update Comment"
+msgstr "最新评论"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:66
+msgid "Notify People"
+msgstr "通知人员"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:67
+msgid "Attached Files"
+msgstr "附加文件"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:68
+msgid "Attachments"
+msgstr "附件"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:69
+msgid "Attach Another File"
+msgstr "附加其它档案"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:70
+msgid "Show Details"
+msgstr "显示详细内容"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:71
+msgid "Hide Details"
+msgstr "隐藏详细内容"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:72
+msgid "New File"
+msgstr "新建文件"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:73
+msgid ""
+"Please browse and select a file, once the file is uploaded, it will be "
+"automatically attached to this comment."
+msgstr "请浏览并选择一个文件，一旦文件上传，它会自动连接到此评语。"
+
+#: application/modules/discussion/views/helpers/DiscussionComment.php:74
+msgid "Attaching File to Comment..."
+msgstr "评论上加附件"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:56
+#: application/modules/discussion/views/helpers/FileSummary.php:51
+msgid "Today"
+msgstr "今天"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:60
+#: application/modules/discussion/views/helpers/FileSummary.php:55
+msgid "Yesterday"
+msgstr "时区"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:75
+#: application/modules/discussion/views/helpers/FileSummary.php:70
+msgid "Send To Trash"
+msgstr "发送到垃圾桶"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:76
+#: application/modules/discussion/views/helpers/FileSummary.php:71
+msgid "View File"
+msgstr "查看文件"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:77
+msgid "Name"
+msgstr "名称"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:78
+msgid "Size &amp; Filetype"
+msgstr "大小及文件类型"
+
+#: application/modules/discussion/views/helpers/FileDescription.php:94
+#, php-format
+msgid "Uploaded %1$s by %2$s"
+msgstr "由 %1$s 上传 %2$s"
+
+#: application/modules/discussion/views/helpers/Subscribers.php:36
+msgid "is responsible."
+msgstr "有人负责."
+
+#: application/modules/discussion/views/helpers/Subscribers.php:45
+msgid "Nobody is subscribed to this discussion."
+msgstr "没有人赞成这一讨论。"
+
+#: application/modules/discussion/views/helpers/Subscribers.php:56
+msgid " is subscribed to this discussion."
+msgstr " 是赞成这一讨论。"
+
+#: application/modules/discussion/views/helpers/Subscribers.php:68
+#: application/modules/discussion/views/helpers/Subscribers.php:81
+msgid " are subscribed to this discussion."
+msgstr " 申请加入这一讨论。"
+
+#: application/modules/people/controllers/AuthController.php:85
+#: application/modules/people/controllers/AuthController.php:103
+#: application/modules/people/controllers/AuthController.php:107
+msgid "Wrong email or password provided. Please try again."
+msgstr "错误的电子邮件或密码。请再试一次。"
+
+#: application/modules/people/controllers/AuthController.php:119
+#: application/modules/people/controllers/AuthController.php:161
+msgid "Login"
+msgstr "注册"
+
+#: application/modules/people/controllers/AuthController.php:153
+msgid "Email"
+msgstr "电邮"
+
+#: application/modules/people/controllers/AuthController.php:157
+msgid "Password"
+msgstr "密码,"
+
+#: application/modules/people/controllers/UserController.php:15
+msgid "Yields Department"
+msgstr "核料部"
+
+#: application/modules/people/controllers/UserController.php:105
+#, php-format
+msgid "Users %1$s %2$s"
+msgstr "由 %1$s 上传 %2$s"
+
+#: application/modules/people/controllers/UserController.php:107
+#, php-format
+msgid "Users %1$s %2$s by %3$s"
+msgstr "预览人 %1$s 日期 %2$s 时间 %3$s"
+
+#: application/modules/people/controllers/UserController.php:141
+#: application/modules/people/controllers/UserController.php:142
+msgid "Add People"
+msgstr "添加人"
+
+#: application/modules/people/controllers/UserController.php:154
+#: application/modules/people/controllers/UserController.php:332
+msgid "Super Administrator"
+msgstr "高级行政管理"
+
+#: application/modules/people/controllers/UserController.php:155
+#: application/modules/people/controllers/UserController.php:333
+msgid "Administrator"
+msgstr "行政管理"
+
+#: application/modules/people/controllers/UserController.php:156
+#: application/modules/people/controllers/UserController.php:167
+#: application/modules/people/controllers/UserController.php:334
+#: application/modules/people/controllers/UserController.php:345
+msgid "Yielder Manager"
+msgstr "核料部经理"
+
+#: application/modules/people/controllers/UserController.php:157
+#: application/modules/people/controllers/UserController.php:168
+#: application/modules/people/controllers/UserController.php:335
+#: application/modules/people/controllers/UserController.php:346
+msgid "Pattern Maker Manager"
+msgstr "样板部经理"
+
+#: application/modules/people/controllers/UserController.php:158
+#: application/modules/people/controllers/UserController.php:169
+#: application/modules/people/controllers/UserController.php:185
+#: application/modules/people/controllers/UserController.php:336
+#: application/modules/people/controllers/UserController.php:347
+#: application/modules/people/controllers/UserController.php:363
+msgid "Pattern Maker"
+msgstr "打板人"
+
+#: application/modules/people/controllers/UserController.php:159
+#: application/modules/people/controllers/UserController.php:170
+#: application/modules/people/controllers/UserController.php:178
+#: application/modules/people/controllers/UserController.php:337
+#: application/modules/people/controllers/UserController.php:348
+#: application/modules/people/controllers/UserController.php:356
+msgid "Yielder"
+msgstr "排板人"
+
+#: application/modules/people/controllers/UserController.php:160
+#: application/modules/people/controllers/UserController.php:171
+#: application/modules/people/controllers/UserController.php:192
+#: application/modules/people/controllers/UserController.php:199
+#: application/modules/people/controllers/UserController.php:338
+#: application/modules/people/controllers/UserController.php:349
+#: application/modules/people/controllers/UserController.php:370
+#: application/modules/people/controllers/UserController.php:377
+msgid "User"
+msgstr "用户 (只限预览)"
+
+#: application/modules/people/controllers/UserController.php:205
+#: application/modules/people/controllers/UserController.php:383
+#: application/modules/people/controllers/UserController.php:507
+msgid "English"
+msgstr "英语"
+
+#: application/modules/people/controllers/UserController.php:206
+#: application/modules/people/controllers/UserController.php:384
+#: application/modules/people/controllers/UserController.php:508
+msgid "Chinese"
+msgstr "中文"
+
+#: application/modules/people/controllers/UserController.php:213
+#: application/modules/people/controllers/UserController.php:216
+#: application/modules/people/controllers/UserController.php:221
+#: application/modules/people/controllers/UserController.php:639
+msgid "Passwords does not match."
+msgstr "密码不匹配。"
+
+#: application/modules/people/controllers/UserController.php:449
+#: application/modules/people/controllers/UserController.php:450
+msgid "Edit "
+msgstr "编 "
+
+#: application/modules/people/controllers/UserController.php:500
+msgid "Edit My Account"
+msgstr "编辑我的帐户"
+
+#: application/modules/people/controllers/UserController.php:619
+#: application/modules/people/controllers/UserController.php:620
+msgid "Change password for user "
+msgstr "更改密码的用户 "
+
+#: application/modules/people/controllers/UserController.php:626
+#: application/modules/people/controllers/UserController.php:627
+msgid "Change My Password"
+msgstr "更改我的密码"
+
+#: application/modules/search/controllers/IndexController.php:121
+msgid "Search Results"
+msgstr "搜索结果"
+
+#: application/modules/search/controllers/IndexController.php:133
+msgid "Yield"
+msgstr "生产"
+
+msgid "Home"
+msgstr "故鄉"
+
+msgid "Users"
+msgstr "用戶"
+
+msgid "Groups"
+msgstr "組"
+
+msgid "Costing Packs"
+msgstr "作業成本法包"
+
+msgid "Add User"
+msgstr "添加用戶"
+
+msgid "Manage Groups"
+msgstr "管理組"
+
+msgid "Roles"
+msgstr "角色"
+
+msgid "General"
+msgstr "一般"
+
+msgid "Setup"
+msgstr "格局"
+
+msgid "Manage Users"
+msgstr "管理用戶"
+
+#: application/modules/search/controllers/IndexController.php:134
+msgid "Discussion"
+msgstr "讨论"
+
+#: application/modules/search/controllers/IndexController.php:135
+msgid "Comment"
+msgstr "评语"
+
+#: application/modules/search/controllers/IndexController.php:143
+msgid "This Week"
+msgstr "本周"
+
+#: application/modules/search/controllers/IndexController.php:144
+msgid "Last Week"
+msgstr "上周"
+
+#: application/modules/search/controllers/IndexController.php:145
+msgid "This Month"
+msgstr "本月"
+
+#: application/modules/search/controllers/IndexController.php:146
+msgid "Last Month"
+msgstr "上月"
+
+#: application/modules/search/controllers/IndexController.php:147
+msgid "This Year"
+msgstr "这一年"
+
+#: application/modules/search/controllers/IndexController.php:148
+msgid "Last Year"
+msgstr "去年同比"
+
+#: application/modules/search/views/helpers/Result.php:82
+msgid " ago"
+msgstr " 前"
+
+#: application/modules/yield/controllers/ManageController.php:13
+msgid "is responsible"
+msgstr "有人负责"
+
+#: application/modules/yield/controllers/ManageController.php:14
+msgid "Loading Styles..."
+msgstr "载入中..."
+
+#: application/modules/yield/controllers/ManageController.php:15
+msgid "Select Style Type..."
+msgstr "选择款式"
+
+#: application/modules/yield/controllers/ManageController.php:16
+msgid "Select Body Type..."
+msgstr "选择成衣类型"
+
+#: application/modules/yield/controllers/ManageController.php:17
+msgid "This body type does not have any style types."
+msgstr "这个体型没有相应款型"
+
+#: application/modules/yield/controllers/ManageController.php:18
+msgid "Remove This Style Type"
+msgstr "删除此体型"
+
+#: application/modules/yield/controllers/ManageController.php:19
+msgid "Remove This Body Type"
+msgstr "删除此体型"
+
+#: application/modules/yield/controllers/ManageController.php:20
+msgid ""
+"Please choose a Body Type first and then enter the Style Type description."
+msgstr "请选择机构类别，并输入风格类型的说明."
+
+#: application/modules/yield/controllers/ManageController.php:21
+msgid "Are you sure you want to delete this Style Type?"
+msgstr "您确定要删除此收益率?"
+
+#: application/modules/yield/controllers/ManageController.php:22
+#: application/modules/yield/controllers/ManageController.php:1419
+msgid "Please enter the Body Type description."
+msgstr "请输入体型描述。"
+
+#: application/modules/yield/controllers/ManageController.php:23
+msgid "Are you sure you want to delete this Body Type?"
+msgstr "您确定要删除此收益率?"
+
+#: application/modules/yield/controllers/ManageController.php:24
+msgid "Please select the Body Type."
+msgstr "请选择体型。"
+
+#: application/modules/yield/controllers/ManageController.php:25
+msgid "Please enter a valid percentage range (from 1% to 100%)."
+msgstr "请输入有效的比例范围（从1％到100％）."
+
+#: application/modules/yield/controllers/ManageController.php:26
+msgid "This mini marker has been flagged blue."
+msgstr "这个小标志已被标记为蓝色."
+
+#: application/modules/yield/controllers/ManageController.php:27
+msgid "Max 10 mini markers is allowed per yield."
+msgstr "最多10个小标记允许每产量."
+
+#: application/modules/yield/controllers/ManageController.php:28
+msgid "Please select an action."
+msgstr "请选择一个动作。"
+
+#: application/modules/yield/controllers/ManageController.php:29
+msgid "Are you sure you want to delete the selected Yields?"
+msgstr "您确定要删除选定的收益率？"
+
+#: application/modules/yield/controllers/ManageController.php:30
+msgid "Are you sure you want to archive the selected Yields?"
+msgstr "您确定要封存选取的收益率？"
+
+#: application/modules/yield/controllers/ManageController.php:31
+msgid "Are you sure you want to delete the selected Refinement?"
+msgstr "您确定要删除选定的收益率？"
+
+#: application/modules/yield/controllers/ManageController.php:38
+msgid "Yields"
+msgstr "单耗"
+
+#: application/modules/yield/controllers/ManageController.php:76
+#, php-format
+msgid "Yields refined by %1$s"
+msgstr "精制的产量 %1$s"
+
+#: application/modules/yield/controllers/ManageController.php:205
+#, php-format
+msgid "Yields %1$s %2$s by %3$s"
+msgstr "预览人 %1$s 日期 %2$s 时间 %3$s"
+
+#: application/modules/yield/controllers/ManageController.php:218
+msgid "Deleted Yields"
+msgstr "删除单耗"
+
+#: application/modules/yield/controllers/ManageController.php:223
+msgid "Pending Yields"
+msgstr "未完成单耗"
+
+#: application/modules/yield/controllers/ManageController.php:228
+msgid "Completed Yields"
+msgstr "完成单耗"
+
+#: application/modules/yield/controllers/ManageController.php:233
+msgid "Archived Yields"
+msgstr "存档产量"
+
+#: application/modules/yield/controllers/ManageController.php:279
+#: application/modules/yield/controllers/ManageController.php:280
+msgid "Create New Yield"
+msgstr "创建新的产量"
+
+#: application/modules/yield/controllers/ManageController.php:680
+msgid "Edit Yield"
+msgstr "编辑单耗"
+
+#: application/modules/yield/controllers/ManageController.php:685
+msgid "Edit Completed Yield"
+msgstr "编辑完成产量"
+
+#: application/modules/yield/controllers/ManageController.php:714
+msgid " Yield"
+msgstr " 单耗"
+
+#: application/modules/yield/controllers/ManageController.php:766
+msgid "Please enter a valid [1-100] Efficiency Percentage."
+msgstr "请输入一个百分比的数值（1-100)"
+
+#: application/modules/yield/controllers/ManageController.php:878
+msgid "Complete Yield #"
+msgstr "总收益率＃"
+
+#: application/modules/yield/controllers/ManageController.php:1448
+msgid "Please select the Body Type to delete."
+msgstr "请选择体型删除。"
+
+#: application/modules/yield/controllers/ManageController.php:1487
+msgid "Please choose the Body Type and enter the Style Type description."
+msgstr "请选择机构类别，并输入风格类型的说明."
+
+#: application/modules/yield/controllers/ManageController.php:1517
+msgid "Please choose the Body Type."
+msgstr "请选择体型."
+
+#: application/modules/yield/controllers/ManageController.php:1546
+msgid "Please select the Style Type to delete."
+msgstr "请选择样式类型删除."
+
+#: application/modules/yield/controllers/RefinementController.php:22
+msgid "Pending"
+msgstr "紧迫的"
+
+#: application/modules/yield/controllers/RefinementController.php:23
+msgid "Completed"
+msgstr "已完成"
+
+#: application/modules/yield/controllers/RefinementController.php:24
+msgid "Archived"
+msgstr "存档"
+
+#: application/modules/yield/controllers/RefinementController.php:25
+msgid "Locked"
+msgstr "锁定"
+
+#: application/modules/yield/controllers/RefinementController.php:26
+msgid "Unlocked"
+msgstr "解锁"
+
+#: application/modules/yield/controllers/RefinementController.php:37
+msgid "Specific Date..."
+msgstr "具体日期..."
+
+#: application/modules/yield/controllers/RefinementController.php:38
+msgid "Specific Date Range..."
+msgstr "具体日期范围..."
+
+#: application/modules/yield/controllers/RefinementController.php:45
+msgid "Above 70%"
+msgstr "70％以上"
+
+#: application/modules/yield/controllers/RefinementController.php:46
+msgid "Below 70%"
+msgstr "低于70％"
+
+#: application/modules/yield/controllers/RefinementController.php:47
+msgid "Accepted"
+msgstr "接受"
+
+#: application/modules/yield/controllers/RefinementController.php:68
+#: application/modules/yield/controllers/RefinementController.php:69
+msgid "Add Refinement"
+msgstr "添加细化"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:31
+msgid "Select Refinement Report..."
+msgstr "选择细化报告..."
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:41
+msgid "View This Report"
+msgstr "查看此报告"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:42
+msgid "Edit This Report"
+msgstr "编辑本报告"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:43
+msgid "Delete This Report"
+msgstr "删除此报告"
+
+#: application/modules/yield/views/helpers/RefinementToolbox.php:44
+msgid "Add Refinement Report"
+msgstr "添加细化报告"
+
+#: application/modules/yield/views/helpers/Subscribers.php:42
+msgid "Nobody is subscribed to this yield."
+msgstr "没有人赞成这一产量。"
+
+#: application/modules/yield/views/helpers/Subscribers.php:46
+msgid "Other subscriber: "
+msgstr "其他用户： "
+
+#: application/modules/yield/views/helpers/Subscribers.php:58
+#: application/modules/yield/views/helpers/Subscribers.php:71
+msgid "Other subscribers: "
+msgstr "其他用户： "
+
+msgid "Welcome"
+msgstr "欢迎"
+
+msgid "Edit my profile"
+msgstr "編輯我的個人資料"
+
+msgid "Logout"
+msgstr "退出"
+
+msgid "Roles Settings"
+msgstr "角色設置"
+
+msgid "Actions"
+msgstr "动作"
+
+msgid "Add a Role"
+msgstr "添加角色"
+
+msgid "People"
+msgstr "人员"
+
+msgid "Manage People"
+msgstr "管理人员"
+
+msgid "Add New Person"
+msgstr "添加新人"
+
+msgid "Restore"
+msgstr "还原"
+
+msgid "Go Back"
+msgstr "上一步"
+
+msgid "My Info"
+msgstr "我的信息"
+
+msgid "Search all data..."
+msgstr "捜索所有信息"
+
+msgid "Edit My Info"
+msgstr "编缉我的信息"
+
+msgid "\tYields"
+msgstr "单耗清单"
+
+msgid "Add New Yield"
+msgstr "添加单耗"
+
+msgid "View Pending"
+msgstr "预览未完成单耗"
+
+msgid "View Completed"
+msgstr "预览已完成单耗"
+
+msgid "View Archived"
+msgstr "查看产量"
+
+msgid "Closed Discussions"
+msgstr "休息讨论"
+
+msgid "Manage Person"
+msgstr "管理人员"
+
+msgid "310/651/8733"
+msgstr "310/651/8733"
+
+msgid "Powered By Amedia Creative"
+msgstr "由Amedia Creative驱动"
+
+msgid "Visit Amedia Creative"
+msgstr "由Amedia Creative驱动"
+
+msgid "Amedia Creative"
+msgstr "由Amedia Creative驱动"
+
+msgid "&nbsp;Please wait..."
+msgstr "&nbsp;请稍候..."
+
+msgid "Who Is Online?"
+msgstr "谁在线？"
+
+msgid "People who were online in the last 15 minutes."
+msgstr "人谁在最后的15分钟在线。"
+
+msgid "Uh oh! Ninja's have stolen this page!"
+msgstr "嗯哦！忍者的偷此页！"
+
+msgid ""
+"Or maybe, you've reached a page that does not exist. Please stop blaming the "
+"ninjas."
+msgstr "或者，也许，您所到达的网页不存在。请停止指责忍者。"
+
+msgid "Error 404 Ninjas"
+msgstr "错误404忍者"
+
+msgid ""
+"You'll probably be able to find the information you need by using th menu at "
+"the top of this page. If you feel there is something wrong with this "
+"application, you may get some help by emailing <a href=\"http://"
+"amediacreative.com\" title=\"Visit Amedia Creative\">Amedia Creative</a> at "
+"<a href=\"wecare@amediacreative.com\" title=\"Email Amedia Creative"
+"\">wecare@amediacreative.com</a>. Thank you."
+msgstr ""
+"You'll probably be able to find the information you need by using th menu at "
+"the top of this page. If you feel there is something wrong with this "
+"application, you may get some help by emailing <a href=\"http://"
+"amediacreative.com\" title=\"Visit Amedia Creative\">Amedia Creative</a> at "
+"<a href=\"wecare@amediacreative.com\" title=\"Email Amedia Creative"
+"\">wecare@amediacreative.com</a>. Thank you."
+
+msgid "Support"
+msgstr "技术援助"
+
+msgid "Recent Activity"
+msgstr "近期活动"
+
+msgid "Activity Summary"
+msgstr "总结"
+
+msgid "User Activity"
+msgstr "近期活动"
+
+msgid "For Today And Yesterday"
+msgstr "今天和昨天"
+
+msgid "Refine"
+msgstr "回复"
+
+msgid "View"
+msgstr "预览"
+
+msgid "Yields Posted Today"
+msgstr "产量今日发布"
+
+msgid "Yields Completed Today"
+msgstr "产量完成"
+
+msgid "Discussions Posted Today"
+msgstr "讨论题目"
+
+msgid "Discussions Commented On Today"
+msgstr "在今天的讨论评论"
+
+msgid "Total Comments Today"
+msgstr "发表评语"
+
+msgid "Users Added Today"
+msgstr "Users Added Today"
+
+msgid "Total Logins Today"
+msgstr "今天共登录"
+
+msgid "Yields Posted Yesterday"
+msgstr "昨天发布产量"
+
+msgid "Yields Completed Yesterday"
+msgstr "产量完成"
+
+msgid "Discussions Posted Yesterday"
+msgstr "昨天发布的讨论"
+
+msgid "Discussions Commented On Yesterday"
+msgstr "昨天的讨论评论"
+
+msgid "Total Comments Yesterday"
+msgstr "昨日总评论"
+
+msgid "Users Added Yesterday"
+msgstr "时区"
+
+msgid "Total Logins Yesterday"
+msgstr "昨天，总登录"
+
+msgid "Yields Posted"
+msgstr "产量完成"
+
+msgid "Yields Completed"
+msgstr "产量完成"
+
+msgid "Discussions Posted"
+msgstr "讨论题目"
+
+msgid "Discussions Commented On"
+msgstr "讨论信息"
+
+msgid "Total Comments"
+msgstr "发表评语"
+
+msgid "Users Added"
+msgstr "用户新增"
+
+msgid "Total Logins"
+msgstr "总登录"
+
+msgid "View More"
+msgstr "查看用户"
+
+msgid "There are no activities from Yesterday and Today."
+msgstr "还有从昨天和今天，没有活动。"
+
+msgid "Select a file..."
+msgstr "选择一个文件..."
+
+msgid "Reset"
+msgstr "重来"
+
+msgid "Additional actions for %1$s."
+msgstr "额外动作 %1$s."
+
+msgid "Unlock Comments"
+msgstr "开启评语"
+
+msgid "Lock Comments"
+msgstr "锁定评语"
+
+msgid "Are you sure you want to delete this discussion?"
+msgstr "您确定要删除此讨论？"
+
+msgid "Move To Yield"
+msgstr "移动到产量"
+
+msgid "Copy To Yield"
+msgstr "复制到产量"
+
+msgid "Are you sure you want to restore this discussion from the trash?"
+msgstr "您确定要恢复这从垃圾的讨论？"
+
+msgid "Your comment message is too short."
+msgstr "您的评论消息是太短了。"
+
+msgid "update"
+msgstr "更新"
+
+msgid "The comment was successfully updated."
+msgstr "评语已成功更新"
+
+msgid "Search Yields"
+msgstr "搜索产量..."
+
+msgid "Yield Style Number (or part of it)"
+msgstr "产量的风貌（或部分）"
+
+msgid "Please enter the Yield Style Number"
+msgstr "请输入产量风貌"
+
+msgid "search"
+msgstr "搜索"
+
+msgid "Searching Yields..."
+msgstr "搜索产量..."
+
+msgid "Next &raquo;"
+msgstr "下一步 &raquo;"
+
+msgid "of %1$s"
+msgstr "現在是 %1$s"
+
+msgid "&laquo; Previous"
+msgstr "&laquo; 上一步"
+
+msgid "Discussion Information"
+msgstr "讨论信息"
+
+msgid "Summary"
+msgstr "总结"
+
+msgid "Please enter the Summary."
+msgstr "请输入摘要。"
+
+msgid "Message"
+msgstr "消息"
+
+msgid "The message is too short."
+msgstr "该消息是太短了。"
+
+msgid "Attach Files"
+msgstr "附加文件"
+
+msgid "Add Another File"
+msgstr "增加其它文件"
+
+msgid "Max total size of files you can upload is 8.00 MB"
+msgstr "上传的文件不能大于8MB"
+
+msgid "Visibility"
+msgstr "能见度"
+
+msgid "Select Yield..."
+msgstr "选择产量..."
+
+msgid ""
+"Discussions may only be added to yields which are not locked or completed."
+msgstr "评语只能添加在那些没有锁定或者没有完成的文件上面"
+
+msgid "Please select a yield."
+msgstr "请选择一个收益。"
+
+msgid "Normal"
+msgstr "正常状态"
+
+msgid "Private"
+msgstr "私人的"
+
+msgid "Private: visible to admins only."
+msgstr "私人的:只有管理员可以看到"
+
+msgid "All Yields Department"
+msgstr "全体排料部门"
+
+msgid "Admins"
+msgstr "管理员"
+
+msgid "Pattern Makers"
+msgstr "庄家模式"
+
+msgid "Yielders"
+msgstr "收益率"
+
+msgid "Designers"
+msgstr "设计师"
+
+msgid "Replies"
+msgstr "回复"
+
+msgid "Last Reply"
+msgstr "最后回复"
+
+msgid "Never"
+msgstr "不可"
+
+msgid "ago"
+msgstr "之前"
+
+msgid "There are no discussions. You may %screate one%s."
+msgstr "没有讨论。您可以%s创建一个%s。"
+
+msgid ""
+"There are no active discussions. You may visit a %sdiscussion%s and unlock "
+"one."
+msgstr "没有积极的讨论。您可以访问%s讨论%s和解锁之一。"
+
+msgid ""
+"There are no locked discussions. You may visit a %sdiscussion%s and lock one."
+msgstr "没有上锁的讨论。您可以访问%s讨论%s和锁定之一。"
+
+msgid "View Discussion Trash"
+msgstr "查看讨论垃圾桶"
+
+msgid "Discussions (%1$s)"
+msgstr "讨论 (%1$s)"
+
+msgid "Recently Added"
+msgstr "新近添加"
+
+msgid "Recently Commented"
+msgstr "最近评论"
+
+msgid "Recently Edited"
+msgstr "新近编辑"
+
+msgid "Discussion Title"
+msgstr "讨论题目"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "By Whom"
+msgstr "制作人"
+
+msgid "View Discussion"
+msgstr "查看讨论"
+
+msgid "By %1$s on %2$s at %3$s"
+msgstr "预览人 %1$s 日期 %2$s 时间 %3$s"
+
+msgid "Style Number"
+msgstr "款号"
+
+msgid "View Yield"
+msgstr "查看产量"
+
+msgid "Subscribers"
+msgstr "用户"
+
+msgid "Description"
+msgstr "说明"
+
+msgid ""
+"Please browse and select a file, once the file is uploaded, it will be "
+"automatically attached to this discussion."
+msgstr "请浏览并选择一个文件，一旦文件上传，它会自动连接到本次评语。"
+
+msgid "Attaching File to Discussion..."
+msgstr "附加文件的讨论..."
+
+msgid "Comments"
+msgstr "评语"
+
+msgid "No comments posted in this Discussion."
+msgstr "本讨论中没有发布评语"
+
+msgid "Reply"
+msgstr "回复"
+
+msgid "Post a Comment"
+msgstr "发表评语"
+
+msgid "Your Comment"
+msgstr "你的评语"
+
+msgid "submit"
+msgstr "递交"
+
+msgid "Started by"
+msgstr "由开始"
+
+msgid "by"
+msgstr "天/小时/分钟前"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Lock"
+msgstr "锁定"
+
+msgid "Unlock"
+msgstr "开启"
+
+msgid "Restore From Trash"
+msgstr "还原从垃圾桶"
+
+msgid "Are you sure you want to restore this discussion?"
+msgstr "您确定要还原这个讨论？"
+
+msgid "Style #"
+msgstr "款号"
+
+msgid "Date Updated"
+msgstr "更新日期"
+
+msgid "Copy to this Yield"
+msgstr "复制到这个产量"
+
+msgid "Move to this Yield"
+msgstr "移动到这个产量"
+
+msgid "Copying discussion..."
+msgstr "复制讨论..."
+
+msgid "Moving discussion..."
+msgstr "移动讨论..."
+
+msgid "Change Avatar"
+msgstr "修改头像"
+
+msgid "Remove Current Avatar"
+msgstr "消除当前的头像"
+
+msgid "Profile Edited"
+msgstr "资料编辑"
+
+msgid ""
+"Your profile has been edited. Note, some changes may not be visible until "
+"you re-log in."
+msgstr "你的页面以编排过了．注意，有些变化要在你进入电脑系统后才能看见"
+
+msgid "Log Back In"
+msgstr "上一步"
+
+msgid "Size & Filetype"
+msgstr "大小和文件格式"
+
+msgid "or"
+msgstr "小时"
+
+msgid "Continue"
+msgstr "继续"
+
+msgid "Yield Details"
+msgstr "產量詳情"
+
+msgid "300 character limit"
+msgstr "300個字符的限制"
+
+msgid "Additional actions for"
+msgstr "的进一步行动 "
+
+msgid "Edit Profile"
+msgstr "编辑提纲"
+
+msgid "Change Password"
+msgstr "更改密码"
+
+msgid "Are you sure you want to delete this user?"
+msgstr "您确定要删除此用户？"
+
+msgid "Are you sure you want to restore this user?"
+msgstr "您确定要恢复该用户?"
+
+msgid "Please login to proceed."
+msgstr "请登录继续."
+
+msgid "Email password doesn't exists"
+msgstr "邮件密码不存在"
+
+msgid "Please enter a valid email"
+msgstr "请输入有效的电邮"
+
+msgid "Password provided is not valid"
+msgstr "你提供的密码不正确"
+
+msgid "Please enter an valid password"
+msgstr "请输入正确的密码"
+
+msgid "login"
+msgstr "注册"
+
+msgid "Required Information"
+msgstr "所需资料"
+
+msgid "Role"
+msgstr "职务"
+
+msgid "Please enter an valid email address."
+msgstr "请输入有效的电子邮件地址."
+
+msgid "Select Role..."
+msgstr "选择角色..."
+
+msgid "Please select a role."
+msgstr "请选择一个角色。"
+
+msgid "First Name"
+msgstr "人名"
+
+msgid "Last Name"
+msgstr "姓"
+
+msgid "Please enter the First Name."
+msgstr "请输入名字。"
+
+msgid "Please enter the Lastname."
+msgstr "请输入姓氏."
+
+msgid "Title"
+msgstr "标题"
+
+msgid "Please enter a the Title."
+msgstr "请输入标题。"
+
+msgid "Optional Information"
+msgstr "自选资料"
+
+msgid ""
+"The following properties are optional. You can set them now, or at any point "
+"in the future."
+msgstr "可选以下属性可设定,或任何时候设定"
+
+msgid ""
+"Please specify the account password.  If not entered, the system will "
+"generate a random password."
+msgstr "请自定密码, 否则系统会任意给个密码,"
+
+msgid "Retype"
+msgstr "重新输入"
+
+msgid "Please enter a password."
+msgstr "请输入密码."
+
+msgid "Please confirm the password."
+msgstr "请确认密码."
+
+msgid "Phone"
+msgstr "电话"
+
+msgid "Phone Ext."
+msgstr "电话分机。"
+
+msgid "Please enter the Phone number."
+msgstr "请输入电话号码。"
+
+msgid "Please enter the Extension number."
+msgstr "请输入分机号码."
+
+msgid "Mobile"
+msgstr "手机"
+
+msgid "Fax"
+msgstr "传真"
+
+msgid "Please enter a Mobile number."
+msgstr "请输入手机号码."
+
+msgid "Please enter a Fax number."
+msgstr "请输入传真号码."
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Time Zone"
+msgstr "时区"
+
+msgid "Please Select..."
+msgstr "请选择..."
+
+msgid "Please select a language."
+msgstr "请选择一种语言。"
+
+msgid "Please select a timezone."
+msgstr "请选择一个时区。"
+
+msgid "AIM"
+msgstr "意图"
+
+msgid "MSN"
+msgstr "质谱"
+
+msgid "Please enter a valid MSN email address."
+msgstr "请输入有效的MSN邮件地址。"
+
+msgid "Personal Welcome Message"
+msgstr "个性化欢迎语"
+
+msgid "Your welcome message is too short."
+msgstr "你的欢迎信息太短。"
+
+msgid "User added successfully"
+msgstr "用户添加成功"
+
+msgid "An email has been sent to the new user with their login information."
+msgstr "一封电子邮件已经发送到他们的登录信息的新用户。"
+
+msgid "New Password"
+msgstr "新密码"
+
+msgid "Confirm New Password"
+msgstr "确认新密码"
+
+msgid "Please enter a password that matches the New Password field."
+msgstr "请输入密码相匹配的新密码字段。"
+
+msgid "Please select the Role."
+msgstr "请选择角色。"
+
+msgid "Please enter the Last Name."
+msgstr "请输入姓氏。"
+
+msgid "Please enter the AIM buddy name."
+msgstr "请输入朋友的名字的目的."
+
+msgid "User edited successfully"
+msgstr "用户编辑成功"
+
+msgid "Sort"
+msgstr "分类"
+
+msgid "Person"
+msgstr "人员"
+
+msgid "Last Seen"
+msgstr "最后记录到的"
+
+msgid "Restore from Trash"
+msgstr "还原从垃圾桶"
+
+msgid "View User Trash"
+msgstr "预览用户垃圾箱"
+
+msgid "View User List"
+msgstr "查看用户列表"
+
+msgid "Please enter a valid email address."
+msgstr "请输入有效的电子邮件地址。"
+
+msgid "Please enter the Title."
+msgstr "请输入标题."
+
+msgid "Avatar updated"
+msgstr "头像更新"
+
+msgid " day(s) ago"
+msgstr " 天前"
+
+msgid "User Avatar"
+msgstr "用户头像"
+
+msgid "Department"
+msgstr "部门"
+
+msgid "Position"
+msgstr "说明"
+
+msgid "Address Data"
+msgstr "地址数据"
+
+msgid "Extension"
+msgstr "分机"
+
+msgid "Time Data"
+msgstr "时间数据"
+
+msgid "Local Time"
+msgstr "当地时间"
+
+msgid "* Timezone was not defined by this user."
+msgstr "*时区是没有定义该用户。"
+
+msgid "Your Refinements"
+msgstr "你的限制条件"
+
+msgid "Type:"
+msgstr "类型:"
+
+msgid "Showing %1$s record(s)."
+msgstr "显示%1$s的记录（拧）。"
+
+msgid "When:"
+msgstr "当："
+
+msgid "Posted By:"
+msgstr "发布者："
+
+msgid "Found %1$s results for <span class='highlight'>%2$s</span>."
+msgstr "找到%1$s的结果 <span class='highlight'>%2$s</span>."
+
+msgid "Showing %1$s of %2$s Results."
+msgstr "显示%1$s美元的第%2$s个结果。"
+
+msgid "Record"
+msgstr "记录"
+
+msgid "Type"
+msgstr "类型"
+
+msgid "Dated"
+msgstr "信"
+
+msgid "No results found for <span class='highlight'>%1$s</span>."
+msgstr "没有找到结果的 <span class='highlight'>%1$s</span>."
+
+msgid "at"
+msgstr "在"
+
+msgid "Add Body Type"
+msgstr "加入体型"
+
+msgid "Close"
+msgstr "弥合"
+
+msgid "Please use the fields below to add new types."
+msgstr "请用下列领域来添加新款"
+
+msgid "Current Body Types"
+msgstr "电流体类型"
+
+msgid "New Body Type"
+msgstr "新的机构类型"
+
+msgid "Please enter a style type."
+msgstr "请输入样式类型。"
+
+msgid "add"
+msgstr "补充"
+
+msgid "Add Style Type"
+msgstr "加入款型"
+
+msgid "Body Type"
+msgstr "成衣类型"
+
+msgid "Body Type..."
+msgstr "成衣类型..."
+
+msgid "Loading..."
+msgstr "载入中..."
+
+msgid "Please select a body type."
+msgstr "请选择体型"
+
+msgid "Current Style Types"
+msgstr "现在款型"
+
+msgid "Please select body type to see its current style types."
+msgstr "请选择体型删除。"
+
+msgid "New Style Type"
+msgstr "新款型"
+
+msgid "Mini Marker"
+msgstr "迷你排板图"
+
+msgid "Efficiency"
+msgstr "利用率"
+
+msgid "Please enter a valid percent."
+msgstr "请输入有效的百分之。"
+
+msgid "Description (Optional)"
+msgstr "说明(可不填)"
+
+msgid "optional"
+msgstr "可"
+
+msgid "Click here to Complete Yield"
+msgstr "编辑完成产量"
+
+msgid "Complete Yield"
+msgstr "完成单耗"
+
+msgid "Unlock Yield"
+msgstr "开启单耗"
+
+msgid "Lock Yield"
+msgstr "锁定单耗"
+
+msgid "Are you sure you want to delete this yield?"
+msgstr "您确定要删除此收益率？"
+
+msgid "Are you sure you want to archive this yield?"
+msgstr "您确定要还原此收益率？"
+
+msgid "Archive Yield"
+msgstr "查看产量"
+
+msgid "Are you sure you want to restore this yield from the trash?"
+msgstr "您确定要还原这个垃圾产量？"
+
+msgid "Are you sure you want to restore this yield from the Archive?"
+msgstr "您确定要还原这个垃圾产量？"
+
+msgid "Restore from Archive"
+msgstr "还原从垃圾桶"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Date Completed"
+msgstr "完成日期"
+
+msgid "Yield Completed"
+msgstr "产量完成"
+
+msgid "Yield Information"
+msgstr "单耗资料"
+
+msgid "Please enter a valid style number."
+msgstr "请输入有效的风貌。"
+
+msgid "Manage Body Types"
+msgstr "管理机构的类型"
+
+msgid "&raquo; Manage"
+msgstr "&raquo; 管理"
+
+msgid "Style Type"
+msgstr "款式"
+
+msgid "Please select the Style Type."
+msgstr "请选择样式类型。"
+
+msgid "Pattern Card"
+msgstr "制做单"
+
+msgid "Please select the Pattern Card file."
+msgstr "请选择图案卡文件。"
+
+msgid "Pattern"
+msgstr "样版"
+
+msgid "Please select the Pattern file."
+msgstr "请选择模式的文件。"
+
+msgid "Responsibilities"
+msgstr "职责"
+
+msgid "No one is responsible."
+msgstr "无人负责"
+
+msgid "Please choose the User responsible for this yield."
+msgstr "请选择用户负责这项收益。"
+
+msgid "Notes (300 character limit)"
+msgstr "注解(限300字母)"
+
+msgid "Current Attachments"
+msgstr "当前附件"
+
+msgid "Uploaded"
+msgstr "由XXX上传于"
+
+msgid "Yield Complete Information"
+msgstr "产量完全信息"
+
+msgid "Completed Pattern Card"
+msgstr "完成模式卡"
+
+msgid "add more"
+msgstr "添加更多"
+
+msgid "Complete Notes"
+msgstr "完整的笔记"
+
+msgid "Your note is too short."
+msgstr "您注意的是太短了。"
+
+msgid ""
+"Warning: Submitting this form will overwrite the previous stored pattern card"
+msgstr "当心：按递交键后,先前储存的制作单将被取代"
+
+msgid "Please choose the Use responsible for this yield."
+msgstr "请选择使用这一收益率负责。"
+
+msgid "Selected Yields"
+msgstr "选择产量"
+
+msgid "Download all Files"
+msgstr "下载所有文件"
+
+msgid "Delete Selected Yields"
+msgstr "删除所选产量"
+
+msgid "View Person"
+msgstr "查看人"
+
+msgid "Are you sure you want to restore this yield?"
+msgstr "您确定要还原此收益率？"
+
+msgid "Restore Yield"
+msgstr "还原产量"
+
+msgid "Restore Yield from Archive"
+msgstr "还原从垃圾桶"
+
+msgid "View Yield Archive"
+msgstr "预览垃圾箱"
+
+msgid "View Yield Trash"
+msgstr "预览垃圾箱"
+
+msgid "View Yields"
+msgstr "预览单耗"
+
+msgid "Important!"
+msgstr "至关重要"
+
+msgid "The following yields are pending longer than 48 hours."
+msgstr "以下单耗超过48小时没完成"
+
+msgid "From"
+msgstr "原自"
+
+msgid "View pending yields"
+msgstr "预览未完工单耗"
+
+msgid "View All Pending Yields"
+msgstr "预览未完工单耗"
+
+msgid "Yields (%1$s)"
+msgstr "产量 (%1$s)"
+
+msgid "Recently Completed"
+msgstr "新近完成"
+
+msgid "Yield Title"
+msgstr "单耗标题"
+
+msgid "Locked by"
+msgstr "锁定人"
+
+msgid "Pending for"
+msgstr "未定"
+
+msgid "Completed by"
+msgstr "完成人"
+
+msgid "Notes"
+msgstr "注释"
+
+msgid "General Notes"
+msgstr "一般注解"
+
+msgid "Completed Notes"
+msgstr "完整注解"
+
+msgid "Yield Discussion"
+msgstr "产量的探讨"
+
+msgid "Associated Discussions"
+msgstr "相关讨论"
+
+msgid "Last Post"
+msgstr "最后发表"
+
+msgid "Group"
+msgstr "集团"
+
+msgid "Please enter a valid group name."
+msgstr "请输入有效的组名称。"
+
+msgid "By User"
+msgstr "按用户"
+
+msgid "Status Options"
+msgstr "状态选项"
+
+msgid "Select Refinement User..."
+msgstr "选择细化报告..."
+
+msgid "Select Status..."
+msgstr "选择状态..."
+
+msgid "Select Date..."
+msgstr "请选择日期..."
+
+msgid "Select Efficiency..."
+msgstr "选择效率..."
+
+msgid "Enter Date"
+msgstr "输入日期"
+
+msgid "Enter Date Range"
+msgstr "输入日期范围"
+
+msgid "edit"
+msgstr "编辑"
+
+msgid "Not defined"
+msgstr "未定义"
+
+msgid "More activities"
+msgstr "更多活动"
+
+msgid ">Show Details"
+msgstr ">“显示详细资料"
+
+msgid "ZF Quickstart Language and Time Demo Application"
+msgstr "ZF公司快速語言和時間演示應用"
+
+msgid "Date and Time Information"
+msgstr "日期和時間信息"
+
+msgid "Current Time Zone is %1$s"
+msgstr "當前時區是 %1$s"
+
+msgid "Today is the %1$s"
+msgstr "今天是 %1$s"
+
+msgid "Table of Contents"
+msgstr "目錄"
+
+msgid "Chapter 1. An Introduction to PHP"
+msgstr "第1章。介紹到PHP"
+
+msgid "Chapter 2. Installing Apache and PHP"
+msgstr "第2章。安裝Apache和PHP"
+
+msgid "Chapter 3. PHP Basics"
+msgstr "第3章。 PHP的基本知識"
+
+msgid "Chapter 4. Functions"
+msgstr "第4章。職能"
+
+msgid "Chapter 5. Arrays"
+msgstr "第5章。陣列"
+
+msgid "Please enter the Last Nname."
+msgstr "请输入姓氏。"
+
+msgid "Zend Framework Quickstart Application"
+msgstr "Zend Framework的快速應用"

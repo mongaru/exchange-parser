@@ -1,0 +1,34 @@
+<?php
+$this->translate = Zend_Registry::get('translate');
+?>
+<script type="text/javascript">
+    //<![CDATA[
+    var paginationFirst = <?php echo $this->first; ?>;
+    var paginationLast = <?php echo $this->last; ?>;
+    var paginationPages = [];
+<?php for($i = $this->first; $i <= $this->last; $i++): ?>
+    paginationPages[<?php echo $i; ?>] = '<?php echo $this->url(array('page' => $i)); ?>';
+<?php endfor; ?>
+    //]]>
+</script>
+<div class="rgt">
+            <!-- Next page link -->
+            <?php if (isset($this->next)): ?>
+            <a href="<?php echo $this->url(array('page' => $this->next)); ?>" class="btn_default"><?php echo $this->translate->_('Next &raquo;'); ?></a>
+            <?php else: ?>
+         <?php echo  '<button class="blue">'.$this->translate->_('Next &raquo;').'</button>'; ?>
+            <?php endif; ?>
+
+                            <input type = "text" style = "width:39px;" name="pag_input" id="pag_input" value="<?php echo $this->current; ?>" onkeyup="PaginateDown(event, this);" onkeydown="PaginateUp(event, this);" />
+
+                    <span class="pag-count"><?php printf($this->translate->_("of %1\$s"), $this->pageCount == 0 ? 1 : $this->pageCount); ?></span>
+ 
+
+            <!-- Previous page link -->
+            <?php if (isset($this->previous)): ?>
+            <a href="<?php echo $this->url(array('page' => $this->previous)); ?>" class="btn_default"><?php echo $this->translate->_('&laquo; Previous'); ?></a>
+            <?php else: ?>
+            <?php echo  '<button class="blue">'.$this->translate->_('&laquo; Previous').'</button>'; ?>
+            <?php endif; ?>
+
+</div>

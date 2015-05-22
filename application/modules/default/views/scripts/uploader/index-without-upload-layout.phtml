@@ -1,0 +1,547 @@
+
+<?php
+  $fileUrl = '';
+  if ($this->fileUploaded == true)
+    $fileUrl = $this->serverUrl('/uploads/' . $this->fileFullName);
+?>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $this->serverUrl('/assets/css/style/reset.css'); ?>" />
+ 
+    <script type="text/javascript" src="<?php echo $this->serverUrl('/assets/js/application/jquery-1.7.2.min.js'); ?>"></script>  
+
+    <script type="text/javascript">
+    //<![CDATA[
+
+        $(document).ready(function() {
+            /*-------------- FILE --------------*/
+            $('.iFile').each(function(){
+                var r = $(this).find('input:file').attr('rel');
+                $(this).append(r);
+            }).change(function(){
+                $(this).prev('.iFileDescription').html('<i class="progress_bar_blue animate_bar">Loading...</i>');
+                $('#FormFileUpload').submit();
+            });
+
+            $('.iFileDescription .remove_btn').click(function(){
+                
+                <?php if ($this->jsResetCallback != ''): ?>
+                    window.top.window.<?php echo $this->jsResetCallback; ?>('<?php echo $this->fileId; ?>', '<?php echo $fileUrl; ?>', '<?php echo $this->jsParameterCallback; ?>');
+                <?php endif; ?>
+                
+                $('.iFile file').val('');
+                $(this).attr('style', 'display:none');
+                $('#file_name').html('');
+
+                return false;
+            });
+        } );
+
+    //]]>
+    </script>
+
+    <?php if ($this->fileUploaded == true): ?>
+        <script type="text/javascript">
+        //<![CDATA[
+
+            $(document).ready(function() {
+                // JS Callback function
+                // First parameter is File Id, Second is File full path
+
+                <?php if ($this->jsResetCallback != ''): ?>
+                    window.top.window.<?php echo $this->jsCallback; ?>('<?php echo $this->fileId; ?>', '<?php echo $fileUrl; ?>', '<?php echo $this->jsParameterCallback; ?>');
+                <?php endif; ?>
+                
+            } );
+
+        //]]>
+        </script>
+    <?php endif; ?>
+
+    <style type="text/css">
+
+        .lft { float:left; }
+        .rgt { float:right; }
+        .cntr {
+          margin-left:auto !important;
+          margin-right:auto !important;
+        }
+        .p_c { text-align: center;}
+        .last, .first { margin:0 !important; }
+        .inline { display:inline; }
+        .iBlk { display:inline-block; }
+        .blk { display:block; }
+        .hide { display:none; }
+        .txtLft { text-align:left !important; }
+        .txtCntr { text-align:center !important; }
+        .txtRgt { text-align:right !important; }
+        .noTxt { text-indent:-99999em; }
+        .noBrdr { border:none !important; }
+        iframe.upload_file {
+          width: 100%;
+          height: 32px;
+        }
+        hr {
+          border-color:#ccc;
+          border-style:solid;
+          border-width:1px 0 0;
+          height:0;
+        }
+        .clearfix:after {
+          content:"";
+          display:block;
+          visibility:hidden;
+          line-height:0;
+        }
+        .clearfix {
+          display:block;
+          clear:both;
+        }
+        html {
+            background:#ffffff;
+            height:100%;
+        }
+        body {
+            background:#ffffff;
+            color:#333;
+            font:12px 'Trebuchet MS', Arial, Helvetica, sans-serif;
+            line-height:18px;
+            min-height:100%;
+            margin:0;
+            padding:0;
+            overflow-x:hidden;
+            overflow-y:visible;
+            background-color:#ffffff;
+        }
+        html[xmlns] .clearfix { display:block; }
+        .full { width:100%; }
+        .grid1 { width:28px; }
+        .grid2 { width:56px; }
+        .grid3 { width:84px; }
+        .grid4 { width:112px; }
+        .grid5 { width:140px; }
+        .grid6 { width:168px; }
+        .grid7 { width:196px; }
+        .grid8 { width:224px; }
+        .grid9 { width:252px; }
+        .grid10 { width:280px; }
+        .grid11 { width:308px; }
+        .grid12 { width:336px; }
+        .grid13 { width:364px; }
+        .grid14 { width:392px; }
+        .grid15 { width:420px; }
+        .grid16 { width:448px; }
+        .grid17 { width:476px; }
+        .grid18 { width:504px; }
+        .grid19 { width:532px; }
+        .grid20 { width:560px; }
+        .fluid .grid1 { width:2.8571428571429%; }
+        .fluid .grid2 { width:5.7142857142857%; }
+        .fluid .grid3 { width:8.5714285714286%; }
+        .fluid .grid4 { width:11.428571428571%; }
+        .fluid .grid5 { width:14.285714285714%; }
+        .fluid .grid6 { width:17.142857142857%; }
+        .fluid .grid7 { width:20%; }
+        .fluid .grid8 { width:22.857142857143%; }
+        .fluid .grid9 { width:25.714285714286%; }
+        .fluid .grid10 { width:28.571428571429%; }
+        .fluid .grid11 { width:31.428571428571%; }
+        .fluid .grid12 { width:34.285714285714%; }
+        .fluid .grid13 { width:37.142857142857%; }
+        .fluid .grid14 { width:40%; }
+        .fluid .grid15 { width:42.857142857143%; }
+        .fluid .grid16 { width:45.714285714286%; }
+        .fluid .grid17 { width:48.571428571429%; }
+        .fluid .grid18 { width:51.428571428571%; }
+        .fluid .grid19 { width:54.285714285714%; }
+        .fluid .grid20 { width:57.142857142857%; }
+        .fluid .grid21 { width:60%; }
+        .fluid .grid22 { width:62.857142857143%; }
+        .fluid .grid23 { width:65.714285714286%; }
+        .fluid .grid24 { width:68.571428571429%; }
+
+        input, select, textarea { width:100%; }
+        input[type="text"], input[type="password"], input[type="search"] {
+            background:#ffffff;
+            color:#a3adb6;
+            border:solid 1px #c0c8cd;
+            font:13px 'Trebuchet MS', Arial, Helvetica, sans-serif;
+            line-height:17px;
+            margin:0 0 5px;
+            padding:6px 14px;
+            -webkit-border-radius:3px;
+            -moz-border-radius:3px;
+            border-radius:3px;
+            -moz-background-clip:padding;
+            -webkit-background-clip:padding-box;
+            background-clip:padding-box;
+            -webkit-box-shadow:1px 1px 3px #e0e0e0 inset, 0 0 0 transparent;
+            -moz-box-shadow:1px 1px 3px #e0e0e0 inset, 0 0 0 transparent;
+            box-shadow:1px 1px 3px #e0e0e0 inset, 0 0 0 transparent;
+            -webkit-transition:.2s;
+            -moz-transition:.2s;
+            -ms-transition:.2s;
+            -o-transition:.2s;
+            transition:.2s;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+        input[type="text"]:focus, input[type="password"]:focus, input[type="search"]:focus {
+            color:#4e5a63;
+            border:solid 1px #738491;
+            -webkit-box-shadow:0 0 0 transparent inset, 0 0 6px #b6b6b6;
+            -moz-box-shadow:0 0 0 transparent inset, 0 0 6px #b6b6b6;
+            box-shadow:0 0 0 transparent inset, 0 0 6px #b6b6b6;
+        }
+
+        .iFile {
+            background:#e6e6e6;
+            color:#818a8f;
+            border:solid 1px #ccc;
+            font-size:12px;
+            line-height:16px;
+            font-weight:bold;
+            padding:7px 14px;
+            margin:0 0 0 -4px;
+            overflow:hidden;
+            background-color:#f5f5f5;
+            background-image:-moz-linear-gradient(top,#fff,#e6e6e6);
+            background-image:-ms-linear-gradient(top,#fff,#e6e6e6);
+            background-image:-webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+            background-image:-webkit-linear-gradient(top,#fff,#e6e6e6);
+            background-image:-o-linear-gradient(top,#fff,#e6e6e6);
+            background-image:linear-gradient(top,#fff,#e6e6e6);
+            background-repeat:repeat-x;
+            display:inline-block;
+            -webkit-border-top-right-radius:3px;
+            -webkit-border-bottom-right-radius:3px;
+            -webkit-border-bottom-left-radius:0;
+            -webkit-border-top-left-radius:0;
+            -moz-border-radius-topright:3px;
+            -moz-border-radius-bottomright:3px;
+            -moz-border-radius-bottomleft:0;
+            -moz-border-radius-topleft:0;
+            border-top-right-radius:3px;
+            border-bottom-right-radius:3px;
+            border-bottom-left-radius:0;
+            border-top-left-radius:0;
+            -moz-background-clip:padding;
+            -webkit-background-clip:padding-box;
+            background-clip:padding-box;
+        }
+        .iFile:hover { background:#e6e6e6; }
+        .iFile input[type="file"] {
+            font-size:100px;
+            width:110%;
+            right:-2px;
+            top:-2px;
+            position:absolute;
+            opacity:0;
+            filter:1;
+            cursor:pointer;
+        }
+        .iFileDescription {
+            background:#fff;
+            color:#131319;
+            border:solid 1px #c0c8cd;
+            font:13px/15px Arial, Helvetica, sans-serif;
+            white-space:nowrap;
+            min-width:110px;
+            height:32px;
+            margin:0;
+            padding:7px 44px 7px 14px;
+            vertical-align:top;
+            overflow:hidden;
+            display:inline-block;
+            -webkit-border-top-right-radius:0;
+            -webkit-border-bottom-right-radius:0;
+            -webkit-border-bottom-left-radius:3px;
+            -webkit-border-top-left-radius:3px;
+            -moz-border-radius-topright:0;
+            -moz-border-radius-bottomright:0;
+            -moz-border-radius-bottomleft:3px;
+            -moz-border-radius-topleft:3px;
+            border-top-right-radius:0;
+            border-bottom-right-radius:0;
+            border-bottom-left-radius:3px;
+            border-top-left-radius:3px;
+            -moz-background-clip:padding;
+            -webkit-background-clip:padding-box;
+            background-clip:padding-box;
+            -webkit-box-shadow:1px 1px 3px #e0e0e0 inset;
+            -moz-box-shadow:1px 1px 3px #e0e0e0 inset;
+            box-shadow:1px 1px 3px #e0e0e0 inset;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+        .iFileDescription em {
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display:block;
+        }
+        .iFileDescription .remove_btn {
+            background:rgba(230,230,230,0.8);
+            border-left:solid 1px #c0c8cd;
+            color:#666;
+            font-size:11px;
+            line-height:28px;
+            font-weight:bold;
+            letter-spacing:.7px;
+            margin:0 0 0 -34px;
+            padding:0 7px;
+            left:100%;
+            top:0;
+            position:absolute;
+            cursor:pointer;
+            z-index:999;
+            text-shadow:0 -1px 0 #fff;
+            height: 30px;
+            -webkit-transition:.2s ease-out;
+            -moz-transition:.2s ease-out;
+            -ms-transition:.2s ease-out;
+            -o-transition:.2s ease-out;
+            transition:.2s ease-out;
+        }
+        .iFileDescription .remove_btn i {
+            font-size:18px;
+            margin-right:7px;
+            vertical-align:middle;
+        }
+        .iFileDescription:hover .remove_btn { margin:0 0 0 -85px; }
+        .iFileDescription .animate_bar {
+            font-style:normal;
+            height:100%;
+            padding:6px 14px;
+            left:0;
+            top:0;
+            position:absolute;
+            z-index:999;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            box-sizing:border-box;
+        }
+
+        .icon-x-altx-alt:after { content:"\e089"; }
+
+        @font-face {
+            font-family:icons;
+            src:url('/images/icons/htmlframework_icons.eot?#') format('eot'), url('/images/icons/htmlframework_icons.svg#htmlframework_icons') format('svg'), url('/images/icons/htmlframework_icons.woff') format('woff'), url('/images/icons/htmlframework_icons.ttf') format('truetype');
+            font-weight:normal;
+            font-style:normal;
+        }
+        [data-icon]:after {
+            font-family:icons;
+            vertical-align:middle;
+            content:attr(data-icon);
+            speak:none;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=hIEfix.png,sizingMethod=crop);
+            zoom:1;
+        }
+        [class^="icon-"]:after, [class*=" icon-"]:after {
+            font-family:icons;
+            font-style:normal;
+            speak:none;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=hIEfix.png,sizingMethod=crop);
+            zoom:1;
+        }
+
+        .progress_bar_blue {
+            color:#ffffff;
+            width:100%;
+            min-height:21px;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            background-color:#149bdf;
+            background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+            background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-ms-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            -webkit-background-size:30px 30px;
+            -moz-background-size:30px 30px;
+            -o-background-size:30px 30px;
+            background-size:30px 30px;
+            -webkit-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            -moz-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+            -webkit-transition:width .6s ease;
+            -moz-transition:width .6s ease;
+            -ms-transition:width .6s ease;
+            -o-transition:width .6s ease;
+            transition:width .6s ease;
+        }
+        .progress_bar_red {
+            color:#ffffff;
+            width:100%;
+            min-height:21px;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            background-color:#ee5f5b;
+            background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+            background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-ms-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            -webkit-background-size:30px 30px;
+            -moz-background-size:30px 30px;
+            -o-background-size:30px 30px;
+            background-size:30px 30px;
+            -webkit-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            -moz-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+            -webkit-transition:width .6s ease;
+            -moz-transition:width .6s ease;
+            -ms-transition:width .6s ease;
+            -o-transition:width .6s ease;
+            transition:width .6s ease;
+        }
+        .progress_bar_green {
+            color:#ffffff;
+            width:100%;
+            min-height:21px;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            background-color:#62c462;
+            background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+            background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-ms-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            -webkit-background-size:30px 30px;
+            -moz-background-size:30px 30px;
+            -o-background-size:30px 30px;
+            background-size:30px 30px;
+            -webkit-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            -moz-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+            -webkit-transition:width .6s ease;
+            -moz-transition:width .6s ease;
+            -ms-transition:width .6s ease;
+            -o-transition:width .6s ease;
+            transition:width .6s ease;
+        }
+        .progress_bar_yellow {
+            color:#ffffff;
+            width:100%;
+            min-height:21px;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            background-color:#fbb450;
+            background-image:-webkit-gradient(linear,0 100%,100% 0,color-stop(.25,rgba(255,255,255,0.15)),color-stop(.25,transparent),color-stop(.5,transparent),color-stop(.5,rgba(255,255,255,0.15)),color-stop(.75,rgba(255,255,255,0.15)),color-stop(.75,transparent),to(transparent));
+            background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-moz-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-ms-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:-o-linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            background-image:linear-gradient(45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
+            -webkit-background-size:30px 30px;
+            -moz-background-size:30px 30px;
+            -o-background-size:30px 30px;
+            background-size:30px 30px;
+            -webkit-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            -moz-box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            box-shadow:0 6px 8px rgba(255,255,255,0.5) inset;
+            text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+            -webkit-transition:width .6s ease;
+            -moz-transition:width .6s ease;
+            -ms-transition:width .6s ease;
+            -o-transition:width .6s ease;
+            transition:width .6s ease;
+        }
+        .animate_bar {
+            -webkit-animation:animate_stripes 1s linear infinite;
+            -moz-animation:animate_stripes 1s linear infinite;
+            -ms-animation:animate_stripes 1s linear infinite;
+            -o-animation:animate_stripes 1s linear infinite;
+            animation:animate_stripes 1s linear infinite;
+        }
+        @-webkit-keyframes animate_stripes {
+          from {
+            background-position:30px 0;
+          }
+          to {
+            background-position:0 0;
+          }
+        }
+        @-moz-keyframes animate_stripes {
+          from {
+            background-position:30px 0;
+          }
+          to {
+            background-position:0 0;
+          }
+        }
+        @-ms-keyframes animate_stripes {
+          from {
+            background-position:30px 0;
+          }
+          to {
+            background-position:0 0;
+          }
+        }
+        @-o-keyframes animate_stripes {
+          from {
+            background-position:0 0;
+          }
+          to {
+            background-position:30px 0;
+          }
+        }
+        @keyframes animate_stripes {
+          from {
+            background-position:30px 0;
+          }
+          to {
+            background-position:0 0;
+          }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <form action="<?php echo $this->serverUrl($this->url()); ?>" method="post" name="FormFileUpload" id="FormFileUpload" enctype="multipart/form-data">
+        <section class="grid11 fluid">
+        <p>
+            <span class="iFileDescription grid24 iBlk" id = "<?php echo $this->ID_file; ?>">
+                <?php if ($this->fileUploaded == true): ?>
+                    <em id="file_name" ><?php echo $this->fileName; ?></em>
+                    <button class="remove_btn" ><i class="icon-x-altx-alt"></i>Remove</button>
+                <?php else: ?>
+                    &nbsp;
+                <?php endif; ?>
+            </span>
+            <span class="iFile">Submit file
+                <input class="" type="file" name="file" id="file" value="" />
+            </span>     
+        </p>
+
+        <?php if ($this->errorMessage != ''): ?>
+            <p class="error spacer clear">
+                <?php echo $this->errorMessage; ?>
+            </p>
+        <?php endif; ?>
+
+        </section>
+        
+    </form>
+
+</body>
+</html>

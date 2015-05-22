@@ -1,0 +1,23 @@
+<?php
+$userRole = $this->userData->user_level;
+?>
+<?php if (null !== $this->setupInfo): ?>
+<!-- Company Actions Box -->
+<div class="padding_wrapper">
+    <div class="box round" id="user_actions">
+        <div class="box-wrapper">
+            <h4><?php echo $this->translate->_('Actions'); ?></h4>
+            <div class="v-list">
+             <?php if (($this->showEdit == true) && (($userRole == 'superadmin') || ($this->amediaAcl->isAllowed(Zend_Auth::getInstance()->getIdentity()->user_level, 'company_manage', 'edit')))): ?>
+                <div class="item clearfix">
+                    <span class="log_head icon16x16-img edit-user"><a href="<?php echo $this->serverUrl('/company/setup/edit/id/' . $this->setupInfo->setup_id); ?>" title="<?php echo $this->translate->_('Edit Setup'); ?>" class="link"><?php echo $this->translate->_('Edit Setup'); ?></a></span>
+                </div> <!-- end item -->
+             <?php endif; ?>  
+            </div> <!-- end v-list -->
+        </div> <!-- end box-wrapper -->
+    </div> <!-- end box -->
+</div> <!-- end padding_wrapper -->
+
+<div class="clear"><!-- --></div>
+<!-- Company Actions Box -->
+<?php endif; ?>
