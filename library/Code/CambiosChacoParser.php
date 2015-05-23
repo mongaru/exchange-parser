@@ -1,36 +1,26 @@
 <?php
 
 include_once('Amedia/simple_html_dom.php');
-//require_once 'Zend/Application.php';
 
 /**
 *
 */
 class Code_CambiosChacoParser
 {
-    function __construct()
+    public function __construct()
     {
     }
 
-    function ejecutar($fileURL)
+    /*
+        agregar campo de fecha de cotizacion o usar un maestro y detalle por fecha.
+        return array(array('moneda' => '', 'compra' => '', 'venta' => ''))
+     */
+    public function ejecutar($fileURL)
     {
         // http://stackoverflow.com/questions/272361/how-can-i-handle-the-warning-of-file-get-contents-function-in-php
 
         // $html = file_get_html('http://www.cambioschaco.com.py/php/chaco_cotizaciones_nuevo.php');
-        //$dom = new Code_SimpleHTMLDom();
-        // $html = $dom->file_get_html('chaco.html');
-        // $html = @file_get_html('chaco.html');
         $html = @file_get_html($fileURL);
-        //$html = file_get_html('youtube.htm');
-        //$html = file_get_html('Product.ibatis.xml');
-
-        //$ret = $html->find('table table tr', 0)->children(0)->innertext;
-
-
-        //echo '<pre>'; var_dump($ret); echo '</pre>'; die;
-
-
-        // $ret = $html->find('table table tr', 0)->children(0)->innertext;
 
         if ($html === FALSE)
         {
@@ -41,8 +31,11 @@ class Code_CambiosChacoParser
         $patronNombre = '/;(\s*\w\s*)*</';
         $patronNumero = '/\d+(\.)?\d+\,00/';
 
+        $cotizaciones = array();
+
         foreach ($html->find('table table tr') as $element)
         {
+            $cotizacion = array();
 
             if (strpos($element->innertext, "paises") !== false)
             {
@@ -70,10 +63,10 @@ class Code_CambiosChacoParser
                     foreach ($coincidencias as $encontrados)
                     {
                         $paisNombre = $encontrados[0];
-                        $paisNombre = str_replace(" ", "", $paisNombre);
                         $paisNombre = str_replace(";", "", $paisNombre);
                         $paisNombre = str_replace("<", "", $paisNombre);
-                        echo '<pre>'; var_dump($paisNombre); echo '</pre>';
+                        $paisNombre = trim($paisNombre);
+                        // echo '<pre>'; var_dump($paisNombre); echo '</pre>';
                         break; // solo se obtiene el primer valor de coincidencia
                     }
                 }
@@ -83,6 +76,8 @@ class Code_CambiosChacoParser
                     continue;
                 }
 
+                $cotizacion[Api_Model_Entidad::CAMPO_MONEDA] = $paisNombre;
+
                 $numeroCompraElemento = $element->children(2);
                 $numeroVentaElemento = $element->children(3);
                 // las filas de cabecera tienen un solo children td, entonces continuar
@@ -91,7 +86,7 @@ class Code_CambiosChacoParser
                     continue;
                 }
 
-                // extraer los montos en guaranies
+                // extraer los montos en guaranies de compra
                 preg_match($patronNumero, $numeroCompraElemento->innertext, $coincidencias, PREG_OFFSET_CAPTURE);
 
                 // si hay entonces quitar el nombre del pais
@@ -101,15 +96,17 @@ class Code_CambiosChacoParser
                     foreach ($coincidencias as $encontrados)
                     {
                         $valorCompra = $encontrados[0];
-                        $valorCompra = str_replace(" ", "", $valorCompra);
                         $valorCompra = str_replace(";", "", $valorCompra);
                         $valorCompra = str_replace("<", "", $valorCompra);
-                        echo '<pre>'; var_dump($valorCompra); echo '</pre>';
+                        $valorCompra = trim($valorCompra);
+                        // echo '<pre>'; var_dump($valorCompra); echo '</pre>';
                         break; // solo se obtiene el primer valor de coincidencia
                     }
                 }
 
-                        // extraer los montos en guaranies
+                $cotizacion[Api_Model_Entidad::CAMPO_COMPRA] = $valorCompra;
+
+                // extraer los montos en guaranies de venta
                 preg_match($patronNumero, $numeroVentaElemento->innertext, $coincidencias, PREG_OFFSET_CAPTURE);
 
                 // si hay entonces quitar el nombre del pais
@@ -119,60 +116,21 @@ class Code_CambiosChacoParser
                     foreach ($coincidencias as $encontrados)
                     {
                         $valorVenta = $encontrados[0];
-                        $valorVenta = str_replace(" ", "", $valorVenta);
                         $valorVenta = str_replace(";", "", $valorVenta);
                         $valorVenta = str_replace("<", "", $valorVenta);
-                        echo '<pre>'; var_dump($valorVenta); echo '</pre>';
+                        $valorVenta = trim($valorVenta);
+                        // echo '<pre>'; var_dump($valorVenta); echo '</pre>';
                         break; // solo se obtiene el primer valor de coincidencia
                     }
                 }
 
-                //$completo = $paisNombre.';'.$valorVenta.';'.$valorCompra;
+                $cotizacion[Api_Model_Entidad::CAMPO_VENTA] = $valorVenta;
 
-                //echo '<pre>'; var_dump($completo); echo '</pre>';
-
-
-                // print_r($coincidencias);
-                // echo '<pre>'; var_dump($coincidencias); echo '</pre>';
-
-                // $patron = '/\d+(\.)?\d+\,00/';
-
-                // foreach ($element->children() as $child)
-                // {
-                //     // preg_match($patrón, $sujeto, $coincidencias, PREG_OFFSET_CAPTURE, 3);
-                // preg_match($patron, $child->innertext, $coincidencias, PREG_OFFSET_CAPTURE);
-                // // print_r($coincidencias);
-                // echo '<pre>'; var_dump($coincidencias); echo '</pre>';
-                // }
+                $cotizaciones[] = $cotizacion;
             }
-
-
-        //;(\s*\w\s*)*<
-
         }
-        // echo '<pre>'; var_dump($cont); echo '</pre>'; die;
-        //echo $element->src . '<br>';
-    }
 
-
-    function getparents(){
-        return $this->parent;
+        return $cotizaciones;
     }
-
-    function getAlowResources(){
-        return $this->AlowResources;
-    }
-    function getAlowResourcesfor($index){
-        if(isset($this->AlowResources[$index])){
-            return $this->AlowResources[$index];
-        } else {
-            return null;
-        }
-    }
-    function getRol(){
-        return $this->rol;
-    }
-
-
 }
- ?>
+?>

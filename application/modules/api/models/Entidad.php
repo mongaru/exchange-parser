@@ -2,8 +2,12 @@
 
 class Api_Model_Entidad
 {
-    const ENTIDADES = array('CCE' => 'Cambios Chaco Encarnacion');
-    const TIPO = array('CC' => 'Cambios Chaco');
+    // const ENTIDADES = array('CCE' => 'Cambios Chaco Encarnacion');
+    // const TIPO = array('CC' => 'Cambios Chaco');
+
+    const CAMPO_MONEDA = 'moneda';
+    const CAMPO_COMPRA = 'compra';
+    const CAMPO_VENTA = 'venta';
 
     protected $_data;
     protected $_mapper;
